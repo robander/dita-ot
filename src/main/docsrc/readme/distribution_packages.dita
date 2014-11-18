@@ -2,13 +2,13 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept id="distribution_packages">
   <title>Distribution packages</title>
-  <shortdesc>The DITA Open Toolkit is distributed in four packages: minimal, standard, client, and
-    full-easy-install. The source code is available both as a Git repository and a ZIP file.</shortdesc>
+  <shortdesc>The DITA Open Toolkit is distributed in four packages: minimal, standard, and client<!--, and
+    full-easy-install-->. The source code is available as a Git repository.</shortdesc>
   <prolog>
     <metadata>
       <keywords>
         <indexterm>distribution packages</indexterm>
-        <indexterm>full-easy-install package, overview</indexterm>
+        <!--indexterm>full-easy-install package, overview</indexterm-->
         <indexterm>minimal package, overview</indexterm>
         <indexterm>standard package, overview</indexterm>
       </keywords>
@@ -58,7 +58,7 @@
     </section>
     <section>
       <title>Client package</title>
-      <p>his package is designed for users who want the simplest installation experience. In
+      <p>This package is designed for users who want the simplest installation experience. In
         addition to the core DITA-OT code and the external libraries that are in the minimal and
         standard packages, it contains Apache Ant and FOP. The client package also
         contains scripts for a guided demo of the DITA-OT. The client package includes the
@@ -79,9 +79,9 @@
           ></keyword>_client_bin.tar.gz</filepath></li>
       </ul></p>
     </section>
-    <section>
+    <!--section>
       <title>Full-easy-install package</title>
-      <p>his package is designed for users who want the simplest installation experience. In
+      <p>This package is designed for users who want the simplest installation experience. In
         addition to the core DITA-OT code and the external libraries that are in the minimal and
         standard packages, it contains Apache Ant and FOP. The full-easy-install package also
         contains batch files designed to set up a build environment using those tools, as well as a
@@ -102,6 +102,6 @@
           <li><filepath>DITA-OT<keyword keyref="version"
               ></keyword>_full_easy_install_bin.tar.gz</filepath></li>
         </ul></p>
-    </section>
+    </section-->
   </conbody>
 </concept>

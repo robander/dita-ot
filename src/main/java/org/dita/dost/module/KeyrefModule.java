@@ -23,32 +23,29 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import org.dita.dost.util.DelayConrefUtils;
 import org.w3c.dom.Element;
 import org.xml.sax.XMLFilter;
-
 import org.dita.dost.exception.DITAOTException;
-import org.dita.dost.log.DITAOTLogger;
 import org.dita.dost.pipeline.AbstractPipelineInput;
 import org.dita.dost.pipeline.AbstractPipelineOutput;
 import org.dita.dost.reader.KeyrefReader;
-import org.dita.dost.util.Job;
+import org.dita.dost.util.Job.FileInfo;
 import org.dita.dost.util.Job.FileInfo.Filter;
 import org.dita.dost.util.KeyDef;
 import org.dita.dost.util.XMLUtils;
 import org.dita.dost.writer.ConkeyrefFilter;
 import org.dita.dost.writer.KeyrefPaser;
+
 /**
  * Keyref Module.
  *
  */
-final class KeyrefModule implements AbstractPipelineModule {
+final class KeyrefModule extends AbstractPipelineModuleImpl {
 
-    private DITAOTLogger logger;
-
-    @Override
-    public void setLogger(final DITAOTLogger logger) {
-        this.logger = logger;
-    }
+    /** Delayed conref utils. */
+    private DelayConrefUtils delayConrefUtils;
+    private String transtype;
 
     /**
      * Entry point of KeyrefModule.
@@ -60,98 +57,88 @@ final class KeyrefModule implements AbstractPipelineModule {
     @Override
     public AbstractPipelineOutput execute(final AbstractPipelineInput input)
             throws DITAOTException {
-        if (logger == null) {
-            throw new IllegalStateException("Logger not set");
-        }
-        final File tempDir = new File(input.getAttribute(ANT_INVOKER_PARAM_TEMPDIR));
-
-        if (!tempDir.isAbsolute()){
-            throw new IllegalArgumentException("Temporary directory " + tempDir + " must be absolute");
-        }
-
-        Job job = null;
-        try{
-            job = new Job(tempDir);
-        }catch(final Exception e){
-            throw new DITAOTException(e) ;
-        }
-
-        // maps of keyname and target
-        final Map<String, URI> keymap =new HashMap<String, URI>();
-        // store the key name defined in a map(keyed by ditamap file)
-        final Hashtable<URI, Set<String>> maps = new Hashtable<URI, Set<String>>();
-        final Collection<KeyDef> keydefs = KeyDef.readKeydef(new File(tempDir, KEYDEF_LIST_FILE));
-
-        for (final KeyDef keyDef: keydefs) {
-            keymap.put(keyDef.keys, keyDef.href);
-            // map file which define the keys
-            final URI map = keyDef.source;
-            // put the keyname into corresponding map which defines it.
-            //a map file can define many keys
-            if(maps.containsKey(map)){
-                maps.get(map).add(keyDef.keys);
-            }else{
-                final Set<String> set = new HashSet<String>();
-                set.add(keyDef.keys);
-                maps.put(map, set);
-            }
-        }
-        final KeyrefReader reader = new KeyrefReader();
-        reader.setLogger(logger);
-        reader.setTempDir(tempDir.getAbsolutePath());
-        for(final URI mapFile: maps.keySet()){
-            logger.logInfo("Reading " + tempDir.toURI().resolve(mapFile).toString());
-            reader.setKeys(maps.get(mapFile));
-            reader.read(tempDir.toURI().resolve(mapFile));
-        }
-        final Map<String, Element> keyDefinition = reader.getKeyDefinition();
-        final Set<String> normalProcessingRole = new HashSet<String>();
-        for (final FileInfo f: job.getFileInfo(new Filter() {
+        final Collection<FileInfo> fis = job.getFileInfo(new Filter() {
+            @Override
             public boolean accept(final FileInfo f) {
                 //Conref Module will change file's content, it is possible that tags with @keyref are copied in
                 //while keyreflist is hard update with xslt.
                 return f.hasKeyref || f.hasConref;
             }
-        })) {
-            final File file = f.file;
-            logger.logInfo("Processing " + new File(tempDir, file.getPath()).getAbsolutePath());
-            
-            final List<XMLFilter> filters = new ArrayList<XMLFilter>();
-            
-            final ConkeyrefFilter conkeyrefFilter = new ConkeyrefFilter();
-            conkeyrefFilter.setLogger(logger);
-            conkeyrefFilter.setKeyDefinitions(keydefs);
-            conkeyrefFilter.setTempDir(tempDir);
-            conkeyrefFilter.setCurrentFile(file);
-            filters.add(conkeyrefFilter);
-            
-            final KeyrefPaser parser = new KeyrefPaser();
-            parser.setLogger(logger);
-            parser.setKeyDefinition(keyDefinition);
-            parser.setTempDir(tempDir);
-            parser.setCurrentFile(file);
-            parser.setKeyMap(keymap);
-            filters.add(parser);
-            
-            XMLUtils.transform(new File(tempDir, file.getPath()), filters);
-            
-            // validate resource-only list
-            for (final String t: parser.getNormalProcessingRoleTargets()) {
-                normalProcessingRole.add(t);
+        });
+        if (!fis.isEmpty()) {
+            // TODO: If map merge is done before key processing, this needs to be rewritten to just read the single map and take submap wrappers into consideration.
+            // maps of keyname and target
+            final Map<String, URI> keymap = new HashMap<String, URI>();
+            // store the key name defined in a map(keyed by ditamap file)
+            final Hashtable<URI, Set<String>> maps = new Hashtable<URI, Set<String>>();
+            final Collection<KeyDef> keydefs = KeyDef.readKeydef(new File(job.tempDir, KEYDEF_LIST_FILE));
+            for (final KeyDef keyDef: keydefs) {
+                keymap.put(keyDef.keys, keyDef.href);
+                // map file which define the keys
+                final URI map = keyDef.source;
+                // put the keyname into corresponding map which defines it.
+                //a map file can define many keys
+                if (maps.containsKey(map)) {
+                    maps.get(map).add(keyDef.keys);
+                } else {
+                    final Set<String> set = new HashSet<String>();
+                    set.add(keyDef.keys);
+                    maps.put(map, set);
+                }
             }
-        }
-        for (final String file: normalProcessingRole) {
-            final FileInfo f = job.getFileInfo(file);
-            if (f != null) {
-                f.isResourceOnly = false;
-                job.add(f);
+            
+            final KeyrefReader reader = new KeyrefReader();
+            reader.setLogger(logger);
+            for(final URI mapFile: maps.keySet()){
+                logger.info("Reading " + job.tempDir.toURI().resolve(mapFile).toString());
+                reader.setKeys(maps.get(mapFile));
+                reader.read(job.tempDir.toURI().resolve(mapFile));
             }
-        }
-
-        try {
-            job.write();
-        } catch (final IOException e) {
-            throw new DITAOTException("Failed to store job state: " + e.getMessage(), e);
+            final Map<String, Element> keyDefinition = reader.getKeyDefinition();
+            transtype = input.getAttribute(ANT_INVOKER_EXT_PARAM_TRANSTYPE);
+            delayConrefUtils = transtype.equals(INDEX_TYPE_ECLIPSEHELP) ? new DelayConrefUtils() : null;
+            
+            final Set<URI> normalProcessingRole = new HashSet<URI>();
+            for (final FileInfo f: fis) {
+                final File file = f.file;
+                logger.info("Processing " + new File(job.tempDir, file.getPath()).getAbsolutePath());
+                
+                final List<XMLFilter> filters = new ArrayList<XMLFilter>();
+                
+                final ConkeyrefFilter conkeyrefFilter = new ConkeyrefFilter();
+                conkeyrefFilter.setLogger(logger);
+                conkeyrefFilter.setJob(job);
+                conkeyrefFilter.setKeyDefinitions(keydefs);
+                conkeyrefFilter.setCurrentFile(file);
+                conkeyrefFilter.setDelayConrefUtils(delayConrefUtils);
+                filters.add(conkeyrefFilter);
+                
+                final KeyrefPaser parser = new KeyrefPaser();
+                parser.setLogger(logger);
+                parser.setJob(job);
+                parser.setKeyDefinition(keyDefinition);
+                parser.setCurrentFile(file);
+                parser.setKeyMap(keymap);
+                filters.add(parser);
+                
+                XMLUtils.transform(new File(job.tempDir, file.getPath()), filters);
+                
+                // validate resource-only list
+                normalProcessingRole.addAll(parser.getNormalProcessingRoleTargets());
+            }
+            for (final URI file: normalProcessingRole) {
+                final FileInfo f = job.getFileInfo(file);
+                if (f != null) {
+                    f.isResourceOnly = false;
+                    job.add(f);
+                }
+            }
+    
+            try {
+                job.write();
+            } catch (final IOException e) {
+                throw new DITAOTException("Failed to store job state: " + e.getMessage(), e);
+            }
         }
         return null;
     }

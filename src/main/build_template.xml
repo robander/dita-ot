@@ -35,9 +35,6 @@
       </condition>
       <param name="1" value="${transtype}"/>
     </dita-ot-fail>
-    <condition property="transtarget" value="pdf2" else="${transtype}">
-      <equals arg1="${transtype}" arg2="pdf" casesensitive="false"/>
-    </condition>
     <condition property="clean.temp" value="true">
       <not><isset property="clean.temp"/></not>
     </condition>
@@ -45,7 +42,7 @@
       <isfalse value="${clean.temp}"/>
     </condition>
     <antcall>
-      <target name="dita2${transtarget}"/>
+      <target name="dita2${transtype}"/>
       <target name="clean-temp"/>
     </antcall>
   </target>
@@ -155,7 +152,7 @@
     <echo level="info">  args.filter=&lt;file&gt;</echo>
     <echo level="info">    Name of the file that contains the filter/flaggin/revision information.</echo>
     <echo level="info"/>
-    <echo level="info">  generate.copy.outer={1|2|3}</echo>
+    <echo level="info">  generate.copy.outer={1|3}</echo>
     <echo level="info">    Specify how to deal with the overflowing dita/topic files. Default is "1".</echo>
     <echo level="info"/>
     <echo level="info">  onlytopic.in.map={true|false}</echo>

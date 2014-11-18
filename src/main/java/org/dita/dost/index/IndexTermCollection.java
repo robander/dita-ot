@@ -164,8 +164,7 @@ public final class IndexTermCollection {
         /*
          * Sort all the terms recursively
          */
-        for (int i = 0; i < termListSize; i++) {
-            final IndexTerm term = termList.get(i);
+        for (final IndexTerm term : termList) {
             term.sortSubTerms();
         }
 
@@ -178,7 +177,7 @@ public final class IndexTermCollection {
      * @throws DITAOTException exception
      */
     public void outputTerms() throws DITAOTException {
-        StringBuffer buff = new StringBuffer(outputFileRoot);
+        StringBuilder buff = new StringBuilder(outputFileRoot);
         AbstractWriter abstractWriter = null;
         IDitaTranstypeIndexWriter indexWriter = null;
 
@@ -196,14 +195,14 @@ public final class IndexTermCollection {
                     ((AbstractExtendDitaWriter) abstractWriter).setPipelineHashIO(this.getPipelineHashIO());
 
                 }catch (final ClassCastException e){
-                    javaLogger.logInfo(e.getMessage());
-                    javaLogger.logInfo(e.toString());
+                    javaLogger.info(e.getMessage());
+                    javaLogger.info(e.toString());
                     e.printStackTrace();
 
                 }
 
 
-                buff = new StringBuffer(indexWriter.getIndexFileName(outputFileRoot));
+                buff = new StringBuilder(indexWriter.getIndexFileName(outputFileRoot));
 
 
             } catch (final ClassNotFoundException e) {
@@ -238,7 +237,7 @@ public final class IndexTermCollection {
                 ((EclipseIndexWriter) abstractWriter).setFilePath(indexDir
                         .getAbsolutePath());
                 // buff.insert(filepath, "\\index.xml");
-                buff = new StringBuffer(new File(indexDir, "index.xml")
+                buff = new StringBuilder(new File(indexDir, "index.xml")
                 .getAbsolutePath());
             }
         }

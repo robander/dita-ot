@@ -141,13 +141,14 @@ public class DefaultLogger implements BuildLogger {
         startTime = System.currentTimeMillis();
     }
 
-    static void throwableMessage(final StringBuffer m, final Throwable error, final boolean verbose) {
+    static void throwableMessage(final StringBuilder m, final Throwable error, final boolean verbose) {
         String msg = error.getMessage();
         final int i = msg.indexOf(": ");
         if (i != -1) {
             msg = msg.substring(i + 1).trim();
         }
-        m.append(msg).append(lSep);
+        m.append(msg);
+//        m.append(lSep);
     }
 
     /**
@@ -160,14 +161,15 @@ public class DefaultLogger implements BuildLogger {
     @Override
     public void buildFinished(final BuildEvent event) {
         final Throwable error = event.getException();
-        final StringBuffer message = new StringBuffer();
+        final StringBuilder message = new StringBuilder();
         if (error == null) {
             // message.append(StringUtils.LINE_SEP);
             // message.append(getBuildSuccessfulMessage());
         } else {
             // message.append(StringUtils.LINE_SEP);
             // message.append(getBuildFailedMessage());
-            message.append(StringUtils.LINE_SEP);
+//            message.append(StringUtils.LINE_SEP);
+            message.append("Error: ");
             throwableMessage(message, error, Project.MSG_VERBOSE <= msgOutputLevel);
         }
         // message.append(StringUtils.LINE_SEP);
@@ -175,7 +177,7 @@ public class DefaultLogger implements BuildLogger {
         // message.append(formatTime(System.currentTimeMillis() - startTime));
 
         final String msg = message.toString();
-        if (error == null) {
+        if (error == null && !msg.trim().isEmpty()) {
             printMessage(msg, out, Project.MSG_VERBOSE);
         } else if (!msg.isEmpty()) {
             printMessage(msg, err, Project.MSG_ERR);
@@ -259,13 +261,13 @@ public class DefaultLogger implements BuildLogger {
         // Filter out messages based on priority
         if (priority <= msgOutputLevel) {
 
-            final StringBuffer message = new StringBuffer();
+            final StringBuilder message = new StringBuilder();
             if (event.getTask() != null && !emacsMode) {
                 // Print out the name of the task if we're in one
                 final String name = event.getTask().getTaskName();
                 String label = "[" + name + "] ";
                 final int size = LEFT_COLUMN_SIZE - label.length();
-                final StringBuffer tmp = new StringBuffer();
+                final StringBuilder tmp = new StringBuilder();
                 for (int i = 0; i < size; i++) {
                     tmp.append(" ");
                 }
@@ -362,8 +364,7 @@ public class DefaultLogger implements BuildLogger {
     protected String getTimestamp() {
         final Date date = new Date(System.currentTimeMillis());
         final DateFormat formatter = DateFormat.getDateTimeInstance(DateFormat.SHORT, DateFormat.SHORT);
-        final String finishTime = formatter.format(date);
-        return finishTime;
+        return formatter.format(date);
     }
 
     /**

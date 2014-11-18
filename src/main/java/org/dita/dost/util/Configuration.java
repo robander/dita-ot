@@ -30,7 +30,9 @@ import org.dita.dost.platform.Integrator;
  */
 public final class Configuration {
 
-    private static final DITAOTJavaLogger logger = new DITAOTJavaLogger();
+    public static final DITAOTJavaLogger logger = new DITAOTJavaLogger();
+    /** Debug mode to aid in development, not intended for end users. */
+    public static final boolean DEBUG = false;
 
     /**
      * Immutable configuration properties.
@@ -57,13 +59,13 @@ public final class Configuration {
                 }
             }
         } catch (final IOException e) {
-            logger.logError(e.getMessage(), e) ;
+            logger.error(e.getMessage(), e) ;
         } finally {
             if (plugingConfigurationInputStream != null) {
                 try {
                     plugingConfigurationInputStream.close();
                 } catch (final IOException ex) {
-                    logger.logError(ex.getMessage(), ex) ;
+                    logger.error(ex.getMessage(), ex) ;
                 }
             }
         }
@@ -86,13 +88,13 @@ public final class Configuration {
                 }
             }
         } catch (final IOException e) {
-            logger.logError(e.getMessage(), e) ;
+            logger.error(e.getMessage(), e) ;
         } finally {
             if (configurationInputStream != null) {
                 try {
                     configurationInputStream.close();
                 } catch (final IOException ex) {
-                    logger.logError(ex.getMessage(), ex) ;
+                    logger.error(ex.getMessage(), ex) ;
                 }
             }
         }
@@ -130,7 +132,7 @@ public final class Configuration {
                 }
             }
         } else {
-            new DITAOTJavaLogger().logError("Failed to read print transtypes from configuration, using defaults.");
+            new DITAOTJavaLogger().error("Failed to read print transtypes from configuration, using defaults.");
             types.add(TRANS_TYPE_PDF);
         }
         printTranstype = Collections.unmodifiableList(types);

@@ -12,7 +12,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URI;
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -58,30 +57,6 @@ public class KeyDef {
         this.source = source;
     }
     
-    /**
-     * Construct new key definition.
-     * 
-     * @param keys key name
-     * @param href href URI, may be {@code null}
-     * @param scope link scope, may be {@code null}
-     * @param source key definition source, may be {@code null}
-     */
-    @Deprecated
-    public KeyDef(final String keys, final String href, final String scope, final String source) {
-        this.keys = keys;
-//        try {
-            this.href = href != null ? toURI(href) : null;
-//        } catch (final URISyntaxException e) {
-//            throw new IllegalArgumentException(e.getMessage(), e);
-//        }
-        this.scope = scope;
-//        try {
-            this.source = source != null ? toURI(source) : null;
-//        } catch (final URISyntaxException e) {
-//            throw new IllegalArgumentException(e.getMessage(), e);
-//        }
-    }
-    
     @Override
     public String toString() {
         final StringBuilder buf = new StringBuilder().append(keys).append(EQUAL);
@@ -107,16 +82,16 @@ public class KeyDef {
     public static Collection<KeyDef> readKeydef(final File keydefFile) throws DITAOTException {
         final Collection<KeyDef> res = new ArrayList<KeyDef>();
         try {
-            final XMLReader parser = StringUtils.getXMLReader();
+            final XMLReader parser = XMLUtils.getXMLReader();
             parser.setContentHandler(new DefaultHandler() {
                 @Override
                 public void startElement(final String uri, final String localName, final String qName, final Attributes atts) throws SAXException {
                     final String n = localName != null ? localName : qName;
                     if (n.equals(ELEMENT_KEYDEF)) {
                         res.add(new KeyDef(atts.getValue(ATTRIBUTE_KEYS),
-                                           atts.getValue(ATTRIBUTE_HREF),
+                                           toURI(atts.getValue(ATTRIBUTE_HREF)),
                                            atts.getValue(ATTRIBUTE_SCOPE),
-                                           atts.getValue(ATTRIUBTE_SOURCE)));
+                                           toURI(atts.getValue(ATTRIUBTE_SOURCE))));
                     }
                 }
             });
@@ -139,7 +114,7 @@ public class KeyDef {
         XMLStreamWriter keydef = null;
         try {
             out = new FileOutputStream(keydefFile);
-            keydef = XMLOutputFactory.newInstance().createXMLStreamWriter(out);
+            keydef = XMLOutputFactory.newInstance().createXMLStreamWriter(out, "UTF-8");
             keydef.writeStartDocument();
             keydef.writeStartElement(ELEMENT_STUB);
             for (final KeyDef k: keydefs) {
@@ -174,4 +149,59 @@ public class KeyDef {
             }
         }
     }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        result = prime * result + ((href == null) ? 0 : href.hashCode());
+        result = prime * result + ((keys == null) ? 0 : keys.hashCode());
+        result = prime * result + ((scope == null) ? 0 : scope.hashCode());
+        result = prime * result + ((source == null) ? 0 : source.hashCode());
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (!(obj instanceof KeyDef)) {
+            return false;
+        }
+        KeyDef other = (KeyDef) obj;
+        if (href == null) {
+            if (other.href != null) {
+                return false;
+            }
+        } else if (!href.equals(other.href)) {
+            return false;
+        }
+        if (keys == null) {
+            if (other.keys != null) {
+                return false;
+            }
+        } else if (!keys.equals(other.keys)) {
+            return false;
+        }
+        if (scope == null) {
+            if (other.scope != null) {
+                return false;
+            }
+        } else if (!scope.equals(other.scope)) {
+            return false;
+        }
+        if (source == null) {
+            if (other.source != null) {
+                return false;
+            }
+        } else if (!source.equals(other.source)) {
+            return false;
+        }
+        return true;
+    }
+    
 }

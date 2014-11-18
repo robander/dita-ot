@@ -121,22 +121,52 @@ public class URLUtilsTest {
     @Test
     public void testGetRelativePathFromMap() throws URISyntaxException {
         assertEquals(new URI("../a.dita"), URLUtils.getRelativePath(new URI("file:/map/map.ditamap"), new URI("file:/a.dita")));
+        assertEquals(new URI("../a.dita"), URLUtils.getRelativePath(new URI("file:/map/"), new URI("file:/a.dita")));
         assertEquals(new URI("a.dita"), URLUtils.getRelativePath(new URI("file:/map.ditamap"), new URI("file:/a.dita")));
         assertEquals(new URI("a.dita"), URLUtils.getRelativePath(new URI("file:/map1/map2/map.ditamap"), new URI("file:/map1/map2/a.dita")));
+        assertEquals(new URI("a.dita"), URLUtils.getRelativePath(new URI("file:/map1/map2/"), new URI("file:/map1/map2/a.dita")));
         assertEquals(new URI("map2/a.dita"), URLUtils.getRelativePath(new URI("file:/map1/map.ditamap"), new URI("file:/map1/map2/a.dita")));
+        assertEquals(new URI("map2/a.dita"), URLUtils.getRelativePath(new URI("file:/map1/"), new URI("file:/map1/map2/a.dita")));
         assertEquals(new URI("../topic/a.dita"), URLUtils.getRelativePath(new URI("file:/map1/map.ditamap"), new URI("file:/topic/a.dita")));
         assertEquals(new URI("a.dita#bar"), URLUtils.getRelativePath(new URI("file:/map.ditamap#foo"), new URI("file:/a.dita#bar")));
         assertEquals(new URI("a.dita"), URLUtils.getRelativePath(new URI("file:/a.dita"), new URI("file:/a.dita")));
         assertEquals(new URI("#bar"), URLUtils.getRelativePath(new URI("file:/a.dita#foo"), new URI("file:/a.dita#bar")));
         assertEquals(new URI("#bar"), URLUtils.getRelativePath(new URI("file:/a.dita"), new URI("#bar")));
-        try {
-            URLUtils.getRelativePath(new URI("/map.ditamap"), new URI("file://a.dita"));
-            fail();
-        } catch (final IllegalArgumentException e) {}
-        try {
-            URLUtils.getRelativePath(new URI("http://localhost/map.ditamap"), new URI("file://a.dita"));
-            fail();
-        } catch (final IllegalArgumentException e) {}
+        assertEquals(new URI("file://a.dita"), URLUtils.getRelativePath(new URI("/map.ditamap"), new URI("file://a.dita")));
+        assertEquals(new URI("https://localhost/map.ditamap") ,URLUtils.getRelativePath(new URI("http://localhost/map.ditamap"), new URI("https://localhost/map.ditamap")));
+        assertEquals(new URI("http:///map.ditamap"), URLUtils.getRelativePath(new URI("http://localhost/map.ditamap"), new URI("http:///map.ditamap")));
+    }
+
+    @Test
+    public void testGetRelativePath() throws URISyntaxException {
+        assertEquals(new URI("../"), URLUtils.getRelativePath(new URI("map/map.ditamap")));
+        assertEquals(null, URLUtils.getRelativePath(new URI("map.ditamap")));
+        assertEquals(new URI("../../"), URLUtils.getRelativePath(new URI("map1/map2/map.ditamap")));
+    } 
+
+    @Test
+    public void testSetFragment() throws URISyntaxException {
+        assertEquals(new URI("foo#baz"), URLUtils.setFragment(new URI("foo#bar"), "baz"));
+        assertEquals(new URI("foo#baz"), URLUtils.setFragment(new URI("foo#"), "baz"));
+        assertEquals(new URI("foo#baz"), URLUtils.setFragment(new URI("foo"), "baz"));
+        assertEquals(new URI("#baz"), URLUtils.setFragment(new URI("#bar"), "baz"));
+        assertEquals(new URI("foo"), URLUtils.setFragment(new URI("foo#bar"), null));
+        assertEquals(new URI("foo"), URLUtils.setFragment(new URI("foo#"), null));
+        assertEquals(new URI("foo"), URLUtils.setFragment(new URI("foo"), null));
+        assertEquals(new URI(""), URLUtils.setFragment(new URI("#bar"), null));
+        assertEquals(new URI("file:/foo/bar#baz"), URLUtils.setFragment(new URI("file:/foo/bar"), "baz"));
+        assertEquals(new URI("file:/foo/bar"), URLUtils.setFragment(new URI("file:/foo/bar"), null));
+        assertEquals(new URI("file://localhost/foo/bar#baz"), URLUtils.setFragment(new URI("file://localhost/foo/bar"), "baz"));
+        assertEquals(new URI("file://localhost/foo/bar"), URLUtils.setFragment(new URI("file://localhost/foo/bar"), null));
+        assertEquals(new URI("urn:foo:bar#baz"), URLUtils.setFragment(new URI("urn:foo:bar"), "baz"));
+        assertEquals(new URI("urn:foo:bar"), URLUtils.setFragment(new URI("urn:foo:bar"), null));
+    }
+    
+    @Test
+    public void testStripFragment() throws URISyntaxException {
+        assertEquals(new URI("foo"), URLUtils.stripFragment(new URI("foo#bar")));
+        assertEquals(new URI("foo"), URLUtils.stripFragment(new URI("foo#")));
+        assertEquals(new URI("foo"), URLUtils.stripFragment(new URI("foo")));
     }
 
 }

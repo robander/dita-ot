@@ -19,6 +19,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -30,6 +33,7 @@ import java.util.Set;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
 import org.dita.dost.TestUtils;
 import org.dita.dost.exception.DITAOTException;
@@ -37,13 +41,13 @@ import org.dita.dost.pipeline.AbstractFacade;
 import org.dita.dost.pipeline.PipelineFacade;
 import org.dita.dost.pipeline.PipelineHashIO;
 import org.dita.dost.util.Job;
-import org.dita.dost.util.KeyDef;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
+import org.xml.sax.SAXException;
 
 public class TestGenMapAndTopicListModule {
 
@@ -74,7 +78,7 @@ public class TestGenMapAndTopicListModule {
         generate(inputDirAbove, inputMapAbove, outDirAbove, tempDirAbove);
     }
 
-    private static void generate(final File inputDir, final File inputMap, final File outDir, final File tempDir) throws DITAOTException {
+    private static void generate(final File inputDir, final File inputMap, final File outDir, final File tempDir) throws DITAOTException, IOException {
         final PipelineHashIO pipelineInput = new PipelineHashIO();
         pipelineInput.setAttribute(ANT_INVOKER_PARAM_INPUTMAP, inputMap.getPath());
         pipelineInput.setAttribute(ANT_INVOKER_PARAM_BASEDIR, srcDir.getAbsolutePath());
@@ -95,6 +99,7 @@ public class TestGenMapAndTopicListModule {
 
         final AbstractFacade facade = new PipelineFacade();
         facade.setLogger(new TestUtils.TestLogger());
+        facade.setJob(new Job(tempDir));
         facade.execute("GenMapAndTopicList", pipelineInput);
     }
         
@@ -174,7 +179,7 @@ public class TestGenMapAndTopicListModule {
 
         final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         final DocumentBuilder builder = factory.newDocumentBuilder();
-        final Document document = builder.parse(new File(tempDirParallel+ File.separator + KEYDEF_LIST_FILE));
+        final Document document = builder.parse(new File(tempDirParallel, KEYDEF_LIST_FILE));
         final Element elem = document.getDocumentElement();
         final NodeList nodeList = elem.getElementsByTagName("keydef");
         final Map<String, List<String>> expKeyDef = new HashMap<String, List<String>>();
@@ -264,7 +269,7 @@ public class TestGenMapAndTopicListModule {
         
         final DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         final DocumentBuilder builder = factory.newDocumentBuilder();
-        final Document document = builder.parse(new File(tempDirAbove+ File.separator + KEYDEF_LIST_FILE));
+        final Document document = builder.parse(new File(tempDirAbove, KEYDEF_LIST_FILE));
         final Element elem = document.getDocumentElement();
         final NodeList nodeList = elem.getElementsByTagName("keydef");
         final Map<String, List<String>> expKeyDef = new HashMap<String, List<String>>();
@@ -313,6 +318,34 @@ public class TestGenMapAndTopicListModule {
         return lines;
     }
 
+//    @Test
+//    public void testUpdateUplevels() throws NoSuchMethodException, SecurityException, SAXException, ParserConfigurationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException, NoSuchFieldException {
+//        final Method updateUplevels = GenMapAndTopicListModule.class.getDeclaredMethod("updateUplevels", File.class);
+//        updateUplevels.setAccessible(true);
+//        final Field uplevels = GenMapAndTopicListModule.class.getDeclaredField("uplevels");
+//        uplevels.setAccessible(true);
+//        {
+//            final GenMapAndTopicListModule m = new GenMapAndTopicListModule();
+//            updateUplevels.invoke(m, new File("foo" + File.separator + "bar" + File.separator + "foo"));
+//            assertEquals(0, uplevels.getInt(m));
+//        }
+//        {
+//            final GenMapAndTopicListModule m = new GenMapAndTopicListModule();
+//            updateUplevels.invoke(m, new File(".." + File.separator + "foo" + File.separator + "bar"));
+//            assertEquals(1, uplevels.getInt(m));
+//        }
+//        {
+//            final GenMapAndTopicListModule m = new GenMapAndTopicListModule();
+//            updateUplevels.invoke(m, new File(".." + File.separator + ".." + File.separator + "foo"));
+//            assertEquals(2, uplevels.getInt(m));
+//        }
+//        {
+//            final GenMapAndTopicListModule m = new GenMapAndTopicListModule();
+//            updateUplevels.invoke(m, new File(".." + File.separator + "foo" + File.separator + ".." + File.separator + "bar"));
+//            assertEquals(1, uplevels.getInt(m));
+//        }
+//    }
+    
     @AfterClass
     public static void tearDown() throws IOException {
         TestUtils.forceDelete(tempDir);

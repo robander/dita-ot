@@ -99,7 +99,7 @@ public final class DitaClass {
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((stringValue == null) ? 0 : stringValue.hashCode());
+        result = prime * result + (stringValue.hashCode());
         return result;
     }
 
@@ -115,11 +115,7 @@ public final class DitaClass {
             return false;
         }
         final DitaClass other = (DitaClass) obj;
-        if (stringValue == null) {
-            if (other.stringValue != null) {
-                return false;
-            }
-        } else if (!stringValue.equals(other.stringValue)) {
+        if (!stringValue.equals(other.stringValue)) {
             return false;
         }
         return true;
@@ -142,7 +138,7 @@ public final class DitaClass {
      * @return {@code true} if given class matches this class, otherwise {@code false}
      */
     public boolean matches(final DitaClass cls) {
-        return cls != null && cls.toString().indexOf(matcher) != -1;
+        return cls != null && cls.toString().contains(matcher);
     }
 
     /**
@@ -152,7 +148,7 @@ public final class DitaClass {
      * @return {@code true} if given class matches this class, otherwise {@code false}
      */
     public boolean matches(final String classString) {
-        return classString != null && classString.indexOf(matcher) != -1;
+        return classString != null && classString.contains(matcher);
     }
 
     /**

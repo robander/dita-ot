@@ -37,7 +37,6 @@
 </xsl:text></xsl:variable>
 
 <!-- *************************** Command line parameters *********************** -->
-<xsl:param name="FILEREF" select="'file://'"/>
 <xsl:param name="OUTEXT" select="'.html'"/><!-- "htm" and "html" are valid values -->
 <xsl:param name="WORKDIR" select="'./'"/>
 
@@ -123,7 +122,7 @@
         <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
       </xsl:call-template>
     </xsl:when>
-    <xsl:when test="@format='dita' or @format='DITA'">
+    <xsl:when test="@format='dita'">
       <xsl:call-template name="output-toc-entry">
         <xsl:with-param name="pathFromMaplist" select="$pathFromMaplist"/>
       </xsl:call-template>
