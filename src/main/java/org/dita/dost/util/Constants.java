@@ -786,6 +786,8 @@ public final class Constants {
     public static final String ANT_INVOKER_EXT_PARAM_GRAMCACHE="gramcache";
     public static final String ANT_INVOKER_EXT_PARAN_SETSYSTEMID="setsystemid";
     public static final String ANT_INVOKER_EXT_PARAN_FORCE_UNIQUE = "force-unique";
+    public static final String ANT_INVOKER_EXT_PARAM_GENERATE_DEBUG_ATTR = "generate-debug-attributes";
+    public static final String ANT_INVOKER_EXT_PARAM_PROCESSING_MODE = "processing-mode";
     /**Constants for line separator.*/
     public static final String LINE_SEPARATOR = System.getProperty("line.separator");
 
@@ -893,9 +895,17 @@ public final class Constants {
     /**ATTR_PRINT_VALUE_PRINT_ONLY.*/
     public static final String ATTR_PRINT_VALUE_PRINT_ONLY = "printonly";
 
-    /**
-     * constants for filtering or flagging.
-     */
+    /** Conaction mark value */
+    public static final String ATTR_CONACTION_VALUE_MARK = "mark";
+    /** Conaction push after value */
+    public static final String ATTR_CONACTION_VALUE_PUSHAFTER = "pushafter";
+    /** Conaction push before value */
+    public static final String ATTR_CONACTION_VALUE_PUSHBEFORE = "pushbefore";
+    /** Conaction push replace value */
+    public static final String ATTR_CONACTION_VALUE_PUSHREPLACE = "pushreplace";
+
+
+    /** constants for filtering or flagging. */
     public static final String DEFAULT_ACTION = "default";
     /**chunk attribute.*/
     public static final String ATTRIBUTE_NAME_CHUNK = "chunk";
