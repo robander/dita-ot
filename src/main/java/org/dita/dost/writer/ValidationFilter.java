@@ -98,7 +98,7 @@ public final class ValidationFilter extends AbstractXMLFilter {
 	        domains.addFirst(domains.peekFirst());
 	    } 
 		AttributesImpl modified = null;
-		modified = validateLang(atts, modified);
+		modified = validateLang(atts, null);
 		validateId(atts);
 		modified = validateHref(atts, modified);
         modified = processFormatDitamap(atts, modified);
@@ -126,7 +126,7 @@ public final class ValidationFilter extends AbstractXMLFilter {
      */
     private void validateCols(final Attributes atts) throws SAXException  {
         if (TOPIC_TGROUP.matches(atts)) {
-            colsLocator = new LocatorImpl(locator);
+            colsLocator = locator != null ? new LocatorImpl(locator) : null;
             final String c = atts.getValue(ATTRIBUTE_NAME_COLS);
             try {
                 cols = Integer.parseInt(c.trim());
@@ -245,7 +245,7 @@ public final class ValidationFilter extends AbstractXMLFilter {
      * @param atts attributes
      */
     private void validateAttributeValues(final String qName, final Attributes atts) {
-        if (validateMap == null || validateMap.isEmpty()) {
+        if (validateMap.isEmpty()) {
             return;
         }
         for (int i = 0; i < atts.getLength(); i++) {

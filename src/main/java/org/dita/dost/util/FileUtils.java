@@ -37,6 +37,7 @@ public final class FileUtils {
     /**
      * Supported image extensions. File extensions contain a leading dot.
      */
+    @Deprecated
     private final static List<String> supportedImageExtensions;
     static {
         final List<String> sie = new ArrayList<String>();
@@ -60,6 +61,7 @@ public final class FileUtils {
     /**
      * Supported HTML extensions. File extensions contain a leading dot.
      */
+    @Deprecated
     private final static List<String> supportedHTMLExtensions;
     static {
         final List<String> she = new ArrayList<String>();
@@ -77,6 +79,7 @@ public final class FileUtils {
     /**
      * Supported resource file extensions. File extensions contain a leading dot.
      */
+    @Deprecated
     private final static List<String> supportedResourceExtensions;
     static {
         final List<String> sre = new ArrayList<String>();
@@ -96,6 +99,7 @@ public final class FileUtils {
      * @param lcasefn file name
      * @return true if is html file and false otherwise
      */
+    @Deprecated
     public static boolean isHTMLFile(final String lcasefn) {
         for (final String ext: supportedHTMLExtensions) {
             if (lcasefn.endsWith(ext)) {
@@ -135,6 +139,7 @@ public final class FileUtils {
      * @param lcasefn file name in lower case.
      * @return {@code true} if file is a resource file, otherwise {@code false}
      */
+    @Deprecated
     public static boolean isResourceFile(final String lcasefn) {
         for (final String ext: supportedResourceExtensions) {
             if (lcasefn.endsWith(ext)) {
@@ -149,6 +154,7 @@ public final class FileUtils {
      * @param lcasefn filename
      * @return true if is supported image and false otherwise
      */
+    @Deprecated
     public static boolean isSupportedImageFile(final String lcasefn) {
         for (final String ext: supportedImageExtensions) {
             if (lcasefn.endsWith(ext)) {
