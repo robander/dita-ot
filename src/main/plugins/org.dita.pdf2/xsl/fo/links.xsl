@@ -250,7 +250,7 @@ See the accompanying license.txt file for applicable licenses.
         </fo:inline>
 
     <xsl:variable name="destination" select="opentopic-func:getDestinationId(@href)"/>
-    <xsl:variable name="element" select="key('key_anchor',$destination)[1]"/>
+    <xsl:variable name="element" select="key('key_anchor',$destination, $root)[1]"/>
 
     <xsl:variable name="referenceTitle" as="node()*">
       <xsl:apply-templates select="." mode="insertReferenceTitle">
@@ -702,8 +702,8 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:if test="exists($links)">
       <linklist class="- topic/linklist " outputclass="relinfo">
         <title class="- topic/title ">
-          <xsl:call-template name="getString">
-            <xsl:with-param name="stringName" select="'Related information'"/>
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Related information'"/>
           </xsl:call-template>
         </title>
         <xsl:copy-of select="$links"/>
@@ -732,8 +732,8 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:if test="normalize-space(string-join($links, ''))">
       <linklist class="- topic/linklist " outputclass="relinfo relconcepts">
         <title class="- topic/title ">
-          <xsl:call-template name="getString">
-            <xsl:with-param name="stringName" select="'Related concepts'"/>
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Related concepts'"/>
           </xsl:call-template>
         </title>
         <xsl:copy-of select="$links"/>
@@ -762,8 +762,8 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:if test="normalize-space(string-join($links, ''))">
       <linklist class="- topic/linklist " outputclass="relinfo relref">
         <title class="- topic/title ">
-          <xsl:call-template name="getString">
-            <xsl:with-param name="stringName" select="'Related reference'"/>
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Related reference'"/>
           </xsl:call-template>
         </title>
         <xsl:copy-of select="$links"/>
@@ -792,8 +792,8 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:if test="normalize-space(string-join($links, ''))">
       <linklist class="- topic/linklist " outputclass="relinfo reltasks">
         <title class="- topic/title ">
-          <xsl:call-template name="getString">
-            <xsl:with-param name="stringName" select="'Related tasks'"/>
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Related tasks'"/>
           </xsl:call-template>
         </title>
         <xsl:copy-of select="$links"/>

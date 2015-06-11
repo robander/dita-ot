@@ -51,24 +51,6 @@
 <xsl:variable name="newline"><xsl:text>
 </xsl:text></xsl:variable>
 
-<!-- The next 4 functions must be defined for rel-links -->
-<xsl:template name="start-revflag"/>
-<xsl:template name="end-revflag"/>
-<xsl:template name="start-flagit"/>
-<xsl:template name="end-flagit"/>
-<xsl:template name="commonattributes">
-  <xsl:param name="default-output-class"/>
-</xsl:template>
-<xsl:template name="gen-style"/>
-<xsl:template name="getrules"/>
-<xsl:template name="conflict-check"/>
-<xsl:template name="end-flags-and-rev">
-  <xsl:param name="flagrules"/>
-</xsl:template>
-<xsl:template name="start-flags-and-rev">
-  <xsl:param name="flagrules"/>
-</xsl:template>
-
 <!-- Copy debug attributes to the elements we are creating -->
 <xsl:template name="debug"><xsl:apply-templates select="@xtrf|@xtrc"/></xsl:template>
 <xsl:template match="@xtrf|@xtrc">
@@ -145,7 +127,7 @@
   </xsl:variable>
   <block><xsl:call-template name="commonatts"/>
     <text style="bold">
-      <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Figure'"/></xsl:call-template>
+      <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Figure'"/></xsl:call-template>
       <xsl:text> </xsl:text><xsl:value-of select="$fignum"/>. <xsl:text/>
       <xsl:apply-templates/>
     </text>
@@ -197,43 +179,43 @@
     <xsl:variable name="noteText">
         <xsl:choose>
             <xsl:when test="not(@type) or @type='note'">
-                <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Note'"/></xsl:call-template>
+                <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Note'"/></xsl:call-template>
             </xsl:when>
             <xsl:when test="@type='attention'">
-                <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Attention'"/></xsl:call-template>
+                <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Attention'"/></xsl:call-template>
             </xsl:when>
             <xsl:when test="@type='caution'">
-                <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Caution'"/></xsl:call-template>
+                <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Caution'"/></xsl:call-template>
             </xsl:when>
             <xsl:when test="@type='danger'">
-                <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Danger'"/></xsl:call-template>
+                <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Danger'"/></xsl:call-template>
             </xsl:when>
             <xsl:when test="@type='fastpath'">
-                <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Fastpath'"/></xsl:call-template>
+                <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Fastpath'"/></xsl:call-template>
             </xsl:when>
             <xsl:when test="@type='important'">
-                <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Important'"/></xsl:call-template>
+                <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Important'"/></xsl:call-template>
             </xsl:when>
             <xsl:when test="@type='remember'">
-                <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Remember'"/></xsl:call-template>
+                <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Remember'"/></xsl:call-template>
             </xsl:when>
             <xsl:when test="@type='restriction'">
-                <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Restriction'"/></xsl:call-template>
+                <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Restriction'"/></xsl:call-template>
             </xsl:when>
             <xsl:when test="@type='tip'">
-                <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Tip'"/></xsl:call-template>
+                <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Tip'"/></xsl:call-template>
             </xsl:when>
             <xsl:when test="@type='trouble'">
-              <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Trouble'"/></xsl:call-template>
+              <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Trouble'"/></xsl:call-template>
             </xsl:when>
             <xsl:when test="@type='other' and @othertype">
                 <xsl:value-of select="@othertype"/>
             </xsl:when>
             <xsl:otherwise>
-                <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Note'"/></xsl:call-template>
+                <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Note'"/></xsl:call-template>
             </xsl:otherwise>
         </xsl:choose>
-        <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'ColonSymbol'"/></xsl:call-template>
+        <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'ColonSymbol'"/></xsl:call-template>
         <xsl:text> </xsl:text>
     </xsl:variable>
     <block><xsl:call-template name="commonatts"/>
@@ -566,7 +548,7 @@
       <block><xsl:call-template name="commonatts"/>
         <text><xsl:call-template name="commonatts"/>
           <xsl:text>********* </xsl:text>
-          <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Required cleanup'"/></xsl:call-template>
+          <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Required cleanup'"/></xsl:call-template>
           <xsl:text> *********</xsl:text>
         </text>
       </block>
@@ -585,7 +567,7 @@
       <block><xsl:call-template name="commonatts"/>
         <text><xsl:call-template name="commonatts"/>
           <xsl:text>********* </xsl:text>
-          <xsl:call-template name="getVariable"><xsl:with-param name="id" select="'Draft comment'"/></xsl:call-template>
+          <xsl:call-template name="getString"><xsl:with-param name="stringName" select="'Draft comment'"/></xsl:call-template>
           <xsl:text> *********</xsl:text>
         </text>
       </block>
