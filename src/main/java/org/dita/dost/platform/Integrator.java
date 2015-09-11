@@ -8,13 +8,16 @@
  */
 package org.dita.dost.platform;
 
+import static javax.xml.XMLConstants.*;
 import static org.apache.commons.io.IOUtils.closeQuietly;
 import static org.dita.dost.util.Constants.*;
 import static org.dita.dost.util.Configuration.*;
+import static org.dita.dost.util.URLUtils.getRelativePath;
 import static org.dita.dost.util.URLUtils.toFile;
 import static org.dita.dost.platform.PluginParser.*;
 
 import java.io.*;
+import java.net.URI;
 import java.util.*;
 import java.util.Map.Entry;
 import java.util.regex.Pattern;
@@ -51,26 +54,26 @@ public final class Integrator {
     private static final String CONF_PLUGIN_IGNORES = "plugin.ignores";
     private static final String CONF_PLUGIN_DIRS = "plugindirs";
     /** Feature name for supported image extensions. */
-    public static final String FEAT_IMAGE_EXTENSIONS = "dita.image.extensions";
+    private static final String FEAT_IMAGE_EXTENSIONS = "dita.image.extensions";
     /** Feature name for supported image extensions. */
-    public static final String FEAT_HTML_EXTENSIONS = "dita.html.extensions";
+    private static final String FEAT_HTML_EXTENSIONS = "dita.html.extensions";
     /** Feature name for supported resource file extensions. */
-    public static final String FEAT_RESOURCE_EXTENSIONS = "dita.resource.extensions";
+    private static final String FEAT_RESOURCE_EXTENSIONS = "dita.resource.extensions";
     /** Feature name for print transformation types. */
-    public static final String FEAT_PRINT_TRANSTYPES = "dita.transtype.print";
-    public static final String FEAT_LIB_EXTENSIONS = "dita.conductor.lib.import";
-    public static final String ELEM_PLUGINS = "plugins";
+    private static final String FEAT_PRINT_TRANSTYPES = "dita.transtype.print";
+    private static final String FEAT_LIB_EXTENSIONS = "dita.conductor.lib.import";
+    private static final String ELEM_PLUGINS = "plugins";
 
     public static final String FEAT_VALUE_SEPARATOR = ",";
-    public static final String PARAM_VALUE_SEPARATOR = ";";
+    private static final String PARAM_VALUE_SEPARATOR = ";";
 
     public static final Pattern ID_PATTERN = Pattern.compile("[0-9a-zA-Z_\\-]+(?:\\.[0-9a-zA-Z_\\-]+)*");
     public static final Pattern VERSION_PATTERN = Pattern.compile("\\d+(?:\\.\\d+(?:\\.\\d+(?:\\.[0-9a-zA-Z_\\-]+)?)?)?");
 
     /** Plugin table which contains detected plugins. */
     private final Map<String, Features> pluginTable;
-    private final Set<String> templateSet = new HashSet<String>(16);
-    private File ditaDir;
+    private final Set<String> templateSet = new HashSet<>(16);
+    private final File ditaDir;
     /** Plugin configuration file. */
     private final Set<File> descSet;
     private final XMLReader reader;
@@ -91,11 +94,11 @@ public final class Integrator {
      */
     public Integrator(final File ditaDir) {
         this.ditaDir = ditaDir;
-        pluginTable = new HashMap<String, Features>(16);
-        descSet = new HashSet<File>(16);
-        loadedPlugin = new HashSet<String>(16);
-        featureTable = new Hashtable<String, List<String>>(16);
-        extensionPoints = new HashSet<String>();
+        pluginTable = new HashMap<>(16);
+        descSet = new HashSet<>(16);
+        loadedPlugin = new HashSet<>(16);
+        featureTable = new Hashtable<>(16);
+        extensionPoints = new HashSet<>();
         try {
             reader = XMLUtils.getXMLReader();
         } catch (final Exception e) {
@@ -165,7 +168,7 @@ public final class Integrator {
         // Get the list of plugin directories from the properties.
         final String[] pluginDirs = properties.getProperty(CONF_PLUGIN_DIRS).split(PARAM_VALUE_SEPARATOR);
 
-        final Set<String> pluginIgnores = new HashSet<String>();
+        final Set<String> pluginIgnores = new HashSet<>();
         if (properties.getProperty(CONF_PLUGIN_IGNORES) != null) {
             pluginIgnores.addAll(Arrays.asList(properties.getProperty(CONF_PLUGIN_IGNORES).split(PARAM_VALUE_SEPARATOR)));
         }
@@ -220,7 +223,7 @@ public final class Integrator {
         // generate configuration properties
         final Properties configuration = new Properties();
         // image extensions, support legacy property file extension
-        final Set<String> imgExts = new HashSet<String>();
+        final Set<String> imgExts = new HashSet<>();
         for (final String ext : properties.getProperty(CONF_SUPPORTED_IMAGE_EXTENSIONS, "").split(CONF_LIST_SEPARATOR)) {
             final String e = ext.trim();
             if (e.length() != 0) {
@@ -241,7 +244,7 @@ public final class Integrator {
         configuration.put(CONF_SUPPORTED_RESOURCE_EXTENSIONS, readExtensions(FEAT_RESOURCE_EXTENSIONS));
 
         // print transtypes
-        final Set<String> printTranstypes = new HashSet<String>();
+        final Set<String> printTranstypes = new HashSet<>();
         if (featureTable.containsKey(FEAT_PRINT_TRANSTYPES)) {
             for (final String ext : featureTable.get(FEAT_PRINT_TRANSTYPES)) {
                 final String e = ext.trim();
@@ -295,13 +298,13 @@ public final class Integrator {
             }
         }
 
-        final Collection<File> jars = featureTable.containsKey(FEAT_LIB_EXTENSIONS) ? relativize(new HashSet<String>(featureTable.get(FEAT_LIB_EXTENSIONS))) : Collections.EMPTY_SET;
+        final Collection<File> jars = featureTable.containsKey(FEAT_LIB_EXTENSIONS) ? relativize(new HashSet<>(featureTable.get(FEAT_LIB_EXTENSIONS))) : Collections.EMPTY_SET;
         writeEnvShell(jars);
         writeEnvBatch(jars);
     }
 
     private Map<String, String> getParserConfiguration() {
-        final Map<String, String> res = new HashMap<String, String>();
+        final Map<String, String> res = new HashMap<>();
         final NodeList features = pluginsDoc.getElementsByTagName(FEATURE_ELEM);
         for (int i = 0; i < features.getLength(); i++) {
             final Element feature = (Element) features.item(i);
@@ -317,7 +320,7 @@ public final class Integrator {
     }
 
     private Collection<File> relativize(final Collection<String> src) {
-        final Collection<File> res = new ArrayList<File>(src.size());
+        final Collection<File> res = new ArrayList<>(src.size());
         final File base = new File(ditaDir, "dummy");
         for (final String lib: src) {
             res.add(FileUtils.getRelativePath(base, toFile(lib)));
@@ -391,7 +394,7 @@ public final class Integrator {
      * @return combined list of values
      */
     private String readExtensions(final String featureName) {
-        final Set<String> exts = new HashSet<String>();
+        final Set<String> exts = new HashSet<>();
         if (featureTable.containsKey(featureName)) {
             for (final String ext : featureTable.get(featureName)) {
                 final String e = ext.trim();
@@ -487,14 +490,17 @@ public final class Integrator {
     /**
      * Parse plugin configuration files.
      */
-    private void parsePlugin() throws TransformerException {
+    private void parsePlugin() {
         final Element root = pluginsDoc.createElement(ELEM_PLUGINS);
         pluginsDoc.appendChild(root);
         if (!descSet.isEmpty()) {
+            final URI b = new File(ditaDir, RESOURCES_DIR + File.separator + "plugins.xml").toURI();
             for (final File descFile : descSet) {
                 logger.debug("Read plug-in configuration " + descFile.getPath());
                 final Element plugin = parseDesc(descFile);
                 if (plugin != null) {
+                    final URI base = getRelativePath(b, descFile.toURI());
+                    plugin.setAttributeNS(XML_NS_URI, XML_NS_PREFIX + ":base", base.toString());
                     root.appendChild(pluginsDoc.importNode(plugin, true));
                 }
             }
@@ -627,7 +633,7 @@ public final class Integrator {
      * @return combined extension value, {@code null} if no value available
      */
     static String getValue(final Map<String, Features> featureTable, final String extension) {
-        final List<String> buf = new ArrayList<String>();
+        final List<String> buf = new ArrayList<>();
         for (final Features f : featureTable.values()) {
             final List<String> v = f.getFeature(extension);
             if (v != null) {

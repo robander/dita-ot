@@ -30,9 +30,9 @@ public final class ForceUniqueFilter extends AbstractXMLFilter {
     /** Absolute path to current source file. */
     private URI currentFile;
     private Job job;
-    private final Map<URI, Integer> topicrefCount = new HashMap<URI, Integer>();
+    private final Map<URI, Integer> topicrefCount = new HashMap<>();
     /** Generated copy-to mappings, key is target topic and value is source topic. */
-    public final Map<URI, URI> copyToMap = new HashMap<URI, URI>();
+    public final Map<URI, URI> copyToMap = new HashMap<>();
 
     public void setCurrentFile(final URI currentFile) {
         this.currentFile = currentFile;
@@ -69,8 +69,8 @@ public final class ForceUniqueFilter extends AbstractXMLFilter {
 
                         final URI source = currentFile.resolve(file);
                         final URI target = currentFile.resolve(stripFragment(generatedCopyTo));
-                        final URI relSource = getRelativePath(job.getInputDir().toURI(), source);
-                        final URI relTarget = getRelativePath(job.getInputDir().toURI(), target);
+                        final URI relSource = getRelativePath(job.getInputDir(), source);
+                        final URI relTarget = getRelativePath(job.getInputDir(), target);
                         copyToMap.put(relTarget, relSource);
 
                         final AttributesImpl buf = new AttributesImpl(atts);
@@ -98,7 +98,7 @@ public final class ForceUniqueFilter extends AbstractXMLFilter {
             ext.append('.');
             ext.append(getExtension(path.toString()));
             final URI dst = toURI(replaceExtension(path.toString(), ext.toString()));
-            final URI target = URLUtils.getRelativePath(new File(job.getInputDir(), "dummy").toURI(), currentFile.resolve(dst));
+            final URI target = URLUtils.getRelativePath(job.getInputDir().resolve("dummy"), currentFile.resolve(dst));
             if (job.getFileInfo(target) == null) {
                 return setFragment(dst, fragment);
             }

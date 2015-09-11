@@ -43,7 +43,7 @@ public final class ExtensibleAntInvoker extends Task {
     /** Pipeline. */
     private final PipelineFacade pipeline;
     /** Pipeline attributes and parameters */
-    private final Map<String, String> attrs = new HashMap<String, String>();
+    private final Map<String, String> attrs = new HashMap<>();
     /** Nested params. */
     private final ArrayList<Param> pipelineParams;
     /** Nested modules. */
@@ -57,8 +57,8 @@ public final class ExtensibleAntInvoker extends Task {
     public ExtensibleAntInvoker() {
         super();
         pipeline = new PipelineFacade();
-        pipelineParams = new ArrayList<Param>();
-        modules = new ArrayList<Module>();
+        pipelineParams = new ArrayList<>();
+        modules = new ArrayList<>();
     }
 
     /**
@@ -208,7 +208,7 @@ public final class ExtensibleAntInvoker extends Task {
      * @return job configuration
      */
     public static Job getJob(final File tempDir, final Project project) {
-        Job job = (Job) project.getReference(ANT_REFERENCE_JOB);
+        Job job = project.getReference(ANT_REFERENCE_JOB);
         if (job != null && job.isStale(tempDir)) {
             project.log("Reload stale job configuration reference", Project.MSG_VERBOSE);
             job = null;
@@ -225,7 +225,7 @@ public final class ExtensibleAntInvoker extends Task {
     }
     
     private Set<File> readListFile(final List<Xslt.IncludesFile> includes, final DITAOTAntLogger logger) {
-    	final Set<File> inc = new HashSet<File>();
+    	final Set<File> inc = new HashSet<>();
     	for (final Xslt.IncludesFile i: includes) {
             if (!isValid(i.ifProperty, null)) {
                 continue;
@@ -261,7 +261,7 @@ public final class ExtensibleAntInvoker extends Task {
      */
     public static class Module {
        
-        public final List<Param> params = new ArrayList<Param>();
+        public final List<Param> params = new ArrayList<>();
         private Class<? extends AbstractPipelineModule> cls;
         
         public void setClass(final Class<? extends AbstractPipelineModule> cls) {
@@ -290,8 +290,8 @@ public final class ExtensibleAntInvoker extends Task {
         private File destDir;
         private File in;
         private File out;
-        private final List<IncludesFile> includes = new ArrayList<IncludesFile>();
-        private final List<IncludesFile> excludes = new ArrayList<IncludesFile>();
+        private final List<IncludesFile> includes = new ArrayList<>();
+        private final List<IncludesFile> excludes = new ArrayList<>();
         private Mapper mapper;
         private String filenameparameter;
         private String filedirparameter;

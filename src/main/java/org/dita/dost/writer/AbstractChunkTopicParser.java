@@ -42,65 +42,65 @@ import static org.dita.dost.util.XMLUtils.*;
 public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
 
     /** Keys and values are absolute chimera paths, i.e. systems paths with fragments */
-    protected LinkedHashMap<String, String> changeTable = null;
+    LinkedHashMap<String, String> changeTable = null;
     /** Keys and values are absolute chimera paths, i.e. systems paths with fragments */
-    protected Map<String, String> conflictTable = null;
+    Map<String, String> conflictTable = null;
 
-    protected Element rootTopicref = null;
+    Element rootTopicref = null;
 
-    protected Element topicDoc = null;
+    Element topicDoc = null;
 
     private final boolean separate;
     /** Input file's parent absolute directory path. */
-    protected File filePath = null;
+    File filePath = null;
 
-    protected File currentParsingFile = null;
-    protected File outputFile = null;
-    private final Stack<File> outputFileNameStack = new Stack<File>();
+    File currentParsingFile = null;
+    File outputFile = null;
+    private final Stack<File> outputFileNameStack = new Stack<>();
 
-    protected String targetTopicId = null;
+    String targetTopicId = null;
 
-    protected String selectMethod = CHUNK_SELECT_DOCUMENT;
+    String selectMethod = CHUNK_SELECT_DOCUMENT;
     // flag whether output the nested nodes
-    protected boolean include = false;
+    boolean include = false;
     private boolean skip = false;
 
     private int includelevel = 0;
     private int skipLevel = 0;
 
-    private final Set<String> topicSpecSet = new HashSet<String>(16);
+    private final Set<String> topicSpecSet = new HashSet<>(16);
 
-    protected boolean startFromFirstTopic = false;
+    boolean startFromFirstTopic = false;
 
-    protected Writer output = null;
+    Writer output = null;
 
-    private final Stack<Writer> outputStack = new Stack<Writer>();
-    private final Stack<Element> stubStack = new Stack<Element>();
+    private final Stack<Writer> outputStack = new Stack<>();
+    private final Stack<Element> stubStack = new Stack<>();
 
     // stub is used as the anchor to mark where to insert generated child
     // topicref inside current topicref
-    protected Element stub = null;
+    Element stub = null;
 
     // siblingStub is similar to stub. The only different is it is used to
     // insert generated topicref sibling to current topicref
-    protected Element siblingStub = null;
+    Element siblingStub = null;
 
-    protected Set<String> topicID = new HashSet<String>();
+    Set<String> topicID = new HashSet<>();
 
-    protected final Set<String> copyto = new HashSet<String>();
+    final Set<String> copyto = new HashSet<>();
 
-    protected final Set<String> copytoSource = new HashSet<String>();
+    final Set<String> copytoSource = new HashSet<>();
 
-    protected final Map<URI, URI> copytotarget2source = new HashMap<URI, URI>();
+    final Map<URI, URI> copytotarget2source = new HashMap<>();
 
-    protected Map<String, String> currentParsingFileTopicIDChangeTable;
+    Map<String, String> currentParsingFileTopicIDChangeTable;
 
     private ChunkFilenameGenerator chunkFilenameGenerator;
 
     /**
      * Constructor.
      */
-    public AbstractChunkTopicParser(final boolean separate) {
+    AbstractChunkTopicParser(final boolean separate) {
         super();
         this.separate = separate;
     }
@@ -409,10 +409,9 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
         return resAtts;
     }
 
-    protected void updateList() {
+    void updateList() {
         try {
-            // XXX: This may have to use new
-            // File(resolve(filePath,FILE_NAME_DITA_LIST_XML)).getParent()
+            // XXX: Why do we need to update copy-to map because all copy-to have been processed already
             final Map<URI, URI> copytotarget2sourcemaplist = job.getCopytoMap();
             copytotarget2source.putAll(copytotarget2sourcemaplist);
             for (final String file : copytoSource) {
@@ -432,12 +431,12 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
      * 
      * @return generated file name
      */
-    protected String generateFilename() {
+    String generateFilename() {
         return chunkFilenameGenerator.generateFilename("Chunk", FILE_EXTENSION_DITA);
     }
 
     /** Check whether href needs to be updated */
-    boolean checkHREF(final Attributes atts) {
+    private boolean checkHREF(final Attributes atts) {
         if (atts.getValue(ATTRIBUTE_NAME_HREF) == null) {
             return false;
         }
@@ -450,7 +449,7 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
      * @param topic document element of a topic file.
      * @return created and populated topicmeta
      */
-    Element createTopicMeta(final Element topic) {
+    private Element createTopicMeta(final Element topic) {
         final Document doc = rootTopicref.getOwnerDocument();
         final Element topicmeta = doc.createElement(MAP_TOPICMETA.localName);
         topicmeta.setAttribute(ATTRIBUTE_NAME_CLASS, MAP_TOPICMETA.toString());
@@ -512,7 +511,8 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
      * @return The first topic id from the given dita file if success, otherwise
      *         {@code null} string is returned.
      */
-    protected String getFirstTopicId(final String absolutePathToFile) {
+    String getFirstTopicId(final String absolutePathToFile) {
+        assert new File(absolutePathToFile).isAbsolute();
         if (absolutePathToFile == null || !isAbsolutePath(absolutePathToFile)) {
             return null;
         }
@@ -537,7 +537,7 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
 
     private static final List<String> excludeList;
     static {
-        final List<String> el = new ArrayList<String>();
+        final List<String> el = new ArrayList<>();
         el.add(TOPIC_INDEXTERM.toString());
         el.add(TOPIC_DRAFT_COMMENT.toString());
         el.add(TOPIC_REQUIRED_CLEANUP.toString());
@@ -556,12 +556,12 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
      * @param classValue class value for search.
      * @return element.
      */
-    Element searchForNode(final Element root, final String searchKey, final String attrName,
-                          final DitaClass classValue) {
+    private Element searchForNode(final Element root, final String searchKey, final String attrName,
+                                  final DitaClass classValue) {
         if (root == null) {
             return null;
         }
-        final Queue<Element> queue = new LinkedList<Element>();
+        final Queue<Element> queue = new LinkedList<>();
         queue.offer(root);
         while (!queue.isEmpty()) {
             final Element pe = queue.poll();
@@ -645,7 +645,7 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
     /**
      * Convenience method to write document start.
      */
-    protected void writeStartDocument(final Writer output) throws IOException {
+    void writeStartDocument(final Writer output) throws IOException {
         output.write(XML_HEAD);
     }
 
@@ -654,7 +654,7 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
      *
      * @param name element name
      */
-    protected void writeStartElement(final Writer output, final String name, final Attributes atts) throws IOException {
+    void writeStartElement(final Writer output, final String name, final Attributes atts) throws IOException {
         output.write(LESS_THAN);
         output.write(name);
         for (int i = 0; i < atts.getLength(); i++) {
@@ -673,7 +673,7 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
      *
      * @param name element name
      */
-    protected void writeEndElement(final Writer output, final String name) throws IOException {
+    void writeEndElement(final Writer output, final String name) throws IOException {
         output.write(LESS_THAN);
         output.write(SLASH);
         output.write(name);
@@ -686,7 +686,7 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
      * @param name PI name
      * @param value PI value, may be {@code null}
      */
-    protected void writeProcessingInstruction(final Writer output, final String name, final String value)
+    void writeProcessingInstruction(final Writer output, final String name, final String value)
             throws IOException {
         output.write(LESS_THAN);
         output.write(QUESTION);
