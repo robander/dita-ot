@@ -2,7 +2,7 @@ apply plugin: 'java'
 apply plugin: 'maven'
 
 group = 'org.dita-ot'
-version = '2.2.0'
+version = '2.2.4'
 
 description = """DITA Open Toolkit"""
 
@@ -23,6 +23,7 @@ dependencies {
     compile group: 'com.ibm.icu', name: 'icu4j', version:'54.1'
     compile group: 'org.apache.ant', name: 'ant', version:'1.9.4'
     compile group: 'org.apache.ant', name: 'ant-launcher', version:'1.9.4'
+    compile group: 'com.google.guava', name: 'guava', version: '19.0'
     runtime group: 'org.apache.ant', name: 'ant-apache-resolver', version:'1.9.4'
     testCompile group: 'nu.validator.htmlparser', name: 'htmlparser', version:'1.4'
     testCompile group: 'junit', name: 'junit', version:'4.11'
@@ -37,7 +38,7 @@ sourceSets {
     integrationTest {
         compileClasspath += main.output + test.output
         runtimeClasspath += main.output + test.output
-        java.srcDir file('src/test/testsuite/src')
+        java.srcDir file('src/test/testsuite/src/main/java')
         resources.srcDir file('src/test/testsuite/testcase')
     }
 }
@@ -51,8 +52,8 @@ def integrationTestSystemProperties = [
         dita_dir : "${projectDir}/src/main",
         basedir : "${projectDir}/src/test/testsuite"
 ]
-if (System.getProperty("only_test") != null) {
-    integrationTestSystemProperties["only_test"] = System.getProperty("only_test")
+if (System.getProperty("test") != null) {
+    integrationTestSystemProperties["test"] = System.getProperty("test")
 }
 if (System.getProperty("log_level") != null) {
     integrationTestSystemProperties["log_level"] = System.getProperty("log_level")
@@ -60,7 +61,7 @@ if (System.getProperty("log_level") != null) {
 
 task integrationTest(type: Test, dependsOn: 'buildLocal') {
     minHeapSize = "128m"
-    maxHeapSize = "512m"
+    maxHeapSize = "1024m"
     testClassesDir = sourceSets.integrationTest.output.classesDir
     classpath = sourceSets.integrationTest.runtimeClasspath
     systemProperties = integrationTestSystemProperties
@@ -70,34 +71,34 @@ task integrationTest(type: Test, dependsOn: 'buildLocal') {
 
 defaultTasks 'buildLocal'
 
-task initInstall(dependsOn: jar) << {
-    def antClassLoader = org.apache.tools.ant.Project.class.classLoader
-    configurations.runtime.each { File f ->
-        antClassLoader.addURL(f.toURI().toURL())
-    }
-    configurations.runtime.allArtifacts.files.each { File f ->
-        antClassLoader.addURL(f.toURI().toURL())
-    }
-    antClassLoader.addURL(file("${projectDir}/src/main/lib").toURI().toURL())
-    antClassLoader.addURL(file("${projectDir}/src/main/resources").toURI().toURL())
-}
-task copyInstall(type: Copy, dependsOn: initInstall) {
+task copyInstall(type: Copy) {
     from (configurations.runtime.allArtifacts.files)
     from (configurations.runtime) {
-        rename "ant-launcher(-.+?)\\.jar", "ant-launcher.jar"
+        rename "ant-launcher(-\\d+(\\.\\d+(\\.\\d+)?)?)\\.jar", "ant-launcher.jar"
+        rename "ant(-\\d+(\\.\\d+(\\.\\d+)?)?)\\.jar", "ant.jar"
     }
     destinationDir = file("src/main/lib")
 }
-task buildLocal(dependsOn: [copyInstall, ":fo:copyInstall"]) << {
+task buildLocal(type: JavaExec, dependsOn: [copyInstall, ":fo:copyInstall", ":axf:copyInstall", ":xep:copyInstall", ":html5:compassCompile", ":wordrtf:copyInstall", ":odt:copyInstall"]) {
     description "Build archives and install all plugins with dependencies"
-    ant.ant([antfile: "integrator.xml", dir: file("src/main")])
+    main = "org.apache.tools.ant.launch.Launcher"
+    classpath = sourceSets.main.runtimeClasspath + files("${projectDir}/src/main", "${projectDir}/src/main/lib", "${projectDir}/src/main/resources")
+    workingDir file("${projectDir}/src/main")
+    args "-f"
+    args file("${projectDir}/src/main/integrator.xml")
 }
 
 // Distribution
 
 def distTempDir = file("${buildDir}/tmp/dist")
+def distVersion = project.hasProperty("commit") && (!project.hasProperty("tag") || tag.empty) ?
+                  "${project.version}+${commit.substring(0, 7)}" :
+                  "${project.version}"
+def distFileName = (project.hasProperty("tag") && tag.empty) ?
+                   "develop" :
+                   "${project.version}"
 
-task cleanDistTemp(type: Delete) << {
+task cleanDistTemp(type: Delete) {
     delete distTempDir
 }
 
@@ -111,9 +112,13 @@ task copyDistTemp(type: Copy, dependsOn: initDist) {
     }
     from (configurations.runtime) {
         into "lib"
-        rename "ant-launcher(-.+?)\\.jar", "ant-launcher.jar"
+        rename "ant-launcher(-\\d+(\\.\\d+(\\.\\d+)?)?)\\.jar", "ant-launcher.jar"
+        rename "ant(-\\d+(\\.\\d+(\\.\\d+)?)?)\\.jar", "ant.jar"
     }
     from ("src/main") {
+        exclude "**/.gradle"
+        exclude "**/build.gradle"
+        exclude "**/settings.gradle"
         exclude ".*"
         exclude "local.properties"
         exclude "build.log"
@@ -124,19 +129,29 @@ task copyDistTemp(type: Copy, dependsOn: initDist) {
         include "bin/dita.bat"
         exclude "demo/**"
         exclude "docsrc/*.md"
-        exclude "docsrc/site.xml"
+        exclude "docsrc/*.xpr"
+        exclude "docsrc/site.*"
+        exclude "docsrc/temp"
         include "docsrc/**"
         include "dtd/**"
         //include "lib/**/*.properties"
         include "lib/configuration.properties"
         exclude "plugins/org.dita-ot.html/**"
+        exclude "plugins/org.dita.html5/.sass-cache"
+        exclude "plugins/org.dita.html5/build"
         exclude "plugins/org.dita.specialization.dita132/**"
         exclude "plugins/org.dita.pdf2/src/**"
+        exclude "plugins/org.dita.pdf2/build"
         exclude "plugins/org.dita.pdf2/bin/**"
-        exclude "plugins/org.dita.pdf2/lib/xep/**"
+        exclude "plugins/org.dita.pdf2.axf/build"
+        exclude "plugins/org.dita.pdf2.fop/build"
+        exclude "plugins/org.dita.pdf2.xep/build"
+        exclude "plugins/org.dita.pdf2.xep/lib/xep/**"
+        exclude "plugins/org.dita.wordrtf/build"
+        exclude "plugins/org.dita.odt/build"
+        exclude "temp"
         include "plugins/**"
         include "resources/**"
-        include "samples/**"
         include "xsl/**"
         // legacy build scripts
         include "startcmd.*"
@@ -147,69 +162,87 @@ task copyDistTemp(type: Copy, dependsOn: initDist) {
 }
 copyDistTemp.outputs.dir distTempDir
 
-task integrateDistTemp(dependsOn: [copyDistTemp, ":fo:copyDistTemp"]) << {
-    def antClassLoader = org.apache.tools.ant.Project.class.classLoader
-    configurations.runtime.each { File f ->
-        antClassLoader.addURL(f.toURI().toURL())
+task updateConfiguration() << {
+    if (!commit.empty) {
+        ant.propertyfile(file: "${distTempDir}/lib/configuration.properties") {
+            entry(key: "otversion", operation: "=", value: "${project.version}+${commit.substring(0, 7)}")
+        }
     }
-    configurations.runtime.allArtifacts.files.each { File f ->
-        antClassLoader.addURL(f.toURI().toURL())
-    }
-    antClassLoader.addURL(file("${projectDir}/src/main/lib").toURI().toURL())
-    antClassLoader.addURL(file("${projectDir}/src/main/resources").toURI().toURL())
-    antClassLoader.addURL(file("${projectDir}/src/main/plugins/org.dita.pdf2/lib/fo.jar").toURI().toURL())
+}
+updateConfiguration.mustRunAfter copyDistTemp
 
-    ant.ant([antfile: "${distTempDir}/integrator.xml", dir: distTempDir])
+task integrateDistTemp(type: JavaExec, dependsOn: [copyDistTemp, ":fo:copyDistTemp", ":axf:copyDistTemp", ":xep:copyDistTemp", ":wordrtf:copyDistTemp", ":odt:copyDistTemp", updateConfiguration]) {
+    main = "org.apache.tools.ant.launch.Launcher"
+    classpath = sourceSets.main.runtimeClasspath + files("${distTempDir}", "${distTempDir}/lib", "${distTempDir}/resources")
+    workingDir distTempDir
+    args "-f"
+    args file("${distTempDir}/integrator.xml")
 }
 
-task generateDocs(dependsOn: integrateDistTemp) << {
-    ant.ant([antfile: "${distTempDir}/docsrc/build.xml", dir: "${distTempDir}/docsrc"]) {
-        // Override system DITA_HOME default priority
-        property(name: "dita.home", location: distTempDir)
-    }
+task generateDocs(type: JavaExec, dependsOn: integrateDistTemp) {
+    main = "org.apache.tools.ant.launch.Launcher"
+    classpath = sourceSets.main.runtimeClasspath + files("${distTempDir}", "${distTempDir}/lib", "${distTempDir}/resources")
+    workingDir distTempDir
+    args "-f"
+    args file("${distTempDir}/docsrc/build.xml")
+    args "-Dbasedir=" + file("${distTempDir}/docsrc")
+    args "-Ddita.home=" + distTempDir
+    args "dist"
 }
 
 task distZip(type: Zip, dependsOn: [jar, generateDocs]) {
-    from (distTempDir) {
-        exclude "bin/dita"
-        exclude "bin/dita.bat"
-        // legacy build scripts
-        exclude "startcmd.*"
-        exclude "bin/ant"
-        exclude "bin/ant.*"
+    into("dita-ot-${distVersion}") {
+        from (distTempDir) {
+            exclude "bin/dita"
+            exclude "bin/dita.bat"
+            // legacy build scripts
+            exclude "startcmd.*"
+            exclude "bin/ant"
+            exclude "bin/ant.*"
+        }
+        from (distTempDir) {
+            fileMode = 0755
+            include "bin/dita"
+            include "bin/dita.bat"
+            // legacy build scripts
+            include "startcmd.*"
+            include "bin/ant"
+            include "bin/ant.*"
+        }
     }
-    from (distTempDir) {
-        fileMode = 0755
-        include "bin/dita"
-        include "bin/dita.bat"
-        // legacy build scripts
-        include "startcmd.*"
-        include "bin/ant"
-        include "bin/ant.*"
-    }
-    archiveName "dita-ot-${project.version}.zip"
+    archiveName "dita-ot-${distFileName}.zip"
 }
 task distTarGz(type: Tar, dependsOn: [jar, generateDocs]) {
     compression = Compression.GZIP
-    from (distTempDir) {
-        exclude "bin/dita"
-        exclude "bin/dita.bat"
-        // legacy build scripts
-        exclude "startcmd.*"
-        exclude "bin/ant"
-        exclude "bin/ant.*"
+    into("dita-ot-${distVersion}") {
+        from (distTempDir ) {
+            exclude "bin/dita"
+            exclude "bin/dita.bat"
+            // legacy build scripts
+            exclude "startcmd.*"
+            exclude "bin/ant"
+            exclude "bin/ant.*"
+        }
+        from (distTempDir) {
+            fileMode = 0755
+            include "bin/dita"
+            include "bin/dita.bat"
+            // legacy build scripts
+            include "startcmd.*"
+            include "bin/ant"
+            include "bin/ant.*"
+        }
     }
-    from (distTempDir) {
-        fileMode = 0755
-        include "bin/dita"
-        include "bin/dita.bat"
-        // legacy build scripts
-        include "startcmd.*"
-        include "bin/ant"
-        include "bin/ant.*"
-    }
-    archiveName "dita-ot-${project.version}.zip"
+    archiveName "dita-ot-${distFileName}.tar.gz"
 }
-task dist(dependsOn: [distZip, distTarGz]) << {
+task dist(dependsOn: [distZip]) << {
     // NOOP
+}
+
+test {
+    inputs.files (
+        'src/test/xsl/common/dita-utilities.xspec',
+        'src/test/xsl/preprocess/maplinkImpl.xspec',
+        'src/test/xsl/plugins/org.dita.html5/xsl/xslhtml/functions.xspec'
+    )
 }

@@ -38,7 +38,8 @@ See the accompanying license.txt file for applicable licenses.
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:opentopic-i18n="http://www.idiominc.com/opentopic/i18n"
                 xmlns:fo="http://www.w3.org/1999/XSL/Format"
-                exclude-result-prefixes="opentopic-i18n">
+                xmlns:x="adobe:ns:meta/"
+                exclude-result-prefixes="opentopic-i18n x">
 
   <xsl:import href="plugin:org.dita.base:xsl/common/output-message.xsl"/>
 
@@ -49,6 +50,7 @@ See the accompanying license.txt file for applicable licenses.
   
 
     <xsl:param name="debug-enabled" select="'false'"/>
+  <!-- Deprecated since 2.3 -->
   <xsl:variable name="msgprefix" select="'PDFX'"/>
 
     <xsl:variable name="font-mappings" select="document('cfg:fo/font-mappings.xml')/font-mappings"/>
@@ -77,8 +79,7 @@ See the accompanying license.txt file for applicable licenses.
           <xsl:variable name="aliasValue" select="$font-mappings/font-table/aliases/alias[@name=$currFontFam]/."/>
           <xsl:if test="not($aliasValue)">
             <xsl:call-template name="output-message">
-              <xsl:with-param name="msgnum">008</xsl:with-param>
-              <xsl:with-param name="msgsev">W</xsl:with-param>
+              <xsl:with-param name="id" select="'PDFX008W'"/>
               <xsl:with-param name="msgparams">%1=<xsl:value-of select="$currFontFam"/></xsl:with-param>
             </xsl:call-template>
           </xsl:if>
@@ -125,6 +126,17 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:template match="fo:instream-foreign-object//opentopic-i18n:text-fragment" priority="100">
       <xsl:apply-templates/>
     </xsl:template>
+  
+  <!-- FIXME: this should be in org.dita.pdf2.fop, but the dita.xsl.xslfo.i18n-postprocess extension point cannot be used for xsl:include -->
+  <xsl:template match="x:xmpmeta//opentopic-i18n:text-fragment" priority="100">
+    <xsl:apply-templates/>
+  </xsl:template>
+  <xsl:template match="x:xmpmeta//*[opentopic-i18n:text-fragment]" priority="100">
+    <xsl:copy>
+      <xsl:apply-templates select="@* | node()"/>
+    </xsl:copy>
+  </xsl:template>
+  
 
     <xsl:template match="opentopic-i18n:text-fragment">
         <xsl:variable name="fontFace" select="ancestor::*[@font-family][not(@font-family = 'inherit')][1]/@font-family"/>
@@ -140,8 +152,7 @@ See the accompanying license.txt file for applicable licenses.
           <xsl:variable name="aliasValue" select="$font-mappings/font-table/aliases/alias[@name=$fontFace]/."/>
           <xsl:if test="not($aliasValue)">
             <xsl:call-template name="output-message">
-              <xsl:with-param name="msgnum">008</xsl:with-param>
-              <xsl:with-param name="msgsev">W</xsl:with-param>
+              <xsl:with-param name="id" select="'PDFX008W'"/>
               <xsl:with-param name="msgparams">%1=<xsl:value-of select="$fontFace"/></xsl:with-param>
             </xsl:call-template>
           </xsl:if>

@@ -26,17 +26,12 @@ import org.xml.sax.helpers.AttributesImpl;
  */
 public final class ConkeyrefFilter extends AbstractXMLFilter {
 
-    private File inputFile;
     private KeyScope keys;
     /** Delayed conref utils, may be {@code null} */
     private DelayConrefUtils delayConrefUtils;
     
     public void setKeyDefinitions(final KeyScope keys) {
         this.keys = keys;
-    }
-
-    public void setCurrentFile(final File inputFile) {
-        this.inputFile = inputFile;
     }
 
     public void setDelayConrefUtils(final DelayConrefUtils delayConrefUtils) {
@@ -68,7 +63,7 @@ public final class ConkeyrefFilter extends AbstractXMLFilter {
                 resAtts = new AttributesImpl(atts);
                 XMLUtils.removeAttribute(resAtts, ATTRIBUTE_NAME_CONKEYREF);
                 final KeyDef k = keys.get(key);
-                if (k.href != null && (k.scope == null || k.scope.equals(ATTR_SCOPE_VALUE_LOCAL))) {
+                if (k.href != null && (k.scope.equals(ATTR_SCOPE_VALUE_LOCAL))) {
                     URI target = getRelativePath(k.href);
                     final String keyFragment = k.href.getFragment();
                     if (id != null && keyFragment != null) {
@@ -96,9 +91,8 @@ public final class ConkeyrefFilter extends AbstractXMLFilter {
      * @return updated href URI
      */
     private URI getRelativePath(final URI href) {
-        final URI filePath = new File(job.tempDir, inputFile.getPath()).toURI();
         final URI keyValue = job.tempDir.toURI().resolve(stripFragment(href));
-        return URLUtils.getRelativePath(filePath, keyValue);
+        return URLUtils.getRelativePath(currentFile, keyValue);
     }
 
 }

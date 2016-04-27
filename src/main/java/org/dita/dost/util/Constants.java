@@ -611,6 +611,7 @@ public final class Constants {
     public static final String ATTRIBUTE_NAME_ALIGN = "align";
     /**conref attribute.*/
     public static final String ATTRIBUTE_NAME_CONREF = "conref";
+    public static final String ATTRIBUTE_NAME_CONREFEND = "conrefend";
     /**href attribute.*/
     public static final String ATTRIBUTE_NAME_HREF = "href";
     /**mapref attribute.*/
@@ -665,6 +666,8 @@ public final class Constants {
     public static final String ATTRIBUTE_NAME_DATA = "data";
     /**codebase attribute.*/
     public static final String ATTRIBUTE_NAME_CODEBASE = "codebase";
+    public static final String ATTRIBUTE_NAME_ARCHIVE = "archive";
+    public static final String ATTRIBUTE_NAME_CLASSID = "classid";
     /**imageref attribute.*/
     public static final String ATTRIBUTE_NAME_IMAGEREF = "imageref";
     /**start attribute.*/
@@ -677,6 +680,10 @@ public final class Constants {
     public static final String ATTRIBUTE_NAME_KEYREF = "keyref";
     /**conkeyref attribute.*/
     public static final String ATTRIBUTE_NAME_CONKEYREF ="conkeyref";
+    public static final String ATTRIBUTE_NAME_ARCHIVEKEYREFS = "archivekeyrefs";
+    public static final String ATTRIBUTE_NAME_CLASSIDKEYREF = "classidkeyref";
+    public static final String ATTRIBUTE_NAME_CODEBASEKEYREF = "codebasekeyref";
+    public static final String ATTRIBUTE_NAME_DATAKEYREF = "datakeyref";
     /**keys attribute.*/
     public static final String ATTRIBUTE_NAME_KEYS = "keys";
     /**keys attribute.*/
@@ -695,6 +702,10 @@ public final class Constants {
     /**cascade attribute.*/
     public static final String ATTRIBUTE_NAME_CASCADE = "cascade";
     public static final String ATTRIBUTE_NAME_COLS = "cols";
+    public static final String ATTRIBUTE_NAME_VALUE = "value";
+    public static final String ATTRIBUTE_NAME_VALUETYPE = "valuetype";
+
+    public static final String ATTRIBUTE_VALUETYPE_VALUE_REF = "ref";
 
     public static final String ATTRIBUTE_CASCADE_VALUE_MERGE = "merge";
     public static final String ATTRIBUTE_CASCADE_VALUE_NOMERGE = "nomerge";
@@ -742,7 +753,8 @@ public final class Constants {
     @Deprecated
     public static final String INPUT_DIR = "user.input.dir";
     public static final String INPUT_DIR_URI = "user.input.dir.uri";
-    /** Property name for copy-to target2sourcemap list file */
+    /** Property name for copy-to target2sourcemap list file. Deprecated since 2.3 */
+    @Deprecated
     public static final String COPYTO_TARGET_TO_SOURCE_MAP_LIST = "copytotarget2sourcemaplist";
     /** Property name for relflag image list file */
     public static final String REL_FLAGIMAGE_LIST="relflagimagelist";
@@ -955,9 +967,12 @@ public final class Constants {
 
     /** Project reference name for job configuration object. */
     public static final String ANT_REFERENCE_JOB = "job";
-
+    /** Deprecated since 2.3 */
+    @Deprecated
     public static final String PI_PATH2PROJ_TARGET = "path2project";
     public static final String PI_PATH2PROJ_TARGET_URI = "path2project-uri";
+    /** Deprecated since 2.3 */
+    @Deprecated
     public static final String PI_WORKDIR_TARGET = "workdir";
     public static final String PI_WORKDIR_TARGET_URI = "workdir-uri";
 

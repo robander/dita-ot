@@ -47,8 +47,8 @@ See the accompanying license.txt file for applicable licenses.
     <!-- *************************************************************** -->
 
     <xsl:variable name="continuedValue">
-        <xsl:call-template name="insertVariable">
-            <xsl:with-param name="theVariableID" select="'Index Continued String'"/>
+        <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Index Continued String'"/>
         </xsl:call-template>
     </xsl:variable>
 
@@ -123,8 +123,7 @@ See the accompanying license.txt file for applicable licenses.
           <xsl:choose>
               <xsl:when test="not($followingMarker)and empty(ancestor-or-self::*[contains(@class, ' topic/prolog ')])">
                 <xsl:call-template name="output-message">
-                  <xsl:with-param name="msgnum">001</xsl:with-param>
-                  <xsl:with-param name="msgsev">W</xsl:with-param>
+                  <xsl:with-param name="id" select="'PDFX001W'"/>
                   <xsl:with-param name="msgparams">%1=<xsl:value-of select="$selfID"/></xsl:with-param>
                 </xsl:call-template>
                </xsl:when>
@@ -132,8 +131,7 @@ See the accompanying license.txt file for applicable licenses.
                   <xsl:choose>
                       <xsl:when test="$followingStartMarker and $followingStartMarker[following::*[generate-id() = generate-id($followingMarker)]]">
                         <xsl:call-template name="output-message">
-                          <xsl:with-param name="msgnum">002</xsl:with-param>
-                          <xsl:with-param name="msgsev">W</xsl:with-param>
+                          <xsl:with-param name="id" select="'PDFX002W'"/>
                           <xsl:with-param name="msgparams">%1=<xsl:value-of select="$selfID"/></xsl:with-param>
                         </xsl:call-template>
                       </xsl:when>
@@ -157,8 +155,7 @@ See the accompanying license.txt file for applicable licenses.
           <xsl:choose>
               <xsl:when test="not($precMarker)">
                 <xsl:call-template name="output-message">
-                  <xsl:with-param name="msgnum">007</xsl:with-param>
-                  <xsl:with-param name="msgsev">W</xsl:with-param>
+                  <xsl:with-param name="id" select="'PDFX007W'"/>
                   <xsl:with-param name="msgparams">%1=<xsl:value-of select="$selfID"/></xsl:with-param>
                 </xsl:call-template>
               </xsl:when>
@@ -166,8 +163,7 @@ See the accompanying license.txt file for applicable licenses.
                   <xsl:choose>
                       <xsl:when test="$precEndMarker and $precEndMarker[preceding::*[generate-id() = generate-id($precMarker)]]">
                         <xsl:call-template name="output-message">
-                          <xsl:with-param name="msgnum">003</xsl:with-param>
-                          <xsl:with-param name="msgsev">W</xsl:with-param>
+                          <xsl:with-param name="id" select="'PDFX003W'"/>
                           <xsl:with-param name="msgparams">%1=<xsl:value-of select="$selfID"/></xsl:with-param>
                         </xsl:call-template>
                       </xsl:when>
@@ -195,8 +191,8 @@ See the accompanying license.txt file for applicable licenses.
 
   <xsl:template match="/" mode="index-postprocess">
     <fo:block xsl:use-attribute-sets="__index__label" id="{$id.index}">
-      <xsl:call-template name="insertVariable">
-        <xsl:with-param name="theVariableID" select="'Index'"/>
+      <xsl:call-template name="getVariable">
+        <xsl:with-param name="id" select="'Index'"/>
       </xsl:call-template>
     </fo:block>
     <xsl:apply-templates select="//opentopic-index:index.groups" mode="index-postprocess"/>
@@ -241,8 +237,8 @@ See the accompanying license.txt file for applicable licenses.
         <xsl:choose>
             <xsl:when test="parent::*[@no-page = 'true']">
                 <fo:inline xsl:use-attribute-sets="index.see.label">
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'Index See String'"/>
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="'Index See String'"/>
                     </xsl:call-template>
                 </fo:inline>
                 <fo:basic-link>
@@ -254,8 +250,7 @@ See the accompanying license.txt file for applicable licenses.
             </xsl:when>
             <xsl:otherwise>
                 <xsl:call-template name="output-message">
-                  <xsl:with-param name="msgnum">011</xsl:with-param>
-                  <xsl:with-param name="msgsev">E</xsl:with-param>
+                  <xsl:with-param name="id" select="'PDFX011E'"/>
                   <xsl:with-param name="msgparams">
                     <xsl:text>%1=</xsl:text><xsl:value-of select="if (following-sibling::opentopic-index:see-also-childs) then 'index-see-also' else 'indexterm'"/>
                     <xsl:text>;</xsl:text>
@@ -264,8 +259,8 @@ See the accompanying license.txt file for applicable licenses.
                 </xsl:call-template>
                 <fo:block xsl:use-attribute-sets="index.entry__content">
                     <fo:inline xsl:use-attribute-sets="index.see-also.label">
-                        <xsl:call-template name="insertVariable">
-                            <xsl:with-param name="theVariableID" select="'Index See Also String'"/>
+                        <xsl:call-template name="getVariable">
+                            <xsl:with-param name="id" select="'Index See Also String'"/>
                         </xsl:call-template>
                     </fo:inline>
                     <fo:basic-link>
@@ -311,8 +306,8 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:template match="opentopic-index:see-also-childs" mode="index-postprocess">
         <fo:block xsl:use-attribute-sets="index.see-also-entry__content">
             <fo:inline xsl:use-attribute-sets="index.see-also.label">
-                <xsl:call-template name="insertVariable">
-                    <xsl:with-param name="theVariableID" select="'Index See Also String'"/>
+                <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Index See Also String'"/>
                 </xsl:call-template>
             </fo:inline>
             <fo:basic-link>
@@ -444,9 +439,7 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:param name="inner-text" select="()"/>
     <xsl:param name="no-page"/>
     <xsl:call-template name="output-message">
-      <xsl:with-param name="msgcat">DOTX</xsl:with-param>
-      <xsl:with-param name="msgnum">066</xsl:with-param>
-      <xsl:with-param name="msgsev">W</xsl:with-param>
+      <xsl:with-param name="id" select="'DOTX066W'"/>
       <xsl:with-param name="msgparams">%1=make-index-ref</xsl:with-param>
     </xsl:call-template>
     <xsl:apply-templates select="." mode="make-index-ref">
@@ -518,14 +511,14 @@ See the accompanying license.txt file for applicable licenses.
                 </xsl:choose>
             </xsl:variable>
             <xsl:if test="count($index/*) > 0">
-                <fo:page-sequence master-reference="index-sequence" xsl:use-attribute-sets="__force__page__count">
+                <fo:page-sequence master-reference="index-sequence" xsl:use-attribute-sets="page-sequence.index">
 
                     <xsl:call-template name="insertIndexStaticContents"/>
 
                     <fo:flow flow-name="xsl-region-body">
                         <fo:marker marker-class-name="current-header">
-                          <xsl:call-template name="insertVariable">
-                            <xsl:with-param name="theVariableID" select="'Index'"/>
+                          <xsl:call-template name="getVariable">
+                            <xsl:with-param name="id" select="'Index'"/>
                           </xsl:call-template>
                         </fo:marker>
                         <xsl:copy-of select="$index"/>
@@ -541,14 +534,14 @@ See the accompanying license.txt file for applicable licenses.
   </xsl:template>
 
     <xsl:template name="processIndexList">
-        <fo:page-sequence master-reference="index-sequence" xsl:use-attribute-sets="__force__page__count">
+        <fo:page-sequence master-reference="index-sequence" xsl:use-attribute-sets="page-sequence.index">
 
             <xsl:call-template name="insertIndexStaticContents"/>
 
             <fo:flow flow-name="xsl-region-body">
                 <fo:block xsl:use-attribute-sets="__index__label" id="{$id.index}">
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'Index'"/>
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="'Index'"/>
                     </xsl:call-template>
                 </fo:block>
 

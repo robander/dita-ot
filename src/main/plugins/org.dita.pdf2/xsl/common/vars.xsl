@@ -47,8 +47,7 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:param name="theParameters" as="document-node()*"/>
     
     <xsl:call-template name="output-message">
-      <xsl:with-param name="msgnum">066</xsl:with-param>
-      <xsl:with-param name="msgsev">W</xsl:with-param>
+      <xsl:with-param name="id" select="'DOTX066W'"/>
       <xsl:with-param name="msgparams">%1=insertVariable</xsl:with-param>
     </xsl:call-template>
     <xsl:call-template name="getVariable">
@@ -60,14 +59,14 @@ See the accompanying license.txt file for applicable licenses.
   <!-- Support legacy variable namespace -->
   <xsl:template match="opentopic-vars:variable" mode="processVariableBody">
     <xsl:param name="params"/>
-    
+
     <xsl:for-each select="node()">
       <xsl:choose>
         <xsl:when test="self::opentopic-vars:param">
           <!--Processing parametrized variable-->
           <xsl:variable name="param-name" select="@ref-name"/>
           <!--Copying parameter child as is-->
-          <xsl:copy-of select="$params[name() = $param-name]/node()"/>
+          <xsl:copy-of select="$params/descendant-or-self::*[local-name() = $param-name]/node()"/>
         </xsl:when>
         <xsl:when test="self::opentopic-vars:variable">
           <xsl:call-template name="getVariable">

@@ -45,6 +45,7 @@ See the accompanying license.txt file for applicable licenses.
   <xsl:param name="figurelink.style" select="'NUMTITLE'"/>
   <xsl:param name="tablelink.style" select="'NUMTITLE'"/>
 
+  <!-- Deprecated since 2.3 -->
   <xsl:variable name="msgprefix">DOTX</xsl:variable>
   
     <xsl:key name="key_anchor" match="*[@id][not(contains(@class,' map/topicref '))]" use="@id"/>
@@ -74,9 +75,9 @@ See the accompanying license.txt file for applicable licenses.
     </xsl:template>
 
     <xsl:template name="insertLinkDesc">
-        <xsl:call-template name="insertVariable">
-            <xsl:with-param name="theVariableID" select="'Link description'"/>
-            <xsl:with-param name="theParameters">
+        <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Link description'"/>
+            <xsl:with-param name="params">
                 <desc>
                     <fo:inline>
                         <xsl:apply-templates select="*[contains(@class,' topic/desc ')]" mode="insert-description"/>
@@ -127,8 +128,8 @@ See the accompanying license.txt file for applicable licenses.
                 
 
         <xsl:if test="not($titlePrefix = '')">
-            <xsl:call-template name="insertVariable">
-                <xsl:with-param name="theVariableID" select="$titlePrefix"/>
+            <xsl:call-template name="getVariable">
+                <xsl:with-param name="id" select="$titlePrefix"/>
             </xsl:call-template>
         </xsl:if>
 
@@ -154,11 +155,11 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:template match="*[contains(@class, ' topic/fig ')][*[contains(@class, ' topic/title ')]]" mode="retrieveReferenceTitle">
       <xsl:choose>
         <xsl:when test="$figurelink.style='NUMBER'">
-          <xsl:call-template name="insertVariable">
-            <xsl:with-param name="theVariableID" select="'Figure Number'"/>
-            <xsl:with-param name="theParameters">
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Figure Number'"/>
+            <xsl:with-param name="params">
                 <number>
-                    <xsl:value-of select="count(key('enumerableByClass', 'topic/fig')[. &lt;&lt; current()]) + 1"/>
+                  <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="fig.title-number"/>
                 </number>
             </xsl:with-param>
           </xsl:call-template>
@@ -167,11 +168,11 @@ See the accompanying license.txt file for applicable licenses.
           <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="insert-text"/>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:call-template name="insertVariable">
-            <xsl:with-param name="theVariableID" select="'Figure.title'"/>
-            <xsl:with-param name="theParameters">
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Figure.title'"/>
+            <xsl:with-param name="params">
                 <number>
-                    <xsl:value-of select="count(key('enumerableByClass', 'topic/fig')[. &lt;&lt; current()]) + 1"/>
+                  <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="fig.title-number"/>
                 </number>
                 <title>
                     <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="insert-text"/>
@@ -192,11 +193,11 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:template match="*[contains(@class, ' topic/table ')][*[contains(@class, ' topic/title ')]]" mode="retrieveReferenceTitle">
       <xsl:choose>
         <xsl:when test="$tablelink.style='NUMBER'">
-          <xsl:call-template name="insertVariable">
-            <xsl:with-param name="theVariableID" select="'Table Number'"/>
-            <xsl:with-param name="theParameters">
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Table Number'"/>
+            <xsl:with-param name="params">
                 <number>
-                    <xsl:value-of select="count(key('enumerableByClass', 'topic/table')[. &lt;&lt; current()]) + 1"/>
+                  <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="table.title-number"/>
                 </number>
             </xsl:with-param>
           </xsl:call-template>
@@ -205,11 +206,11 @@ See the accompanying license.txt file for applicable licenses.
           <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="insert-text"/>
         </xsl:when>
         <xsl:otherwise>
-          <xsl:call-template name="insertVariable">
-            <xsl:with-param name="theVariableID" select="'Table.title'"/>
-            <xsl:with-param name="theParameters">
+          <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'Table.title'"/>
+            <xsl:with-param name="params">
                 <number>
-                    <xsl:value-of select="count(key('enumerableByClass', 'topic/table')[. &lt;&lt; current()]) + 1"/>
+                  <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="table.title-number"/>
                 </number>
                 <title>
                     <xsl:apply-templates select="*[contains(@class, ' topic/title ')]" mode="insert-text"/>
@@ -221,14 +222,14 @@ See the accompanying license.txt file for applicable licenses.
     </xsl:template>
 
     <xsl:template match="*[contains(@class, ' topic/li ')]" mode="retrieveReferenceTitle">
-        <xsl:call-template name="insertVariable">
-            <xsl:with-param name="theVariableID" select="'List item'"/>
+        <xsl:call-template name="getVariable">
+            <xsl:with-param name="id" select="'List item'"/>
         </xsl:call-template>
     </xsl:template>
 
     <xsl:template match="*[contains(@class, ' topic/fn ')]" mode="retrieveReferenceTitle">
-    <xsl:call-template name="insertVariable">
-        <xsl:with-param name="theVariableID" select="'Foot note'"/>
+    <xsl:call-template name="getVariable">
+        <xsl:with-param name="id" select="'Foot note'"/>
     </xsl:call-template>
     </xsl:template>
 
@@ -363,8 +364,8 @@ See the accompanying license.txt file for applicable licenses.
               <fo:block xsl:use-attribute-sets="related-links">
 
                 <fo:block xsl:use-attribute-sets="related-links.title">
-                  <xsl:call-template name="insertVariable">
-                    <xsl:with-param name="theVariableID" select="'Related Links'"/>
+                  <xsl:call-template name="getVariable">
+                    <xsl:with-param name="id" select="'Related Links'"/>
                   </xsl:call-template>
                 </fo:block>
 
@@ -415,8 +416,8 @@ See the accompanying license.txt file for applicable licenses.
                 <fo:inline>
                   <xsl:call-template name="commonattributes"/>
                 </fo:inline>
-                <xsl:call-template name="insertVariable">
-                  <xsl:with-param name="theVariableID" select="'Unordered List bullet'"/>
+                <xsl:call-template name="getVariable">
+                  <xsl:with-param name="id" select="'Unordered List bullet'"/>
                 </xsl:call-template>
               </fo:block>
             </fo:list-item-label>
@@ -446,9 +447,9 @@ See the accompanying license.txt file for applicable licenses.
                 <fo:inline>
                   <xsl:call-template name="commonattributes"/>
                 </fo:inline>
-                <xsl:call-template name="insertVariable">
-                  <xsl:with-param name="theVariableID" select="'Ordered List Number'"/>
-                  <xsl:with-param name="theParameters">
+                <xsl:call-template name="getVariable">
+                  <xsl:with-param name="id" select="'Ordered List Number'"/>
+                  <xsl:with-param name="params">
                     <number>
                       <xsl:value-of select="position()"/>
                     </number>
@@ -532,7 +533,7 @@ See the accompanying license.txt file for applicable licenses.
                     </xsl:call-template>
                   </xsl:when>
                   <xsl:otherwise>
-                    <xsl:apply-templates/>
+                    <xsl:apply-templates select="*[contains(@class, ' topic/linktext ')]"/>
                   </xsl:otherwise>
                 </xsl:choose>
             </fo:basic-link>
@@ -594,9 +595,9 @@ See the accompanying license.txt file for applicable licenses.
             <xsl:when test="not($element) or ($destination = '')"/>
             <xsl:when test="$isTitleEmpty">
                 <fo:inline>
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'Page'"/>
-                        <xsl:with-param name="theParameters">
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="'Page'"/>
+                        <xsl:with-param name="params">
                             <pagenum>
                                 <fo:inline>
                                     <fo:page-number-citation ref-id="{$destination}"/>
@@ -608,9 +609,9 @@ See the accompanying license.txt file for applicable licenses.
             </xsl:when>
             <xsl:otherwise>
                 <fo:inline>
-                    <xsl:call-template name="insertVariable">
-                        <xsl:with-param name="theVariableID" select="'On the page'"/>
-                        <xsl:with-param name="theParameters">
+                    <xsl:call-template name="getVariable">
+                        <xsl:with-param name="id" select="'On the page'"/>
+                        <xsl:with-param name="params">
                             <pagenum>
                                 <fo:inline>
                                     <fo:page-number-citation ref-id="{$destination}"/>
@@ -678,8 +679,7 @@ See the accompanying license.txt file for applicable licenses.
     <xsl:param name="href"/>
     <!-- FIXME: There is no message PDFX063W -->
     <xsl:call-template name="output-message">
-      <xsl:with-param name="msgnum">063</xsl:with-param>
-      <xsl:with-param name="msgsev">W</xsl:with-param>
+      <xsl:with-param name="id" select="'DOTX063W'"/>
       <xsl:with-param name="msgparams">%1=<xsl:value-of select="$href"/></xsl:with-param>
     </xsl:call-template>
   </xsl:template>
