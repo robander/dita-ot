@@ -359,10 +359,18 @@ See the accompanying LICENSE file for applicable license.
     </xsl:choose>
   </xsl:template>
   <xsl:template match="*[contains(@class, ' bookmap/part ')]" mode="generatePageSequences">
-    <!-- Merge process generates placeholder for <part> with no title, no topic -->
-    <xsl:for-each select="key('topic-id', @id)">
-      <xsl:call-template name="processTopicPart"/>
-    </xsl:for-each>
+    <!-- Merge process generates placeholder for <part> with no title, no topic; move on to chapter for that case -->
+    <xsl:variable name="referencedTopic" select="key('topic-id', @id)[not(@dita-ot:topicmerge='emptypart')]" as="element()*"/>
+    <xsl:choose>
+      <xsl:when test="empty($referencedTopic)">
+        <xsl:apply-templates select="*[contains(@class,' map/topicref ')]" mode="generatePageSequences"/>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:for-each select="key('topic-id', @id)">
+          <xsl:call-template name="processTopicPart"/>
+        </xsl:for-each>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
   <xsl:template match="*[contains(@class, ' bookmap/figurelist ')]" mode="generatePageSequences">
     <xsl:for-each select="key('topic-id', @id)">

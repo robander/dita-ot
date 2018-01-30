@@ -67,6 +67,11 @@ See the accompanying LICENSE file for applicable license.
             <xsl:choose>
               <!-- In a future version, suppressing Notices in the TOC should not be hard-coded. -->
               <xsl:when test="$retain-bookmap-order and $mapTopicref/self::*[contains(@class, ' bookmap/notices ')]"/>
+              <xsl:when test="ot-placeholder:emptyPlaceholderPartTopic(.)">
+                <xsl:apply-templates mode="toc">
+                  <xsl:with-param name="include" select="'true'"/>
+                </xsl:apply-templates>
+              </xsl:when>
               <xsl:when test="$mapTopicref[@toc = 'yes' or not(@toc)] or
                               (not($mapTopicref) and $include = 'true')">
                     <fo:block xsl:use-attribute-sets="__toc__indent">

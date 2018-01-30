@@ -152,7 +152,14 @@ See the accompanying LICENSE file for applicable license.
                 <xsl:call-template name="processTopicAppendices"/>
             </xsl:when>
             <xsl:when test="$topicType = 'topicPart'">
-                <xsl:call-template name="processTopicPart"/>
+                <xsl:choose>
+                    <xsl:when test="ot-placeholder:emptyPlaceholderPart(.,$topicType)">
+                        <xsl:apply-templates select="*[contains(@class,' topic/topic ')]"/>
+                    </xsl:when>
+                    <xsl:otherwise>
+                        <xsl:call-template name="processTopicPart"/>
+                    </xsl:otherwise>
+                </xsl:choose>
             </xsl:when>
             <xsl:when test="$topicType = 'topicPreface'">
                 <xsl:call-template name="processTopicPreface"/>
@@ -719,7 +726,22 @@ See the accompanying LICENSE file for applicable license.
     </xsl:template>
 
     <xsl:template match="*[contains(@class, ' bookmap/part ')]" mode="topicTitleNumber">
-      <xsl:number format="I" count="*[contains(@class, ' bookmap/part ')]"/>
+      <xsl:apply-templates select="." mode="topicTitleNumber.validParts"/>
+    </xsl:template>
+    <xsl:template match="*[contains(@class,' bookmap/part ')]" mode="topicTitleNumber.validParts">
+      <xsl:param name="foundParts" select="0" as="xs:integer"/>
+      <xsl:variable name="updateCount" 
+          select="if (ot-placeholder:emptyPlaceholderPart(key('topic-id',@id),'topicPart')) then ($foundParts + 1) else ($foundParts)" as="xs:integer"/>
+      <xsl:choose>
+        <xsl:when test="preceding-sibling::*[contains(@class,' bookmap/part ')]">
+          <xsl:apply-templates select="preceding-sibling::*[contains(@class,' bookmap/part ')][1]" mode="topicTitleNumber.validParts">
+            <xsl:with-param name="foundParts" select="$updateCount"/>
+          </xsl:apply-templates>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:number format="I" value="$updateCount"/>
+        </xsl:otherwise>
+      </xsl:choose>
     </xsl:template>
 
     <xsl:template match="*" mode="topicTitleNumber" priority="-10">
@@ -871,6 +893,26 @@ See the accompanying LICENSE file for applicable license.
         <xsl:call-template name="determineTopicType"/>
       </xsl:variable>
       <xsl:sequence select="$topicType"/>
+    </xsl:function>
+    
+    <xsl:function name="ot-placeholder:emptyPlaceholderPartTopic" as="xs:boolean">
+        <xsl:param name="ctx" as="element()"/>
+        <xsl:for-each select="$ctx">
+            <xsl:variable name="topicType">
+                <xsl:call-template name="determineTopicType"/>
+            </xsl:variable>
+            <xsl:sequence select="ot-placeholder:emptyPlaceholderPart($ctx, $topicType)"/>
+        </xsl:for-each>
+    </xsl:function>
+    <xsl:function name="ot-placeholder:emptyPlaceholderPart" as="xs:boolean">
+        <xsl:param name="ctx" as="element()"/>
+        <xsl:param name="topicType" as="xs:string"/>
+        <xsl:choose>
+            <xsl:when test="$ctx/@dita-ot:topicmerge='emptypart'"><xsl:sequence select="true()"/></xsl:when>
+            <xsl:otherwise>
+                <xsl:sequence select="false()"/>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:function>
 
 </xsl:stylesheet>

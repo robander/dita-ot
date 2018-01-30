@@ -56,6 +56,9 @@ See the accompanying LICENSE file for applicable license.
         </xsl:variable>
         
         <xsl:choose>
+          <xsl:when test="ot-placeholder:emptyPlaceholderPartTopic(.)">
+            <xsl:apply-templates mode="bookmark"/>
+          </xsl:when>
           <xsl:when test="$mapTopicref[@toc = 'yes' or not(@toc)] or
                           not($mapTopicref)">
             <fo:bookmark>

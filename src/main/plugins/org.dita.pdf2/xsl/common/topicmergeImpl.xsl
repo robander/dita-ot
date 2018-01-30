@@ -185,6 +185,10 @@ See the accompanying LICENSE file for applicable license.
           </xsl:variable>
           <xsl:if test="not($isNotTopicRef)">
               <topic id="{generate-id()}" class="+ topic/topic pdf2-d/placeholder ">
+                  <xsl:if test="contains(@class, ' bookmap/part ') and
+                      empty(@navtitle | *[contains(@class,' map/topicmeta ')]/*[contains(@class,' topic/navtitle ')])">
+                      <xsl:attribute name="dita-ot:topicmerge" select="'emptypart'"/>
+                  </xsl:if>
                   <title class="- topic/title ">
                       <xsl:choose>
                           <xsl:when test="*[contains(@class,' map/topicmeta ')]/*[contains(@class,' topic/navtitle ')]">
