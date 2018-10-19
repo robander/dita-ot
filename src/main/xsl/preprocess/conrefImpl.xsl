@@ -517,7 +517,9 @@ See the accompanying LICENSE file for applicable license.
 
   <xsl:template match="@conrefend" mode="original-attributes" priority="10"/>
   <xsl:template match="@xtrc | @xtrf" mode="original-attributes" priority="10"/>
-  <xsl:template match="@conref" mode="original-attributes" priority="10"/>
+  <xsl:template match="@conref" mode="original-attributes" priority="10">
+    <xsl:attribute name="dita-ot:orig-conref"><xsl:value-of select="."/></xsl:attribute>
+  </xsl:template>
   <xsl:template match="*[contains(@class, ' topic/image ')]/@href" mode="original-attributes" priority="10"/>
   <xsl:template match="*[contains(@class, ' svg-d/svgref ')]/@href" mode="original-attributes" priority="10"/>
   <xsl:template match="*[contains(@class, ' topic/tgroup ')]/@cols" mode="original-attributes" priority="10"/>
