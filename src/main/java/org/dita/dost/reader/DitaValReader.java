@@ -73,6 +73,9 @@ public final class DitaValReader implements AbstractReader {
     private Map<QName, Map<String, Set<Element>>> bindingMap;
     /** List of relative flagging image paths. */
     private final List<URI> relFlagImageList;
+    
+    /** Map of flag images with absolute URI, relative URI **/
+    private Map<URI, URI> flagImagesMap;
 
     /**
      * Default constructor of DitaValReader class.
@@ -82,6 +85,7 @@ public final class DitaValReader implements AbstractReader {
         filterMap = new HashMap<>();
         imageList = new ArrayList<>(256);
         relFlagImageList = new ArrayList<>(256);
+        flagImagesMap = new HashMap<>();
 
         try {
             final DocumentBuilderFactory builderFactory = DocumentBuilderFactory.newInstance();
@@ -242,27 +246,47 @@ public final class DitaValReader implements AbstractReader {
     }
 
     private FlagImage readFlagImage(final Element elem, final String name) {
+    	System.out.println("DITAVAL READER READ FLAG IMAGE");
         final NodeList children = elem.getElementsByTagName(name);
         if (children.getLength() != 0) {
             final Element img = (Element) children.item(0);
             URI absolute = null;
+            URI imageref = null;
             if (!img.getAttribute(ATTRIBUTE_NAME_IMAGEREF).isEmpty()) {
+//            	img.setAttribute("actual-original-imageref", img.getAttribute(ATTRIBUTE_NAME_IMAGEREF));
+            	System.out.println("imageref attribute starts as: " + img.getAttribute(ATTRIBUTE_NAME_IMAGEREF));
                 absolute = URLUtils.toURI(img.getAttribute(ATTRIBUTE_NAME_IMAGEREF));
+                imageref = absolute;
+                System.out.println("Absolute image path: " + absolute);
                 URI relative;
                 if (absolute.isAbsolute()) {
                     relative = getRelativePath(ditaVal, absolute);
+                    System.out.println("1Relative image path: " + relative);
                 } else if (!img.getAttributeNS(DITA_OT_NAMESPACE, ATTRIBUTE_NAME_IMAGEREF_URI).isEmpty()) {
-                    absolute = URI.create(img.getAttributeNS(DITA_OT_NAMESPACE, ATTRIBUTE_NAME_IMAGEREF_URI));
                     relative = absolute;
+                    absolute = URI.create(img.getAttributeNS(DITA_OT_NAMESPACE, ATTRIBUTE_NAME_IMAGEREF_URI));
+                    //relative = absolute;
+                    System.out.println("2Relative and absolute were: " + absolute);
+                    System.out.println("2CHANGED relative to: " + relative);
+                    System.out.println("2222ditaval URI for that rel path: " + ditaVal);
                 } else {
                     relative = absolute;
                     absolute = ditaVal.resolve(absolute);
+                    System.out.println("3Relative image path set to absolute: " + relative);
+                    System.out.println("3Absolute now resolved against ditaval?: " + absolute);
+                    System.out.println("3333ditaval URI for that: " + ditaVal);
                 }
                 imageList.add(absolute);
                 relFlagImageList.add(relative);
+                flagImagesMap.put(absolute, relative);
+                
+                System.err.println("tempfilenamescheme! : " + tempFileNameScheme);
+                System.err.println("job.getFileInfo(absolute) : "+ job.getFileInfo(absolute));
+                System.err.println("relative : "+ relative);
 
                 if (tempFileNameScheme != null && job.getFileInfo(absolute) == null) {
                     final URI dstTemp = tempFileNameScheme.generateTempFileName(absolute);
+                    System.out.println("Adding to job with absolute, and with URI " + dstTemp);
                     final Job.FileInfo.Builder fi = new Job.FileInfo.Builder()
                             .src(absolute)
                             .uri(dstTemp)
@@ -277,8 +301,31 @@ public final class DitaValReader implements AbstractReader {
                 altText = getText(alts.item(0));
             }
 
+            System.err.println("TIME TO COMPARE!!! ");
+            final URI mapInTemp = job.getInputFile() != null ? job.tempDirURI.resolve(job.getFileInfo(job.getInputFile()).uri) : null;
+            if (tempFileNameScheme != null) {
+                System.err.println("-- imageref: " + imageref);
+                System.err.println("-- as temp file from absolute: " + tempFileNameScheme.generateTempFileName(absolute));
+                System.err.println("-- as temp file from imageref: " + tempFileNameScheme.generateTempFileName(imageref));
+                System.err.println("FINDME");
+                if (job.getInputFile() != null) {
+                    System.err.println("File info for input map: " + job.getFileInfo(job.getInputFile()));
+                }
+                System.err.println("-- MAP IN TEMP: " + mapInTemp);
+                System.err.println("-- imageref against mapintemp: " + tempFileNameScheme.generateTempFileName(mapInTemp.resolve((imageref))));
+            } else {
+                System.err.println("there is no temp file name scheme, stick iwth imageref " + imageref);
+            }
             if (absolute != null || altText != null) {
-                return new FlagImage(absolute, altText);
+                System.err.println("FINDME Gonna create new FlagImage");
+                System.err.println("  absolute: " + absolute);
+                System.err.println("  imageref: " + imageref);
+                //For imageref relative path, use generated temp file scheme (if available), otherwise original relative path from ditaval
+                if (tempFileNameScheme != null && job.getFileInfo(absolute) != null && !tempFileNameScheme.generateTempFileName(absolute).isAbsolute()) {
+                    System.err.println("  HOLD UP, imageref reset: " + imageref);
+                    return new FlagImage(absolute, tempFileNameScheme.generateTempFileName(absolute), altText);
+                }
+                return new FlagImage(absolute, imageref, altText);
             }
         }
         return null;
@@ -382,7 +429,7 @@ public final class DitaValReader implements AbstractReader {
 
 
     /**
-     * Insert action into filetermap if key not present in the map
+     * Insert action into filterMap if key not present in the map
      */
     private void insertAction(final Action action, final FilterKey key) {
         if (filterMap.get(key) == null) {
@@ -390,6 +437,14 @@ public final class DitaValReader implements AbstractReader {
         } else {
             logger.info(MessageUtils.getMessage("DOTJ007I", key.toString()).toString());
         }
+    }
+
+    /**
+     * Return the image set.
+     * @return image set
+     */
+    public Map<URI, URI> getFlagImageMap() {
+        return Collections.unmodifiableMap(flagImagesMap);
     }
 
     /**

@@ -1,0 +1,1994 @@
+
+init:
+
+dita2pdf2.init:
+
+init-properties:
+
+check-arg:
+   [delete] Deleting directory C:\dcs\test\jira226\updir\content\tempOOBpdf
+    [mkdir] Created dir: C:\dcs\test\jira226\updir\content\tempOOBpdf
+
+log-arg:
+     [echo] *****************************************************************
+     [echo] * basedir = C:\github\robander\dita-ot\src\main
+     [echo] * dita.dir = C:\github\robander\dita-ot\src\main\bin\..
+     [echo] * transtype = pdf
+     [echo] * tempdir = C:\dcs\test\jira226\updir\content\tempOOBpdf
+     [echo] * outputdir = C:\dcs\test\jira226\updir\content\outOOB
+     [echo] * clean.temp = no
+     [echo] * DITA-OT version = 3.3.1
+     [echo] * XML parser = Xerces
+     [echo] * XSLT processor = Saxon
+     [echo] * collator = ICU
+     [echo] *****************************************************************
+     [echo] #Ant properties
+     [echo] #Mon Jun 03 20:53:54 CDT 2019
+     [echo] args.filter=C\:\\dcs\\test\\jira226\\simple\\ditavaldir\\revs.ditaval
+     [echo] args.grammar.cache=yes
+     [echo] args.input=C\:\\dcs\\test\\jira226\\updir\\content\\jira226.ditamap
+     [echo] args.logdir=C\:\\dcs\\test\\jira226\\updir\\content\\outOOB
+     [echo] args.rellinks=nofamily
+     [echo] args.xml.systemid.set=yes
+     [echo] dita.dir=C\:\\github\\robander\\dita-ot\\src\\main\\bin\\..
+     [echo] dita.output.dir=C\:\\dcs\\test\\jira226\\updir\\content\\outOOB
+     [echo] dita.plugin.org.dita.base.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.base
+     [echo] dita.plugin.org.dita.eclipsehelp.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.eclipsehelp
+     [echo] dita.plugin.org.dita.html5.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.html5
+     [echo] dita.plugin.org.dita.htmlhelp.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.htmlhelp
+     [echo] dita.plugin.org.dita.pdf2.axf.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.pdf2.axf
+     [echo] dita.plugin.org.dita.pdf2.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.pdf2
+     [echo] dita.plugin.org.dita.pdf2.fop.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.pdf2.fop
+     [echo] dita.plugin.org.dita.pdf2.xep.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.pdf2.xep
+     [echo] dita.plugin.org.dita.specialization.dita11.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.specialization.dita11
+     [echo] dita.plugin.org.dita.xhtml.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.xhtml
+     [echo] dita.plugin.org.oasis-open.dita.v1_2.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.oasis-open.dita.v1_2
+     [echo] dita.plugin.org.oasis-open.dita.v1_3.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.oasis-open.dita.v1_3
+     [echo] dita.temp.dir=C\:\\dcs\\test\\jira226\\updir\\content\\tempOOBpdf
+     [echo] preprocess.chunk.skip=true
+     [echo] preprocess.copy-flag.skip=true
+     [echo] preprocess.copy-image.skip=true
+     [echo] *****************************************************************
+
+build-init:
+
+preprocess2.init:
+     [echo] *****************************************************************
+     [echo] * input = C:\dcs\test\jira226\updir\content\jira226.ditamap
+     [echo] *****************************************************************
+
+ditaval-merge:
+[ditaval-merge] Writing conditions from ditaval: C:\dcs\test\jira226\simple\ditavaldir\revs.ditaval
+[ditaval-merge] Resolving against: file:/C:/dcs/test/jira226/simple/ditavaldir/
+
+map-reader:
+[map-reader] Using Xerces grammar pool for DTD and schema caching.
+[map-reader] DITAVAL READER READ FLAG IMAGE
+[map-reader] imageref attribute starts as: startpuffA.jpg
+[map-reader] Absolute image path: startpuffA.jpg
+[map-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+[map-reader] 2CHANGED relative to: startpuffA.jpg
+[map-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[map-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@965f9a41
+[map-reader] job.getFileInfo(absolute) : null
+[map-reader] relative : startpuffA.jpg
+[map-reader] Adding to job with absolute, and with URI f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg / f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg / null / null
+[map-reader] -- imageref: startpuffA.jpg
+[map-reader] -- as temp file from absolute: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] -- as temp file from original absolute: a6fe92a054f69aa4f1b3b9973804a0d76fcce1d2.jpg
+[map-reader] FINDME
+[map-reader] DITAVAL READER READ FLAG IMAGE
+[map-reader] DITAVAL READER READ FLAG IMAGE
+[map-reader] imageref attribute starts as: startpuffB.jpg
+[map-reader] Absolute image path: startpuffB.jpg
+[map-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+[map-reader] 2CHANGED relative to: startpuffB.jpg
+[map-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[map-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@965f9a41
+[map-reader] job.getFileInfo(absolute) : null
+[map-reader] relative : startpuffB.jpg
+[map-reader] Adding to job with absolute, and with URI 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg / 5c354a380201909f90cb4fccff6426b271903bf3.jpg / null / null
+[map-reader] -- imageref: startpuffB.jpg
+[map-reader] -- as temp file from absolute: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] -- as temp file from original absolute: 47879aea87158a37d20be6039139bc21293a7f4a.jpg
+[map-reader] FINDME
+[map-reader] DITAVAL READER READ FLAG IMAGE
+[map-reader] DITAVAL READER READ FLAG IMAGE
+[map-reader] imageref attribute starts as: subdir/startpuffC.jpg
+[map-reader] Absolute image path: subdir/startpuffC.jpg
+[map-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+[map-reader] 2CHANGED relative to: subdir/startpuffC.jpg
+[map-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[map-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@965f9a41
+[map-reader] job.getFileInfo(absolute) : null
+[map-reader] relative : subdir/startpuffC.jpg
+[map-reader] Adding to job with absolute, and with URI a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg / a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg / null / null
+[map-reader] -- imageref: subdir/startpuffC.jpg
+[map-reader] -- as temp file from absolute: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] -- as temp file from original absolute: feff96297879ac9ba619054230b8a81a6786ba4a.jpg
+[map-reader] FINDME
+[map-reader] DITAVAL READER READ FLAG IMAGE
+[map-reader] DITAVAL READER READ FLAG IMAGE
+[map-reader] imageref attribute starts as: startpuff.png
+[map-reader] Absolute image path: startpuff.png
+[map-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+[map-reader] 2CHANGED relative to: startpuff.png
+[map-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[map-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@965f9a41
+[map-reader] job.getFileInfo(absolute) : null
+[map-reader] relative : startpuff.png
+[map-reader] Adding to job with absolute, and with URI 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png / 116c90f37e9b1c61d23793787dcc08abc7d03f85.png / null / null
+[map-reader] -- imageref: startpuff.png
+[map-reader] -- as temp file from absolute: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[map-reader] -- as temp file from original absolute: ea477318403060f5fc4e0e3f89207cd8d3677f85.png
+[map-reader] FINDME
+[map-reader] DITAVAL READER READ FLAG IMAGE
+[map-reader] imageref attribute starts as: endpuff.png
+[map-reader] Absolute image path: endpuff.png
+[map-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+[map-reader] 2CHANGED relative to: endpuff.png
+[map-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[map-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@965f9a41
+[map-reader] job.getFileInfo(absolute) : null
+[map-reader] relative : endpuff.png
+[map-reader] Adding to job with absolute, and with URI fa549940b09e21e33bfaf11794798bf587e46600.png
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png / fa549940b09e21e33bfaf11794798bf587e46600.png / null / null
+[map-reader] -- imageref: endpuff.png
+[map-reader] -- as temp file from absolute: fa549940b09e21e33bfaf11794798bf587e46600.png
+[map-reader] -- as temp file from original absolute: 96d2ed8257efaa3d8247edf90e17d4350ac217fd.png
+[map-reader] FINDME
+[map-reader] DITAVAL READER READ FLAG IMAGE
+[map-reader] imageref attribute starts as: startchange.svg
+[map-reader] Absolute image path: startchange.svg
+[map-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+[map-reader] 2CHANGED relative to: startchange.svg
+[map-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[map-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@965f9a41
+[map-reader] job.getFileInfo(absolute) : null
+[map-reader] relative : startchange.svg
+[map-reader] Adding to job with absolute, and with URI 121d8b3325fa147a1564db8a18c678cceedfbc26.svg
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg / 121d8b3325fa147a1564db8a18c678cceedfbc26.svg / null / null
+[map-reader] -- imageref: startchange.svg
+[map-reader] -- as temp file from absolute: 121d8b3325fa147a1564db8a18c678cceedfbc26.svg
+[map-reader] -- as temp file from original absolute: 524a710ef078dbadb6acf465b77ce340eb53e10d.svg
+[map-reader] FINDME
+[map-reader] DITAVAL READER READ FLAG IMAGE
+[map-reader] imageref attribute starts as: endchange.svg
+[map-reader] Absolute image path: endchange.svg
+[map-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+[map-reader] 2CHANGED relative to: endchange.svg
+[map-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[map-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@965f9a41
+[map-reader] job.getFileInfo(absolute) : null
+[map-reader] relative : endchange.svg
+[map-reader] Adding to job with absolute, and with URI 80cc1d3debffa62e256d287ad9b6648265674d9b.svg
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg / 80cc1d3debffa62e256d287ad9b6648265674d9b.svg / null / null
+[map-reader] -- imageref: endchange.svg
+[map-reader] -- as temp file from absolute: 80cc1d3debffa62e256d287ad9b6648265674d9b.svg
+[map-reader] -- as temp file from original absolute: 3fb2206d5a77003f1d027e9c3ae7b576b1980aaa.svg
+[map-reader] FINDME
+[map-reader] Processing file:/C:/dcs/test/jira226/updir/content/jira226.ditamap to file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap / file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / null
+[map-reader] Looks like checking for flags on map
+[map-reader] Collected flags: 0
+[map-reader] Looks like checking for flags on title
+[map-reader] Collected flags: 0
+[map-reader] Looks like checking for flags on topicref
+[map-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[map-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] imageref is f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] OK what the heck....
+[map-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] +++ getInputMap: jira226.ditamap
+[map-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[map-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] imageref was: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+[map-reader] Relative path to map would be: jira226.ditamap
+[map-reader] From there to flag would be: jira226.ditamapf37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] Got flag file info. flagFi.uri: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] Rel path from current file to flag image: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] ***************** Adjusting path to image null
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Collected flags: 1
+[map-reader] Writing start flag(s)!
+[map-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}, endflag=null}
+[map-reader] WRITING A START FLAG! HREF IS: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] abs = href and is not null. Adding dita-ot:imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] Also adding dita-ot:original-imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] Looks like checking for flags on topicref
+[map-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[map-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] imageref is 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] OK what the heck....
+[map-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] +++ getInputMap: jira226.ditamap
+[map-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[map-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] imageref was: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+[map-reader] Relative path to map would be: jira226.ditamap
+[map-reader] From there to flag would be: jira226.ditamap5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] Got flag file info. flagFi.uri: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] Rel path from current file to flag image: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] ***************** Adjusting path to image null
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Collected flags: 1
+[map-reader] Writing start flag(s)!
+[map-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=5c354a380201909f90cb4fccff6426b271903bf3.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}, endflag=null}
+[map-reader] WRITING A START FLAG! HREF IS: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] abs = href and is not null. Adding dita-ot:imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] Also adding dita-ot:original-imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] Looks like checking for flags on topicref
+[map-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[map-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] imageref is a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] OK what the heck....
+[map-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] +++ getInputMap: jira226.ditamap
+[map-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[map-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] imageref was: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+[map-reader] Relative path to map would be: jira226.ditamap
+[map-reader] From there to flag would be: jira226.ditamapa4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] Got flag file info. flagFi.uri: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] Rel path from current file to flag image: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] ***************** Adjusting path to image null
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Collected flags: 1
+[map-reader] Writing start flag(s)!
+[map-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}, endflag=null}
+[map-reader] WRITING A START FLAG! HREF IS: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] abs = href and is not null. Adding dita-ot:imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] Also adding dita-ot:original-imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] file:/C:/dcs/test/jira226/updir/content/jira226.ditamap:7:44: [DOTJ036W][WARN] The file "file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita" is outside the scope of the input dita/map directory.
+[map-reader] Looks like checking for flags on topicref
+[map-reader] Collected flags: 0
+[map-reader] Looks like checking for flags on reltable
+[map-reader] Collected flags: 0
+[map-reader] Looks like checking for flags on relrow
+[map-reader] Collected flags: 0
+[map-reader] Looks like checking for flags on relcell
+[map-reader] Collected flags: 0
+[map-reader] Looks like checking for flags on topicref
+[map-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[map-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] imageref is f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] OK what the heck....
+[map-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] +++ getInputMap: jira226.ditamap
+[map-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[map-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] imageref was: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+[map-reader] Relative path to map would be: jira226.ditamap
+[map-reader] From there to flag would be: jira226.ditamapf37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] Got flag file info. flagFi.uri: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] Rel path from current file to flag image: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] ***************** Adjusting path to image null
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Collected flags: 1
+[map-reader] Writing start flag(s)!
+[map-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}, endflag=null}
+[map-reader] WRITING A START FLAG! HREF IS: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] abs = href and is not null. Adding dita-ot:imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] Also adding dita-ot:original-imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[map-reader] Looks like checking for flags on topicref
+[map-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[map-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] imageref is 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] OK what the heck....
+[map-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] +++ getInputMap: jira226.ditamap
+[map-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[map-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] imageref was: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+[map-reader] Relative path to map would be: jira226.ditamap
+[map-reader] From there to flag would be: jira226.ditamap5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] Got flag file info. flagFi.uri: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] Rel path from current file to flag image: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] ***************** Adjusting path to image null
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Collected flags: 1
+[map-reader] Writing start flag(s)!
+[map-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=5c354a380201909f90cb4fccff6426b271903bf3.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}, endflag=null}
+[map-reader] WRITING A START FLAG! HREF IS: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] abs = href and is not null. Adding dita-ot:imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] Also adding dita-ot:original-imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[map-reader] Looks like checking for flags on topicref
+[map-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[map-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] *******************
+[map-reader] imageref is a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] GOTTA FIX PDF
+[map-reader] OK what the heck....
+[map-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] +++ getInputMap: jira226.ditamap
+[map-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[map-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] imageref was: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+[map-reader] Relative path to map would be: jira226.ditamap
+[map-reader] From there to flag would be: jira226.ditamapa4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] Got flag file info. flagFi.uri: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] Rel path from current file to flag image: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] ***************** Adjusting path to image null
+[map-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Collected flags: 1
+[map-reader] Writing start flag(s)!
+[map-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[map-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}, endflag=null}
+[map-reader] WRITING A START FLAG! HREF IS: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] abs = href and is not null. Adding dita-ot:imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] Also adding dita-ot:original-imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[map-reader] Looks like checking for flags on relcell
+[map-reader] Collected flags: 0
+[map-reader] file:/C:/dcs/test/jira226/updir/content/jira226.ditamap:16:44: [DOTJ036W][WARN] The file "file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita" is outside the scope of the input dita/map directory.
+[map-reader] Looks like checking for flags on topicref
+[map-reader] Collected flags: 0
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / 1018321ed5b17950b06daeba167b6de0717eee63.dita / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg / f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg / 5c354a380201909f90cb4fccff6426b271903bf3.jpg / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg / a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png / 116c90f37e9b1c61d23793787dcc08abc7d03f85.png / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png / fa549940b09e21e33bfaf11794798bf587e46600.png / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg / 121d8b3325fa147a1564db8a18c678cceedfbc26.svg / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg / 80cc1d3debffa62e256d287ad9b6648265674d9b.svg / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / 630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / 1018321ed5b17950b06daeba167b6de0717eee63.dita / file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita / 5d976593512a844f5ec996637f13e4a57e64144b.dita / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita / 6c0f5db7f8791bf95187ba13d739232f5c728203.dita / null / null
+[map-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap / file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[map-reader] Serializing job specification
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\fullditamap.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+   [delete] Deleting: C:\dcs\test\jira226\updir\content\tempOOBpdf\fullditamap.list
+
+map-mapref:
+   [mapref] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+   [mapref] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap / file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+
+map-branch-filter:
+[branch-filter] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+
+map-keyref:
+   [mapref] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+   [mapref] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap / file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+
+map-conrefpush:
+
+map-conref:
+
+map-profile-check:
+
+map-profile:
+  [profile] DITAVAL READER READ FLAG IMAGE
+  [profile] imageref attribute starts as: startpuffA.jpg
+  [profile] Absolute image path: startpuffA.jpg
+  [profile] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+  [profile] 2CHANGED relative to: startpuffA.jpg
+  [profile] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+  [profile] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@ce74582a
+  [profile] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, uri=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, file=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+  [profile] relative : startpuffA.jpg
+  [profile] -- imageref: startpuffA.jpg
+  [profile] -- as temp file from absolute: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] -- as temp file from original absolute: a6fe92a054f69aa4f1b3b9973804a0d76fcce1d2.jpg
+  [profile] FINDME
+  [profile] DITAVAL READER READ FLAG IMAGE
+  [profile] DITAVAL READER READ FLAG IMAGE
+  [profile] imageref attribute starts as: startpuffB.jpg
+  [profile] Absolute image path: startpuffB.jpg
+  [profile] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+  [profile] 2CHANGED relative to: startpuffB.jpg
+  [profile] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+  [profile] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@ce74582a
+  [profile] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, uri=5c354a380201909f90cb4fccff6426b271903bf3.jpg, file=5c354a380201909f90cb4fccff6426b271903bf3.jpg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+  [profile] relative : startpuffB.jpg
+  [profile] -- imageref: startpuffB.jpg
+  [profile] -- as temp file from absolute: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] -- as temp file from original absolute: 47879aea87158a37d20be6039139bc21293a7f4a.jpg
+  [profile] FINDME
+  [profile] DITAVAL READER READ FLAG IMAGE
+  [profile] DITAVAL READER READ FLAG IMAGE
+  [profile] imageref attribute starts as: subdir/startpuffC.jpg
+  [profile] Absolute image path: subdir/startpuffC.jpg
+  [profile] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+  [profile] 2CHANGED relative to: subdir/startpuffC.jpg
+  [profile] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+  [profile] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@ce74582a
+  [profile] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, uri=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, file=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+  [profile] relative : subdir/startpuffC.jpg
+  [profile] -- imageref: subdir/startpuffC.jpg
+  [profile] -- as temp file from absolute: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] -- as temp file from original absolute: feff96297879ac9ba619054230b8a81a6786ba4a.jpg
+  [profile] FINDME
+  [profile] DITAVAL READER READ FLAG IMAGE
+  [profile] DITAVAL READER READ FLAG IMAGE
+  [profile] imageref attribute starts as: startpuff.png
+  [profile] Absolute image path: startpuff.png
+  [profile] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+  [profile] 2CHANGED relative to: startpuff.png
+  [profile] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+  [profile] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@ce74582a
+  [profile] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, uri=116c90f37e9b1c61d23793787dcc08abc7d03f85.png, file=116c90f37e9b1c61d23793787dcc08abc7d03f85.png, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+  [profile] relative : startpuff.png
+  [profile] -- imageref: startpuff.png
+  [profile] -- as temp file from absolute: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+  [profile] -- as temp file from original absolute: ea477318403060f5fc4e0e3f89207cd8d3677f85.png
+  [profile] FINDME
+  [profile] DITAVAL READER READ FLAG IMAGE
+  [profile] imageref attribute starts as: endpuff.png
+  [profile] Absolute image path: endpuff.png
+  [profile] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+  [profile] 2CHANGED relative to: endpuff.png
+  [profile] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+  [profile] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@ce74582a
+  [profile] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, result=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, uri=fa549940b09e21e33bfaf11794798bf587e46600.png, file=fa549940b09e21e33bfaf11794798bf587e46600.png, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+  [profile] relative : endpuff.png
+  [profile] -- imageref: endpuff.png
+  [profile] -- as temp file from absolute: fa549940b09e21e33bfaf11794798bf587e46600.png
+  [profile] -- as temp file from original absolute: 96d2ed8257efaa3d8247edf90e17d4350ac217fd.png
+  [profile] FINDME
+  [profile] DITAVAL READER READ FLAG IMAGE
+  [profile] imageref attribute starts as: startchange.svg
+  [profile] Absolute image path: startchange.svg
+  [profile] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+  [profile] 2CHANGED relative to: startchange.svg
+  [profile] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+  [profile] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@ce74582a
+  [profile] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg, uri=121d8b3325fa147a1564db8a18c678cceedfbc26.svg, file=121d8b3325fa147a1564db8a18c678cceedfbc26.svg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+  [profile] relative : startchange.svg
+  [profile] -- imageref: startchange.svg
+  [profile] -- as temp file from absolute: 121d8b3325fa147a1564db8a18c678cceedfbc26.svg
+  [profile] -- as temp file from original absolute: 524a710ef078dbadb6acf465b77ce340eb53e10d.svg
+  [profile] FINDME
+  [profile] DITAVAL READER READ FLAG IMAGE
+  [profile] imageref attribute starts as: endchange.svg
+  [profile] Absolute image path: endchange.svg
+  [profile] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+  [profile] 2CHANGED relative to: endchange.svg
+  [profile] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+  [profile] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@ce74582a
+  [profile] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg, uri=80cc1d3debffa62e256d287ad9b6648265674d9b.svg, file=80cc1d3debffa62e256d287ad9b6648265674d9b.svg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+  [profile] relative : endchange.svg
+  [profile] -- imageref: endchange.svg
+  [profile] -- as temp file from absolute: 80cc1d3debffa62e256d287ad9b6648265674d9b.svg
+  [profile] -- as temp file from original absolute: 3fb2206d5a77003f1d027e9c3ae7b576b1980aaa.svg
+  [profile] FINDME
+  [profile] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Looks like checking for flags on map
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on title
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on topicref
+  [profile] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+  [profile] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] *******************
+  [profile] *******************
+  [profile] *******************
+  [profile] imageref is f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] OK what the heck....
+  [profile] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+  [profile] +++ getInputMap: jira226.ditamap
+  [profile] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+  [profile] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] imageref was: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+  [profile] Relative path to map would be: jira226.ditamap
+  [profile] From there to flag would be: jira226.ditamapf37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] Got flag file info. flagFi.uri: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Rel path from current file to flag image: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] ***************** Adjusting path to image null
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Collected flags: 1
+  [profile] Writing start flag(s)!
+  [profile] Adjusted against path file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}, endflag=null}
+  [profile] WRITING A START FLAG! HREF IS: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] abs = href and is not null. Adding dita-ot:imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] Also adding dita-ot:original-imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] Looks like checking for flags on ditaval-startprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on topicref
+  [profile] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+  [profile] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] *******************
+  [profile] *******************
+  [profile] *******************
+  [profile] imageref is 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] OK what the heck....
+  [profile] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+  [profile] +++ getInputMap: jira226.ditamap
+  [profile] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+  [profile] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] imageref was: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+  [profile] Relative path to map would be: jira226.ditamap
+  [profile] From there to flag would be: jira226.ditamap5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] Got flag file info. flagFi.uri: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Rel path from current file to flag image: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] ***************** Adjusting path to image null
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Collected flags: 1
+  [profile] Writing start flag(s)!
+  [profile] Adjusted against path file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=5c354a380201909f90cb4fccff6426b271903bf3.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}, endflag=null}
+  [profile] WRITING A START FLAG! HREF IS: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] abs = href and is not null. Adding dita-ot:imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] Also adding dita-ot:original-imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] Looks like checking for flags on ditaval-startprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on topicref
+  [profile] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+  [profile] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] *******************
+  [profile] *******************
+  [profile] *******************
+  [profile] imageref is a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] OK what the heck....
+  [profile] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+  [profile] +++ getInputMap: jira226.ditamap
+  [profile] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+  [profile] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] imageref was: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+  [profile] Relative path to map would be: jira226.ditamap
+  [profile] From there to flag would be: jira226.ditamapa4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] Got flag file info. flagFi.uri: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Rel path from current file to flag image: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] ***************** Adjusting path to image null
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Collected flags: 1
+  [profile] Writing start flag(s)!
+  [profile] Adjusted against path file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}, endflag=null}
+  [profile] WRITING A START FLAG! HREF IS: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] abs = href and is not null. Adding dita-ot:imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] Also adding dita-ot:original-imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] Looks like checking for flags on ditaval-startprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on ditaval-endprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on ditaval-endprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on ditaval-endprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on topicref
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on reltable
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on relrow
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on relcell
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on topicref
+  [profile] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+  [profile] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] *******************
+  [profile] *******************
+  [profile] *******************
+  [profile] imageref is f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] OK what the heck....
+  [profile] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+  [profile] +++ getInputMap: jira226.ditamap
+  [profile] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+  [profile] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] imageref was: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+  [profile] Relative path to map would be: jira226.ditamap
+  [profile] From there to flag would be: jira226.ditamapf37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] Got flag file info. flagFi.uri: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Rel path from current file to flag image: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] ***************** Adjusting path to image null
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Collected flags: 1
+  [profile] Writing start flag(s)!
+  [profile] Adjusted against path file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}, endflag=null}
+  [profile] WRITING A START FLAG! HREF IS: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] abs = href and is not null. Adding dita-ot:imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] Also adding dita-ot:original-imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+  [profile] Looks like checking for flags on ditaval-startprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on ditaval-endprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on topicref
+  [profile] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+  [profile] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] *******************
+  [profile] *******************
+  [profile] *******************
+  [profile] imageref is 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] OK what the heck....
+  [profile] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+  [profile] +++ getInputMap: jira226.ditamap
+  [profile] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+  [profile] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] imageref was: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+  [profile] Relative path to map would be: jira226.ditamap
+  [profile] From there to flag would be: jira226.ditamap5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] Got flag file info. flagFi.uri: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Rel path from current file to flag image: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] ***************** Adjusting path to image null
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Collected flags: 1
+  [profile] Writing start flag(s)!
+  [profile] Adjusted against path file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=5c354a380201909f90cb4fccff6426b271903bf3.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}, endflag=null}
+  [profile] WRITING A START FLAG! HREF IS: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] abs = href and is not null. Adding dita-ot:imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] Also adding dita-ot:original-imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+  [profile] Looks like checking for flags on ditaval-startprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on ditaval-endprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on topicref
+  [profile] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+  [profile] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] *******************
+  [profile] *******************
+  [profile] *******************
+  [profile] imageref is a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] GOTTA FIX PDF
+  [profile] OK what the heck....
+  [profile] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+  [profile] +++ getInputMap: jira226.ditamap
+  [profile] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+  [profile] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] imageref was: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+  [profile] Relative path to map would be: jira226.ditamap
+  [profile] From there to flag would be: jira226.ditamapa4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] Got flag file info. flagFi.uri: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] And current file uri: 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Rel path from current file to flag image: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] ***************** Adjusting path to image null
+  [profile]  for currentFile file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Collected flags: 1
+  [profile] Writing start flag(s)!
+  [profile] Adjusted against path file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+  [profile] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}, endflag=null}
+  [profile] WRITING A START FLAG! HREF IS: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] abs = href and is not null. Adding dita-ot:imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] Also adding dita-ot:original-imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+  [profile] Looks like checking for flags on ditaval-startprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on ditaval-endprop
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on relcell
+  [profile] Collected flags: 0
+  [profile] Looks like checking for flags on topicref
+  [profile] Collected flags: 0
+
+preprocess2.maps:
+
+topic-reader:
+[topic-reader] Using Xerces grammar pool for DTD and schema caching.
+[topic-reader] DITAVAL READER READ FLAG IMAGE
+[topic-reader] imageref attribute starts as: startpuffA.jpg
+[topic-reader] Absolute image path: startpuffA.jpg
+[topic-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+[topic-reader] 2CHANGED relative to: startpuffA.jpg
+[topic-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[topic-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@79553f13
+[topic-reader] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, uri=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, file=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+[topic-reader] relative : startpuffA.jpg
+[topic-reader] -- imageref: startpuffA.jpg
+[topic-reader] -- as temp file from absolute: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] -- as temp file from original absolute: a6fe92a054f69aa4f1b3b9973804a0d76fcce1d2.jpg
+[topic-reader] FINDME
+[topic-reader] DITAVAL READER READ FLAG IMAGE
+[topic-reader] DITAVAL READER READ FLAG IMAGE
+[topic-reader] imageref attribute starts as: startpuffB.jpg
+[topic-reader] Absolute image path: startpuffB.jpg
+[topic-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+[topic-reader] 2CHANGED relative to: startpuffB.jpg
+[topic-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[topic-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@79553f13
+[topic-reader] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, uri=5c354a380201909f90cb4fccff6426b271903bf3.jpg, file=5c354a380201909f90cb4fccff6426b271903bf3.jpg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+[topic-reader] relative : startpuffB.jpg
+[topic-reader] -- imageref: startpuffB.jpg
+[topic-reader] -- as temp file from absolute: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] -- as temp file from original absolute: 47879aea87158a37d20be6039139bc21293a7f4a.jpg
+[topic-reader] FINDME
+[topic-reader] DITAVAL READER READ FLAG IMAGE
+[topic-reader] DITAVAL READER READ FLAG IMAGE
+[topic-reader] imageref attribute starts as: subdir/startpuffC.jpg
+[topic-reader] Absolute image path: subdir/startpuffC.jpg
+[topic-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+[topic-reader] 2CHANGED relative to: subdir/startpuffC.jpg
+[topic-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[topic-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@79553f13
+[topic-reader] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, uri=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, file=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+[topic-reader] relative : subdir/startpuffC.jpg
+[topic-reader] -- imageref: subdir/startpuffC.jpg
+[topic-reader] -- as temp file from absolute: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] -- as temp file from original absolute: feff96297879ac9ba619054230b8a81a6786ba4a.jpg
+[topic-reader] FINDME
+[topic-reader] DITAVAL READER READ FLAG IMAGE
+[topic-reader] DITAVAL READER READ FLAG IMAGE
+[topic-reader] imageref attribute starts as: startpuff.png
+[topic-reader] Absolute image path: startpuff.png
+[topic-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+[topic-reader] 2CHANGED relative to: startpuff.png
+[topic-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[topic-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@79553f13
+[topic-reader] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, uri=116c90f37e9b1c61d23793787dcc08abc7d03f85.png, file=116c90f37e9b1c61d23793787dcc08abc7d03f85.png, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+[topic-reader] relative : startpuff.png
+[topic-reader] -- imageref: startpuff.png
+[topic-reader] -- as temp file from absolute: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] -- as temp file from original absolute: ea477318403060f5fc4e0e3f89207cd8d3677f85.png
+[topic-reader] FINDME
+[topic-reader] DITAVAL READER READ FLAG IMAGE
+[topic-reader] imageref attribute starts as: endpuff.png
+[topic-reader] Absolute image path: endpuff.png
+[topic-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+[topic-reader] 2CHANGED relative to: endpuff.png
+[topic-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[topic-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@79553f13
+[topic-reader] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, result=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, uri=fa549940b09e21e33bfaf11794798bf587e46600.png, file=fa549940b09e21e33bfaf11794798bf587e46600.png, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+[topic-reader] relative : endpuff.png
+[topic-reader] -- imageref: endpuff.png
+[topic-reader] -- as temp file from absolute: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] -- as temp file from original absolute: 96d2ed8257efaa3d8247edf90e17d4350ac217fd.png
+[topic-reader] FINDME
+[topic-reader] DITAVAL READER READ FLAG IMAGE
+[topic-reader] imageref attribute starts as: startchange.svg
+[topic-reader] Absolute image path: startchange.svg
+[topic-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+[topic-reader] 2CHANGED relative to: startchange.svg
+[topic-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[topic-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@79553f13
+[topic-reader] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg, uri=121d8b3325fa147a1564db8a18c678cceedfbc26.svg, file=121d8b3325fa147a1564db8a18c678cceedfbc26.svg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+[topic-reader] relative : startchange.svg
+[topic-reader] -- imageref: startchange.svg
+[topic-reader] -- as temp file from absolute: 121d8b3325fa147a1564db8a18c678cceedfbc26.svg
+[topic-reader] -- as temp file from original absolute: 524a710ef078dbadb6acf465b77ce340eb53e10d.svg
+[topic-reader] FINDME
+[topic-reader] DITAVAL READER READ FLAG IMAGE
+[topic-reader] imageref attribute starts as: endchange.svg
+[topic-reader] Absolute image path: endchange.svg
+[topic-reader] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+[topic-reader] 2CHANGED relative to: endchange.svg
+[topic-reader] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/ditaot.generated.ditaval
+[topic-reader] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$HashTempFileScheme@79553f13
+[topic-reader] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg, uri=80cc1d3debffa62e256d287ad9b6648265674d9b.svg, file=80cc1d3debffa62e256d287ad9b6648265674d9b.svg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+[topic-reader] relative : endchange.svg
+[topic-reader] -- imageref: endchange.svg
+[topic-reader] -- as temp file from absolute: 80cc1d3debffa62e256d287ad9b6648265674d9b.svg
+[topic-reader] -- as temp file from original absolute: 3fb2206d5a77003f1d027e9c3ae7b576b1980aaa.svg
+[topic-reader] FINDME
+[topic-reader] Reading file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] Processing file:/C:/dcs/test/jira226/updir/content/jira226outer.dita to file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] Looks like checking for flags on topic
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on title
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on body
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on p
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] imageref was: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamap116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] Got flag file info. flagFi.uri: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] And current file uri: 630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] Rel path from current file to flag image: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, imageref='fa549940b09e21e33bfaf11794798bf587e46600.png', alt='this ends the rev'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] imageref was: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapfa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Got flag file info. flagFi.uri: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] And current file uri: 630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] Rel path from current file to flag image: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='solid', startflag=FlagImage{href=116c90f37e9b1c61d23793787dcc08abc7d03f85.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}, endflag=FlagImage{href=fa549940b09e21e33bfaf11794798bf587e46600.png, imageref='fa549940b09e21e33bfaf11794798bf587e46600.png', alt='this ends the rev'}}
+[topic-reader] WRITING A START FLAG! HREF IS: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] Also adding dita-ot:original-imageref: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] WRITING A START FLAG! HREF IS: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Also adding dita-ot:original-imageref: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Looks like checking for flags on p
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on image
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] imageref was: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapf37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Got flag file info. flagFi.uri: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] And current file uri: 630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] Rel path from current file to flag image: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Also adding dita-ot:original-imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] imageref was: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamap5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Got flag file info. flagFi.uri: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] And current file uri: 630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] Rel path from current file to flag image: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=5c354a380201909f90cb4fccff6426b271903bf3.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Also adding dita-ot:original-imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] imageref was: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapa4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Got flag file info. flagFi.uri: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] And current file uri: 630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-reader] Rel path from current file to flag image: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Also adding dita-ot:original-imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] Collected flags: 0
+[topic-reader] Processing file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita to file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] Looks like checking for flags on topic
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on title
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on body
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on p
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] imageref was: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamap116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] Got flag file info. flagFi.uri: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] And current file uri: 5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] Rel path from current file to flag image: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, imageref='fa549940b09e21e33bfaf11794798bf587e46600.png', alt='this ends the rev'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] imageref was: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapfa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Got flag file info. flagFi.uri: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] And current file uri: 5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] Rel path from current file to flag image: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='solid', startflag=FlagImage{href=116c90f37e9b1c61d23793787dcc08abc7d03f85.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}, endflag=FlagImage{href=fa549940b09e21e33bfaf11794798bf587e46600.png, imageref='fa549940b09e21e33bfaf11794798bf587e46600.png', alt='this ends the rev'}}
+[topic-reader] WRITING A START FLAG! HREF IS: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] Also adding dita-ot:original-imageref: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] WRITING A START FLAG! HREF IS: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Also adding dita-ot:original-imageref: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] imageref was: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapf37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Got flag file info. flagFi.uri: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] And current file uri: 5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] Rel path from current file to flag image: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Also adding dita-ot:original-imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] imageref was: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamap5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Got flag file info. flagFi.uri: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] And current file uri: 5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] Rel path from current file to flag image: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=5c354a380201909f90cb4fccff6426b271903bf3.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Also adding dita-ot:original-imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] imageref was: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapa4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Got flag file info. flagFi.uri: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] And current file uri: 5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] Rel path from current file to flag image: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Also adding dita-ot:original-imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on related-links
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on link
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on link
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] imageref was: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamap116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] Got flag file info. flagFi.uri: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] And current file uri: 5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] Rel path from current file to flag image: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, imageref='fa549940b09e21e33bfaf11794798bf587e46600.png', alt='this ends the rev'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] imageref was: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapfa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Got flag file info. flagFi.uri: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] And current file uri: 5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-reader] Rel path from current file to flag image: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='solid', startflag=FlagImage{href=116c90f37e9b1c61d23793787dcc08abc7d03f85.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}, endflag=FlagImage{href=fa549940b09e21e33bfaf11794798bf587e46600.png, imageref='fa549940b09e21e33bfaf11794798bf587e46600.png', alt='this ends the rev'}}
+[topic-reader] WRITING A START FLAG! HREF IS: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] Also adding dita-ot:original-imageref: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] WRITING A START FLAG! HREF IS: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Also adding dita-ot:original-imageref: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Processing file:/C:/dcs/test/jira226/updir/content/jira226inner.dita to file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] Looks like checking for flags on topic
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on title
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on body
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on p
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] imageref was: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamap116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] Got flag file info. flagFi.uri: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] And current file uri: 6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] Rel path from current file to flag image: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, imageref='fa549940b09e21e33bfaf11794798bf587e46600.png', alt='this ends the rev'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] imageref was: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapfa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Got flag file info. flagFi.uri: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] And current file uri: 6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] Rel path from current file to flag image: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='solid', startflag=FlagImage{href=116c90f37e9b1c61d23793787dcc08abc7d03f85.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}, endflag=FlagImage{href=fa549940b09e21e33bfaf11794798bf587e46600.png, imageref='fa549940b09e21e33bfaf11794798bf587e46600.png', alt='this ends the rev'}}
+[topic-reader] WRITING A START FLAG! HREF IS: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] Also adding dita-ot:original-imageref: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] WRITING A START FLAG! HREF IS: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Also adding dita-ot:original-imageref: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] imageref was: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapf37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Got flag file info. flagFi.uri: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] And current file uri: 6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] Rel path from current file to flag image: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Also adding dita-ot:original-imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] imageref was: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamap5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Got flag file info. flagFi.uri: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] And current file uri: 6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] Rel path from current file to flag image: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=5c354a380201909f90cb4fccff6426b271903bf3.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Also adding dita-ot:original-imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] imageref was: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapa4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Got flag file info. flagFi.uri: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] And current file uri: 6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-reader] Rel path from current file to flag image: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Also adding dita-ot:original-imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] Collected flags: 0
+[topic-reader] Processing file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita to file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] Looks like checking for flags on topic
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on title
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on body
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on p
+[topic-reader] Collected flags: 0
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] imageref was: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamap116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] Got flag file info. flagFi.uri: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] And current file uri: 1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] Rel path from current file to flag image: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, imageref='fa549940b09e21e33bfaf11794798bf587e46600.png', alt='this ends the rev'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] imageref was: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapfa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Got flag file info. flagFi.uri: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] And current file uri: 1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] Rel path from current file to flag image: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='solid', startflag=FlagImage{href=116c90f37e9b1c61d23793787dcc08abc7d03f85.png, imageref='116c90f37e9b1c61d23793787dcc08abc7d03f85.png', alt='this starts the rev'}, endflag=FlagImage{href=fa549940b09e21e33bfaf11794798bf587e46600.png, imageref='fa549940b09e21e33bfaf11794798bf587e46600.png', alt='this ends the rev'}}
+[topic-reader] WRITING A START FLAG! HREF IS: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] Also adding dita-ot:original-imageref: 116c90f37e9b1c61d23793787dcc08abc7d03f85.png
+[topic-reader] WRITING A START FLAG! HREF IS: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Also adding dita-ot:original-imageref: fa549940b09e21e33bfaf11794798bf587e46600.png
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] imageref was: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapf37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Got flag file info. flagFi.uri: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] And current file uri: 1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] Rel path from current file to flag image: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg, imageref='f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg', alt='Start the AAAA'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Also adding dita-ot:original-imageref: f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] imageref was: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamap5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Got flag file info. flagFi.uri: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] And current file uri: 1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] Rel path from current file to flag image: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=5c354a380201909f90cb4fccff6426b271903bf3.jpg, imageref='5c354a380201909f90cb4fccff6426b271903bf3.jpg', alt='Start the BBBB'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Also adding dita-ot:original-imageref: 5c354a380201909f90cb4fccff6426b271903bf3.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[topic-reader] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] *******************
+[topic-reader] imageref is a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] GOTTA FIX PDF
+[topic-reader] OK what the heck....
+[topic-reader] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+[topic-reader] +++ getInputMap: jira226.ditamap
+[topic-reader] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/jira226.ditamap
+[topic-reader] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] imageref was: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+[topic-reader] Relative path to map would be: jira226.ditamap
+[topic-reader] From there to flag would be: jira226.ditamapa4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Got flag file info. flagFi.uri: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] And current file uri: 1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-reader] Rel path from current file to flag image: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] ***************** Adjusting path to image null
+[topic-reader]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] Collected flags: 1
+[topic-reader] Writing start flag(s)!
+[topic-reader] Adjusted against path file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+[topic-reader] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg, imageref='a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg', alt='Start the CCCC'}, endflag=null}
+[topic-reader] WRITING A START FLAG! HREF IS: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] abs = href and is not null. Adding dita-ot:imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Also adding dita-ot:original-imageref: a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg
+[topic-reader] Looks like checking for flags on p
+[topic-reader] Collected flags: 0
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / 630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / 1018321ed5b17950b06daeba167b6de0717eee63.dita / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita / 5d976593512a844f5ec996637f13e4a57e64144b.dita / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita / 6c0f5db7f8791bf95187ba13d739232f5c728203.dita / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / 630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita / file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/anotherpuff.png / 381fff2859cf710f270e82f45c57ac136e0e16d1.png / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg / f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg / 5c354a380201909f90cb4fccff6426b271903bf3.jpg / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg / a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png / 116c90f37e9b1c61d23793787dcc08abc7d03f85.png / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png / fa549940b09e21e33bfaf11794798bf587e46600.png / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg / 121d8b3325fa147a1564db8a18c678cceedfbc26.svg / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg / 80cc1d3debffa62e256d287ad9b6648265674d9b.svg / null / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / 630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita / file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / 1018321ed5b17950b06daeba167b6de0717eee63.dita / file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita / 5d976593512a844f5ec996637f13e4a57e64144b.dita / file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita / 6c0f5db7f8791bf95187ba13d739232f5c728203.dita / file:/C:/dcs/test/jira226/updir/content/jira226inner.dita / null
+[topic-reader] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap / file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / 5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-reader] Serializing job specification
+
+topic-branch-filter:
+[branch-filter] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+
+topic-keyref:
+
+topic-copy-to:
+
+topic-conrefpush:
+
+topic-conref:
+
+topic-profile-check:
+
+topic-profile:
+
+topic-fragment:
+[topic-fragment] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topic-fragment] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-fragment] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-fragment] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+
+topic-chunk:
+
+topic-move-meta-entries:
+[move-meta] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[move-meta] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[move-meta] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\preprocess\mappull.xsl
+
+topic-maplink:
+  [maplink] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/1018321ed5b17950b06daeba167b6de0717eee63.dita
+  [maplink] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+  [maplink] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+  [maplink] Processing file:/C:/dcs/test/jira226/updir/content/tempOOBpdf/5d976593512a844f5ec996637f13e4a57e64144b.dita
+
+topic-topicpull:
+[topicpull] Transforming into C:\dcs\test\jira226\updir\content\tempOOBpdf
+[topicpull] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\preprocess\topicpull.xsl
+[topicpull] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\1018321ed5b17950b06daeba167b6de0717eee63.dita
+[topicpull] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topicpull] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topicpull] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+
+preprocess2.topics:
+
+map-clean-map:
+[clean-map] Transforming into C:\dcs\test\jira226\updir\content\tempOOBpdf
+[clean-map] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\preprocess\clean-map.xsl
+[clean-map] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+
+clean-preprocess:
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\canditopics.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\conref.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\conreftargets.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\copytosource.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\fullditamap.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\fullditamapandtopic.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\fullditatopic.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\hrefditatopic.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\hreftargets.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\html.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\image.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\outditafiles.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\resourceonly.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\resourceonly.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\subjectscheme.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\subtargets.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\user.input.file.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\.job.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\usr.input.file.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+
+copy-image2:
+
+copy-html:
+
+copy-flag-check:
+
+copy-flag:
+
+copy-files2:
+
+preprocess2:
+
+map2pdf2:
+[topic-merge] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\5ea58fbb1399a091f58ea610a52d676adf41a23e.ditamap
+[topic-merge] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\630ff25d76c5fc83d83bc7593148da1bee0de1d7.dita
+[topic-merge] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\5d976593512a844f5ec996637f13e4a57e64144b.dita
+[topic-merge] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\6c0f5db7f8791bf95187ba13d739232f5c728203.dita
+[topic-merge] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\1018321ed5b17950b06daeba167b6de0717eee63.dita
+
+transform.topic2pdf.init:
+
+publish.map.pdf.init:
+
+copyCoreArtwork:
+     [copy] Copying 4 files to C:\dcs\test\jira226\updir\content\tempOOBpdf\Configuration\OpenTopic
+
+transform.fo2pdf.ah.test-use:
+
+transform.fo2pdf.ah.init:
+
+transform.fo2pdf.xep.test-use:
+
+transform.fo2pdf.xep.init:
+
+transform.fo2pdf.fop.test-use:
+
+transform.fo2pdf.fop.init:
+
+transform.topic2fo.init:
+     [echo] Using document.locale=en
+
+transform.topic2fo.index:
+
+transform.topic2fo.main:
+ [pipeline] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.pdf2.fop\xsl\fo\topic2fo_shell_fop.xsl
+ [pipeline] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\stage1.xml to C:\dcs\test\jira226\updir\content\tempOOBpdf\stage2.fo
+ [pipeline] Checking for 116c90f37e9b1c61d23793787dcc08abc7d03f85.png in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate 116c90f37e9b1c61d23793787dcc08abc7d03f85.png to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+ [pipeline] Checking for fa549940b09e21e33bfaf11794798bf587e46600.png in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate fa549940b09e21e33bfaf11794798bf587e46600.png to file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+ [pipeline] Checking for f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+ [pipeline] Checking for 5c354a380201909f90cb4fccff6426b271903bf3.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate 5c354a380201909f90cb4fccff6426b271903bf3.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+ [pipeline] Checking for a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+ [pipeline] Checking for 116c90f37e9b1c61d23793787dcc08abc7d03f85.png in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate 116c90f37e9b1c61d23793787dcc08abc7d03f85.png to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+ [pipeline] Checking for fa549940b09e21e33bfaf11794798bf587e46600.png in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate fa549940b09e21e33bfaf11794798bf587e46600.png to file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+ [pipeline] Checking for f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+ [pipeline] Checking for 5c354a380201909f90cb4fccff6426b271903bf3.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate 5c354a380201909f90cb4fccff6426b271903bf3.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+ [pipeline] Checking for a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+ [pipeline] Checking for 116c90f37e9b1c61d23793787dcc08abc7d03f85.png in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate 116c90f37e9b1c61d23793787dcc08abc7d03f85.png to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+ [pipeline] Checking for fa549940b09e21e33bfaf11794798bf587e46600.png in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate fa549940b09e21e33bfaf11794798bf587e46600.png to file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+ [pipeline] Checking for 116c90f37e9b1c61d23793787dcc08abc7d03f85.png in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate 116c90f37e9b1c61d23793787dcc08abc7d03f85.png to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+ [pipeline] Checking for fa549940b09e21e33bfaf11794798bf587e46600.png in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate fa549940b09e21e33bfaf11794798bf587e46600.png to file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+ [pipeline] Checking for f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+ [pipeline] Checking for 5c354a380201909f90cb4fccff6426b271903bf3.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate 5c354a380201909f90cb4fccff6426b271903bf3.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+ [pipeline] Checking for a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+ [pipeline] Checking for 116c90f37e9b1c61d23793787dcc08abc7d03f85.png in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate 116c90f37e9b1c61d23793787dcc08abc7d03f85.png to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+ [pipeline] Checking for fa549940b09e21e33bfaf11794798bf587e46600.png in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate fa549940b09e21e33bfaf11794798bf587e46600.png to file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+ [pipeline] Checking for f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate f37b89f07a687dfdbce65328cd673e7ea20e2045.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+ [pipeline] Checking for 5c354a380201909f90cb4fccff6426b271903bf3.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate 5c354a380201909f90cb4fccff6426b271903bf3.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+ [pipeline] Checking for a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg in job
+ [pipeline] PULLING IMAGEREF FROM JOB, translate a4c4b70c7e182bfbbb380dc2a234dbed6feab732.jpg to file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+
+transform.topic2fo.i18n.filter:
+[i18n-preprocess] Processing C:\dcs\test\jira226\updir\content\tempOOBpdf\stage2.fo to C:\dcs\test\jira226\updir\content\tempOOBpdf\topic.fo
+[i18n-preprocess] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.pdf2\xsl\fo\i18n-postprocess.xsl
+
+transform.topic2fo.i18n.no-filter:
+
+transform.topic2fo.i18n:
+
+transform.topic2fo:
+
+transform.fo2pdf.ah:
+
+transform.fo2pdf.xep:
+
+transform.fo2pdf.fop:
+      [fop] [WARN] Font "SimSun,normal,700" not found. Substituting with "SimSun,normal,400".
+      [fop] [INFO] Rendered page #1.
+      [fop] [INFO] Rendered page #2.
+      [fop] [INFO] Rendered page #3.
+      [fop] [INFO] Rendered page #4.
+      [fop] [INFO] Rendered page #5.
+      [fop] [INFO] Rendered page #6.
+      [fop] C:\dcs\test\jira226\updir\content\tempOOBpdf\topic.fo -> C:\dcs\test\jira226\updir\content\outOOB\jira226.pdf
+
+transform.fo2pdf:
+
+transform.topic2pdf:
+
+publish.map.pdf:
+
+topic2pdf2:
+
+dita2pdf2:
+
+dita2pdf:
+
+clean-temp:

@@ -1,0 +1,1775 @@
+
+init:
+
+html5.init:
+
+init-properties:
+
+check-arg:
+   [delete] Deleting directory C:\dcs\test\jira226\updir\content\tempOOB-checkin
+    [mkdir] Created dir: C:\dcs\test\jira226\updir\content\tempOOB-checkin
+
+log-arg:
+     [echo] *****************************************************************
+     [echo] * basedir = C:\github\robander\dita-ot\src\main
+     [echo] * dita.dir = C:\github\robander\dita-ot\src\main\bin\..
+     [echo] * transtype = html5
+     [echo] * tempdir = C:\dcs\test\jira226\updir\content\tempOOB-checkin
+     [echo] * outputdir = C:\dcs\test\jira226\updir\content\outOOB-checkin
+     [echo] * clean.temp = no
+     [echo] * DITA-OT version = 3.3.1
+     [echo] * XML parser = Xerces
+     [echo] * XSLT processor = Saxon
+     [echo] * collator = ICU
+     [echo] *****************************************************************
+     [echo] #Ant properties
+     [echo] #Mon Jun 03 20:54:01 CDT 2019
+     [echo] args.filter=C\:\\dcs\\test\\jira226\\simple\\ditavaldir\\revs.ditaval
+     [echo] args.grammar.cache=yes
+     [echo] args.input=C\:\\dcs\\test\\jira226\\updir\\content\\jira226.ditamap
+     [echo] args.logdir=C\:\\dcs\\test\\jira226\\updir\\content\\outOOB-checkin
+     [echo] args.xml.systemid.set=yes
+     [echo] args.xsl=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.html5/xsl/dita2html5.xsl
+     [echo] dita.dir=C\:\\github\\robander\\dita-ot\\src\\main\\bin\\..
+     [echo] dita.html5.reloadstylesheet=false
+     [echo] dita.output.dir=C\:\\dcs\\test\\jira226\\updir\\content\\outOOB-checkin
+     [echo] dita.plugin.org.dita.base.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.base
+     [echo] dita.plugin.org.dita.eclipsehelp.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.eclipsehelp
+     [echo] dita.plugin.org.dita.html5.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.html5
+     [echo] dita.plugin.org.dita.htmlhelp.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.htmlhelp
+     [echo] dita.plugin.org.dita.pdf2.axf.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.pdf2.axf
+     [echo] dita.plugin.org.dita.pdf2.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.pdf2
+     [echo] dita.plugin.org.dita.pdf2.fop.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.pdf2.fop
+     [echo] dita.plugin.org.dita.pdf2.xep.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.pdf2.xep
+     [echo] dita.plugin.org.dita.specialization.dita11.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.specialization.dita11
+     [echo] dita.plugin.org.dita.xhtml.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.dita.xhtml
+     [echo] dita.plugin.org.oasis-open.dita.v1_2.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.oasis-open.dita.v1_2
+     [echo] dita.plugin.org.oasis-open.dita.v1_3.dir=C\:\\github\\robander\\dita-ot\\src\\main\\plugins\\org.oasis-open.dita.v1_3
+     [echo] dita.temp.dir=C\:\\dcs\\test\\jira226\\updir\\content\\tempOOB-checkin
+     [echo] *****************************************************************
+
+build-init:
+
+preprocess.init:
+     [echo] *****************************************************************
+     [echo] * input = C:\dcs\test\jira226\updir\content\jira226.ditamap
+     [echo] *****************************************************************
+
+ditaval-merge:
+[ditaval-merge] Writing conditions from ditaval: C:\dcs\test\jira226\simple\ditavaldir\revs.ditaval
+[ditaval-merge] Resolving against: file:/C:/dcs/test/jira226/simple/ditavaldir/
+
+gen-list:
+ [gen-list] DITAVAL READER READ FLAG IMAGE
+ [gen-list] imageref attribute starts as: startpuffA.jpg
+ [gen-list] Absolute image path: startpuffA.jpg
+ [gen-list] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+ [gen-list] 2CHANGED relative to: startpuffA.jpg
+ [gen-list] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+ [gen-list] tempfilenamescheme! : null
+ [gen-list] job.getFileInfo(absolute) : null
+ [gen-list] relative : startpuffA.jpg
+ [gen-list] there is no temp file name scheme, stick iwth imageref startpuffA.jpg
+ [gen-list] DITAVAL READER READ FLAG IMAGE
+ [gen-list] DITAVAL READER READ FLAG IMAGE
+ [gen-list] imageref attribute starts as: startpuffB.jpg
+ [gen-list] Absolute image path: startpuffB.jpg
+ [gen-list] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+ [gen-list] 2CHANGED relative to: startpuffB.jpg
+ [gen-list] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+ [gen-list] tempfilenamescheme! : null
+ [gen-list] job.getFileInfo(absolute) : null
+ [gen-list] relative : startpuffB.jpg
+ [gen-list] there is no temp file name scheme, stick iwth imageref startpuffB.jpg
+ [gen-list] DITAVAL READER READ FLAG IMAGE
+ [gen-list] DITAVAL READER READ FLAG IMAGE
+ [gen-list] imageref attribute starts as: subdir/startpuffC.jpg
+ [gen-list] Absolute image path: subdir/startpuffC.jpg
+ [gen-list] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+ [gen-list] 2CHANGED relative to: subdir/startpuffC.jpg
+ [gen-list] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+ [gen-list] tempfilenamescheme! : null
+ [gen-list] job.getFileInfo(absolute) : null
+ [gen-list] relative : subdir/startpuffC.jpg
+ [gen-list] there is no temp file name scheme, stick iwth imageref subdir/startpuffC.jpg
+ [gen-list] DITAVAL READER READ FLAG IMAGE
+ [gen-list] DITAVAL READER READ FLAG IMAGE
+ [gen-list] imageref attribute starts as: startpuff.png
+ [gen-list] Absolute image path: startpuff.png
+ [gen-list] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+ [gen-list] 2CHANGED relative to: startpuff.png
+ [gen-list] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+ [gen-list] tempfilenamescheme! : null
+ [gen-list] job.getFileInfo(absolute) : null
+ [gen-list] relative : startpuff.png
+ [gen-list] there is no temp file name scheme, stick iwth imageref startpuff.png
+ [gen-list] DITAVAL READER READ FLAG IMAGE
+ [gen-list] imageref attribute starts as: endpuff.png
+ [gen-list] Absolute image path: endpuff.png
+ [gen-list] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+ [gen-list] 2CHANGED relative to: endpuff.png
+ [gen-list] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+ [gen-list] tempfilenamescheme! : null
+ [gen-list] job.getFileInfo(absolute) : null
+ [gen-list] relative : endpuff.png
+ [gen-list] there is no temp file name scheme, stick iwth imageref endpuff.png
+ [gen-list] DITAVAL READER READ FLAG IMAGE
+ [gen-list] imageref attribute starts as: startchange.svg
+ [gen-list] Absolute image path: startchange.svg
+ [gen-list] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+ [gen-list] 2CHANGED relative to: startchange.svg
+ [gen-list] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+ [gen-list] tempfilenamescheme! : null
+ [gen-list] job.getFileInfo(absolute) : null
+ [gen-list] relative : startchange.svg
+ [gen-list] there is no temp file name scheme, stick iwth imageref startchange.svg
+ [gen-list] DITAVAL READER READ FLAG IMAGE
+ [gen-list] imageref attribute starts as: endchange.svg
+ [gen-list] Absolute image path: endchange.svg
+ [gen-list] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+ [gen-list] 2CHANGED relative to: endchange.svg
+ [gen-list] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+ [gen-list] tempfilenamescheme! : null
+ [gen-list] job.getFileInfo(absolute) : null
+ [gen-list] relative : endchange.svg
+ [gen-list] there is no temp file name scheme, stick iwth imageref endchange.svg
+ [gen-list] Using Xerces grammar pool for DTD and schema caching.
+ [gen-list] Processing file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] file:/C:/dcs/test/jira226/updir/content/jira226.ditamap:7:44: [DOTJ036W][WARN] The file "file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita" is outside the scope of the input dita/map directory.
+ [gen-list] file:/C:/dcs/test/jira226/updir/content/jira226.ditamap:16:44: [DOTJ036W][WARN] The file "file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita" is outside the scope of the input dita/map directory.
+ [gen-list] Processing file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list] Processing file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+ [gen-list] Processing file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+ [gen-list] Processing file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list] + creating file info for file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list]  DEBUG creating uri peer/jira226peer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list]  DEBUG creating uri peer/jira226peer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / peer/jira226peer.dita / file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / null
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list] + creating file info for file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list]  DEBUG creating uri content/jira226outer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list]  DEBUG creating uri content/jira226outer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / content/jira226outer.dita / file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / null
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list] + already had info for that normalized file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list]  DEBUG creating uri peer/jira226peer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list]  DEBUG creating uri peer/jira226peer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / peer/jira226peer.dita / file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / null
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+ [gen-list] + creating file info for file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+ [gen-list]  DEBUG creating uri content/subdirtest/jira226middle.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+ [gen-list]  DEBUG creating uri content/subdirtest/jira226middle.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita / content/subdirtest/jira226middle.dita / file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita / null
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+ [gen-list] + creating file info for file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+ [gen-list]  DEBUG creating uri content/jira226inner.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+ [gen-list]  DEBUG creating uri content/jira226inner.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita / content/jira226inner.dita / file:/C:/dcs/test/jira226/updir/content/jira226inner.dita / null
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] + creating file info for file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list]  DEBUG creating uri content/jira226.ditamap
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list]  DEBUG creating uri content/jira226.ditamap
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / content/jira226.ditamap / file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / null
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list] + already had info for that normalized file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list]  DEBUG creating uri content/jira226outer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list]  DEBUG creating uri content/jira226outer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / content/jira226outer.dita / file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / null
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/content/anotherpuff.png
+ [gen-list] + creating file info for file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/anotherpuff.png
+ [gen-list]  DEBUG creating uri content/anotherpuff.png
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/anotherpuff.png
+ [gen-list]  DEBUG creating uri content/anotherpuff.png
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/anotherpuff.png
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/anotherpuff.png / content/anotherpuff.png / file:/C:/dcs/test/jira226/updir/content/anotherpuff.png / null
+ [gen-list] Get or create file info for: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+ [gen-list]  -- first check if it's there? null
+ [gen-list] Matching relpath item: startpuffA.jpg
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+ [gen-list] + creating file info for file
+ [gen-list] ********************************
+ [gen-list] SOMEHOW I DIDN'T HAVE relpath: startpuffA.jpg
+ [gen-list] tfn1, src: startpuffA.jpg
+ [gen-list]  DEBUG creating uri relpath startpuffA.jpg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+ [gen-list]  DEBUG creating uri abspath file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+ [gen-list] Or maybe make it relative to base input dir: file:/C:/dcs/test/jira226/updir/
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/startpuffA.jpg
+ [gen-list] Or maybe make it relative to MAP FILE!!!!: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/content/startpuffA.jpg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/startpuffA.jpg
+ [gen-list] Which generates a temp file name: content/startpuffA.jpg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/startpuffA.jpg
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg / content/startpuffA.jpg / null / null
+ [gen-list] And it is: FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, uri=content/startpuffA.jpg, file=content\startpuffA.jpg, format='null', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=false, isOutDita=false}
+ [gen-list] Get or create file info for: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+ [gen-list]  -- first check if it's there? null
+ [gen-list] Matching relpath item: startpuffB.jpg
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+ [gen-list] + creating file info for file
+ [gen-list] ********************************
+ [gen-list] SOMEHOW I DIDN'T HAVE relpath: startpuffB.jpg
+ [gen-list] tfn1, src: startpuffB.jpg
+ [gen-list]  DEBUG creating uri relpath startpuffB.jpg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+ [gen-list]  DEBUG creating uri abspath file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+ [gen-list] Or maybe make it relative to base input dir: file:/C:/dcs/test/jira226/updir/
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/startpuffB.jpg
+ [gen-list] Or maybe make it relative to MAP FILE!!!!: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/content/startpuffB.jpg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/startpuffB.jpg
+ [gen-list] Which generates a temp file name: content/startpuffB.jpg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/startpuffB.jpg
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg / content/startpuffB.jpg / null / null
+ [gen-list] And it is: FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, uri=content/startpuffB.jpg, file=content\startpuffB.jpg, format='null', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=false, isOutDita=false}
+ [gen-list] Get or create file info for: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+ [gen-list]  -- first check if it's there? null
+ [gen-list] Matching relpath item: subdir/startpuffC.jpg
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+ [gen-list] + creating file info for file
+ [gen-list] ********************************
+ [gen-list] SOMEHOW I DIDN'T HAVE relpath: subdir/startpuffC.jpg
+ [gen-list] tfn1, src: subdir/startpuffC.jpg
+ [gen-list]  DEBUG creating uri relpath subdir/startpuffC.jpg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+ [gen-list]  DEBUG creating uri abspath file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+ [gen-list] Or maybe make it relative to base input dir: file:/C:/dcs/test/jira226/updir/
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/subdir/startpuffC.jpg
+ [gen-list] Or maybe make it relative to MAP FILE!!!!: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/content/subdir/startpuffC.jpg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/subdir/startpuffC.jpg
+ [gen-list] Which generates a temp file name: content/subdir/startpuffC.jpg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/subdir/startpuffC.jpg
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg / content/subdir/startpuffC.jpg / null / null
+ [gen-list] And it is: FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, uri=content/subdir/startpuffC.jpg, file=content\subdir\startpuffC.jpg, format='null', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=false, isOutDita=false}
+ [gen-list] Get or create file info for: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+ [gen-list]  -- first check if it's there? null
+ [gen-list] Matching relpath item: startpuff.png
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+ [gen-list] + creating file info for file
+ [gen-list] ********************************
+ [gen-list] SOMEHOW I DIDN'T HAVE relpath: startpuff.png
+ [gen-list] tfn1, src: startpuff.png
+ [gen-list]  DEBUG creating uri relpath startpuff.png
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+ [gen-list]  DEBUG creating uri abspath file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+ [gen-list] Or maybe make it relative to base input dir: file:/C:/dcs/test/jira226/updir/
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/startpuff.png
+ [gen-list] Or maybe make it relative to MAP FILE!!!!: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/content/startpuff.png
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/startpuff.png
+ [gen-list] Which generates a temp file name: content/startpuff.png
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/startpuff.png
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png / content/startpuff.png / null / null
+ [gen-list] And it is: FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, uri=content/startpuff.png, file=content\startpuff.png, format='null', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=false, isOutDita=false}
+ [gen-list] Get or create file info for: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+ [gen-list]  -- first check if it's there? null
+ [gen-list] Matching relpath item: endpuff.png
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+ [gen-list] + creating file info for file
+ [gen-list] ********************************
+ [gen-list] SOMEHOW I DIDN'T HAVE relpath: endpuff.png
+ [gen-list] tfn1, src: endpuff.png
+ [gen-list]  DEBUG creating uri relpath endpuff.png
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+ [gen-list]  DEBUG creating uri abspath file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+ [gen-list] Or maybe make it relative to base input dir: file:/C:/dcs/test/jira226/updir/
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/endpuff.png
+ [gen-list] Or maybe make it relative to MAP FILE!!!!: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/content/endpuff.png
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/endpuff.png
+ [gen-list] Which generates a temp file name: content/endpuff.png
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/endpuff.png
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png / content/endpuff.png / null / null
+ [gen-list] And it is: FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, result=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, uri=content/endpuff.png, file=content\endpuff.png, format='null', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=false, isOutDita=false}
+ [gen-list] Get or create file info for: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+ [gen-list]  -- first check if it's there? null
+ [gen-list] Matching relpath item: startchange.svg
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+ [gen-list] + creating file info for file
+ [gen-list] ********************************
+ [gen-list] SOMEHOW I DIDN'T HAVE relpath: startchange.svg
+ [gen-list] tfn1, src: startchange.svg
+ [gen-list]  DEBUG creating uri relpath startchange.svg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+ [gen-list]  DEBUG creating uri abspath file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+ [gen-list] Or maybe make it relative to base input dir: file:/C:/dcs/test/jira226/updir/
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/startchange.svg
+ [gen-list] Or maybe make it relative to MAP FILE!!!!: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/content/startchange.svg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/startchange.svg
+ [gen-list] Which generates a temp file name: content/startchange.svg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/startchange.svg
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg / content/startchange.svg / null / null
+ [gen-list] And it is: FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg, uri=content/startchange.svg, file=content\startchange.svg, format='null', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=false, isOutDita=false}
+ [gen-list] Get or create file info for: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+ [gen-list]  -- first check if it's there? null
+ [gen-list] Matching relpath item: endchange.svg
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] getOrCreateFlagImageFileInfo
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+ [gen-list] + creating file info for file
+ [gen-list] ********************************
+ [gen-list] SOMEHOW I DIDN'T HAVE relpath: endchange.svg
+ [gen-list] tfn1, src: endchange.svg
+ [gen-list]  DEBUG creating uri relpath endchange.svg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+ [gen-list]  DEBUG creating uri abspath file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+ [gen-list] Or maybe make it relative to base input dir: file:/C:/dcs/test/jira226/updir/
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/endchange.svg
+ [gen-list] Or maybe make it relative to MAP FILE!!!!: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+ [gen-list] Which would make: file:/C:/dcs/test/jira226/updir/content/endchange.svg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/endchange.svg
+ [gen-list] Which generates a temp file name: content/endchange.svg
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/endchange.svg
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg / content/endchange.svg / null / null
+ [gen-list] And it is: FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg, uri=content/endchange.svg, file=content\endchange.svg, format='null', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=false, isOutDita=false}
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list] + already had info for that normalized file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list]  DEBUG creating uri content/jira226outer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list]  DEBUG creating uri content/jira226outer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / content/jira226outer.dita / file:/C:/dcs/test/jira226/updir/content/jira226outer.dita / null
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list] + already had info for that normalized file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list]  DEBUG creating uri peer/jira226peer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list]  DEBUG creating uri peer/jira226peer.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / peer/jira226peer.dita / file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita / null
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+ [gen-list] + already had info for that normalized file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+ [gen-list]  DEBUG creating uri content/subdirtest/jira226middle.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+ [gen-list]  DEBUG creating uri content/subdirtest/jira226middle.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita / content/subdirtest/jira226middle.dita / file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita / null
+ [gen-list] + file.normalize(): file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+ [gen-list] + already had info for that normalized file
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+ [gen-list]  DEBUG creating uri content/jira226inner.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+ [gen-list]  DEBUG creating uri content/jira226inner.dita
+ [gen-list] tfn1, src: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226inner.dita / content/jira226inner.dita / file:/C:/dcs/test/jira226/updir/content/jira226inner.dita / null
+ [gen-list] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / content/jira226.ditamap / file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / content\jira226.ditamap
+ [gen-list] Serializing job specification
+
+debug-filter:
+   [filter] DITAVAL READER READ FLAG IMAGE
+   [filter] imageref attribute starts as: startpuffA.jpg
+   [filter] Absolute image path: startpuffA.jpg
+   [filter] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+   [filter] 2CHANGED relative to: startpuffA.jpg
+   [filter] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+   [filter] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$DefaultTempFileScheme@1963a9c6
+   [filter] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, uri=content/startpuffA.jpg, file=content\startpuffA.jpg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+   [filter] relative : startpuffA.jpg
+   [filter] -- imageref: startpuffA.jpg
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+   [filter] -- as temp file from absolute: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+   [filter] tfn1, src: startpuffA.jpg
+   [filter] -- as temp file from original absolute: startpuffA.jpg
+   [filter] FINDME
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+   [filter] DITAVAL READER READ FLAG IMAGE
+   [filter] DITAVAL READER READ FLAG IMAGE
+   [filter] imageref attribute starts as: startpuffB.jpg
+   [filter] Absolute image path: startpuffB.jpg
+   [filter] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+   [filter] 2CHANGED relative to: startpuffB.jpg
+   [filter] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+   [filter] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$DefaultTempFileScheme@1963a9c6
+   [filter] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, uri=content/startpuffB.jpg, file=content\startpuffB.jpg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+   [filter] relative : startpuffB.jpg
+   [filter] -- imageref: startpuffB.jpg
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+   [filter] -- as temp file from absolute: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+   [filter] tfn1, src: startpuffB.jpg
+   [filter] -- as temp file from original absolute: startpuffB.jpg
+   [filter] FINDME
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+   [filter] DITAVAL READER READ FLAG IMAGE
+   [filter] DITAVAL READER READ FLAG IMAGE
+   [filter] imageref attribute starts as: subdir/startpuffC.jpg
+   [filter] Absolute image path: subdir/startpuffC.jpg
+   [filter] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+   [filter] 2CHANGED relative to: subdir/startpuffC.jpg
+   [filter] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+   [filter] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$DefaultTempFileScheme@1963a9c6
+   [filter] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, uri=content/subdir/startpuffC.jpg, file=content\subdir\startpuffC.jpg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+   [filter] relative : subdir/startpuffC.jpg
+   [filter] -- imageref: subdir/startpuffC.jpg
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+   [filter] -- as temp file from absolute: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+   [filter] tfn1, src: subdir/startpuffC.jpg
+   [filter] -- as temp file from original absolute: subdir/startpuffC.jpg
+   [filter] FINDME
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+   [filter] DITAVAL READER READ FLAG IMAGE
+   [filter] DITAVAL READER READ FLAG IMAGE
+   [filter] imageref attribute starts as: startpuff.png
+   [filter] Absolute image path: startpuff.png
+   [filter] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+   [filter] 2CHANGED relative to: startpuff.png
+   [filter] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+   [filter] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$DefaultTempFileScheme@1963a9c6
+   [filter] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, uri=content/startpuff.png, file=content\startpuff.png, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+   [filter] relative : startpuff.png
+   [filter] -- imageref: startpuff.png
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+   [filter] -- as temp file from absolute: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+   [filter] tfn1, src: startpuff.png
+   [filter] -- as temp file from original absolute: startpuff.png
+   [filter] FINDME
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+   [filter] DITAVAL READER READ FLAG IMAGE
+   [filter] imageref attribute starts as: endpuff.png
+   [filter] Absolute image path: endpuff.png
+   [filter] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+   [filter] 2CHANGED relative to: endpuff.png
+   [filter] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+   [filter] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$DefaultTempFileScheme@1963a9c6
+   [filter] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, result=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, uri=content/endpuff.png, file=content\endpuff.png, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+   [filter] relative : endpuff.png
+   [filter] -- imageref: endpuff.png
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+   [filter] -- as temp file from absolute: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+   [filter] tfn1, src: endpuff.png
+   [filter] -- as temp file from original absolute: endpuff.png
+   [filter] FINDME
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+   [filter] DITAVAL READER READ FLAG IMAGE
+   [filter] imageref attribute starts as: startchange.svg
+   [filter] Absolute image path: startchange.svg
+   [filter] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+   [filter] 2CHANGED relative to: startchange.svg
+   [filter] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+   [filter] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$DefaultTempFileScheme@1963a9c6
+   [filter] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg, uri=content/startchange.svg, file=content\startchange.svg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+   [filter] relative : startchange.svg
+   [filter] -- imageref: startchange.svg
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+   [filter] -- as temp file from absolute: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+   [filter] tfn1, src: startchange.svg
+   [filter] -- as temp file from original absolute: startchange.svg
+   [filter] FINDME
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg
+   [filter] DITAVAL READER READ FLAG IMAGE
+   [filter] imageref attribute starts as: endchange.svg
+   [filter] Absolute image path: endchange.svg
+   [filter] 2Relative and absolute were: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+   [filter] 2CHANGED relative to: endchange.svg
+   [filter] 2222ditaval URI for that rel path: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/ditaot.generated.ditaval
+   [filter] tempfilenamescheme! : org.dita.dost.module.GenMapAndTopicListModule$DefaultTempFileScheme@1963a9c6
+   [filter] job.getFileInfo(absolute) : FileInfo{src=file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg, result=file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg, uri=content/endchange.svg, file=content\endchange.svg, format='image', hasConref=false, isChunked=false, hasLink=false, isResourceOnly=false, isTarget=false, isConrefPush=false, isInput=false, hasKeyref=false, hasCoderef=false, isSubjectScheme=false, isSubtarget=false, isFlagImage=true, isOutDita=false}
+   [filter] relative : endchange.svg
+   [filter] -- imageref: endchange.svg
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+   [filter] -- as temp file from absolute: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+   [filter] tfn1, src: endchange.svg
+   [filter] -- as temp file from original absolute: endchange.svg
+   [filter] FINDME
+   [filter] tfn1, src: file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg
+   [filter] Using Xerces grammar pool for DTD and schema caching.
+   [filter] Processing file:/C:/dcs/test/jira226/updir/content/jira226.ditamap to file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] Looks like checking for flags on map
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on title
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on topicref
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffA.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] imageref was: startpuffA.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffA.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffA.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] And current file uri: content/jira226.ditamap
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] Rel path from current file to flag image: startpuffA.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: startpuffA.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: startpuffA.jpg
+   [filter] Also adding dita-ot:original-imageref: startpuffA.jpg
+   [filter] Looks like checking for flags on topicref
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffB.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] imageref was: startpuffB.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffB.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffB.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] And current file uri: content/jira226.ditamap
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] Rel path from current file to flag image: startpuffB.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: startpuffB.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: startpuffB.jpg
+   [filter] Also adding dita-ot:original-imageref: startpuffB.jpg
+   [filter] Looks like checking for flags on topicref
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is subdir/startpuffC.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] imageref was: subdir/startpuffC.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapsubdir/startpuffC.jpg
+   [filter] Got flag file info. flagFi.uri: content/subdir/startpuffC.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] And current file uri: content/jira226.ditamap
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] Rel path from current file to flag image: subdir/startpuffC.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: subdir/startpuffC.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: subdir/startpuffC.jpg
+   [filter] Also adding dita-ot:original-imageref: subdir/startpuffC.jpg
+   [filter] Looks like checking for flags on topicref
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on reltable
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on relrow
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on relcell
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on topicref
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffA.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] imageref was: startpuffA.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffA.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffA.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] And current file uri: content/jira226.ditamap
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] Rel path from current file to flag image: startpuffA.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: startpuffA.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: startpuffA.jpg
+   [filter] Also adding dita-ot:original-imageref: startpuffA.jpg
+   [filter] Looks like checking for flags on topicref
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffB.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] imageref was: startpuffB.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffB.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffB.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] And current file uri: content/jira226.ditamap
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] Rel path from current file to flag image: startpuffB.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: startpuffB.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: startpuffB.jpg
+   [filter] Also adding dita-ot:original-imageref: startpuffB.jpg
+   [filter] Looks like checking for flags on topicref
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is subdir/startpuffC.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] imageref was: subdir/startpuffC.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapsubdir/startpuffC.jpg
+   [filter] Got flag file info. flagFi.uri: content/subdir/startpuffC.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] And current file uri: content/jira226.ditamap
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] Rel path from current file to flag image: subdir/startpuffC.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: subdir/startpuffC.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: subdir/startpuffC.jpg
+   [filter] Also adding dita-ot:original-imageref: subdir/startpuffC.jpg
+   [filter] Looks like checking for flags on relcell
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on topicref
+   [filter] Collected flags: 0
+   [filter] Processing file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita to file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/peer/jira226peer.dita
+   [filter] Looks like checking for flags on topic
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on title
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on body
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on p
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='startpuff.png', alt='this starts the rev'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='startpuff.png', alt='this starts the rev'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuff.png
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] imageref was: startpuff.png
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuff.png
+   [filter] Got flag file info. flagFi.uri: content/startpuff.png
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] And current file uri: peer/jira226peer.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/peer/jira226peer.dita
+   [filter] Rel path from current file to flag image: ../content/startpuff.png
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, imageref='endpuff.png', alt='this ends the rev'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is endpuff.png
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] imageref was: endpuff.png
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapendpuff.png
+   [filter] Got flag file info. flagFi.uri: content/endpuff.png
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] And current file uri: peer/jira226peer.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/peer/jira226peer.dita
+   [filter] Rel path from current file to flag image: ../content/endpuff.png
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='solid', startflag=FlagImage{href=../content/startpuff.png, imageref='../content/startpuff.png', alt='this starts the rev'}, endflag=FlagImage{href=../content/endpuff.png, imageref='../content/endpuff.png', alt='this ends the rev'}}
+   [filter] WRITING A START FLAG! HREF IS: ../content/startpuff.png
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../content/startpuff.png
+   [filter] Also adding dita-ot:original-imageref: ../content/startpuff.png
+   [filter] WRITING A START FLAG! HREF IS: ../content/endpuff.png
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../content/endpuff.png
+   [filter] Also adding dita-ot:original-imageref: ../content/endpuff.png
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffA.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] imageref was: startpuffA.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffA.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffA.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] And current file uri: peer/jira226peer.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/peer/jira226peer.dita
+   [filter] Rel path from current file to flag image: ../content/startpuffA.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=../content/startpuffA.jpg, imageref='../content/startpuffA.jpg', alt='Start the AAAA'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: ../content/startpuffA.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../content/startpuffA.jpg
+   [filter] Also adding dita-ot:original-imageref: ../content/startpuffA.jpg
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffB.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] imageref was: startpuffB.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffB.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffB.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] And current file uri: peer/jira226peer.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/peer/jira226peer.dita
+   [filter] Rel path from current file to flag image: ../content/startpuffB.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=../content/startpuffB.jpg, imageref='../content/startpuffB.jpg', alt='Start the BBBB'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: ../content/startpuffB.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../content/startpuffB.jpg
+   [filter] Also adding dita-ot:original-imageref: ../content/startpuffB.jpg
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is subdir/startpuffC.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] imageref was: subdir/startpuffC.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapsubdir/startpuffC.jpg
+   [filter] Got flag file info. flagFi.uri: content/subdir/startpuffC.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] And current file uri: peer/jira226peer.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/peer/jira226peer.dita
+   [filter] Rel path from current file to flag image: ../content/subdir/startpuffC.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/peer/jira226peer.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=../content/subdir/startpuffC.jpg, imageref='../content/subdir/startpuffC.jpg', alt='Start the CCCC'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: ../content/subdir/startpuffC.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../content/subdir/startpuffC.jpg
+   [filter] Also adding dita-ot:original-imageref: ../content/subdir/startpuffC.jpg
+   [filter] Looks like checking for flags on p
+   [filter] Collected flags: 0
+   [filter] Processing file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita to file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdirtest/jira226middle.dita
+   [filter] Looks like checking for flags on topic
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on title
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on body
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on p
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='startpuff.png', alt='this starts the rev'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='startpuff.png', alt='this starts the rev'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuff.png
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] imageref was: startpuff.png
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuff.png
+   [filter] Got flag file info. flagFi.uri: content/startpuff.png
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] And current file uri: content/subdirtest/jira226middle.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdirtest/jira226middle.dita
+   [filter] Rel path from current file to flag image: ../startpuff.png
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, imageref='endpuff.png', alt='this ends the rev'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is endpuff.png
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] imageref was: endpuff.png
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapendpuff.png
+   [filter] Got flag file info. flagFi.uri: content/endpuff.png
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] And current file uri: content/subdirtest/jira226middle.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdirtest/jira226middle.dita
+   [filter] Rel path from current file to flag image: ../endpuff.png
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='solid', startflag=FlagImage{href=../startpuff.png, imageref='../startpuff.png', alt='this starts the rev'}, endflag=FlagImage{href=../endpuff.png, imageref='../endpuff.png', alt='this ends the rev'}}
+   [filter] WRITING A START FLAG! HREF IS: ../startpuff.png
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../startpuff.png
+   [filter] Also adding dita-ot:original-imageref: ../startpuff.png
+   [filter] WRITING A START FLAG! HREF IS: ../endpuff.png
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../endpuff.png
+   [filter] Also adding dita-ot:original-imageref: ../endpuff.png
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffA.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] imageref was: startpuffA.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffA.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffA.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] And current file uri: content/subdirtest/jira226middle.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdirtest/jira226middle.dita
+   [filter] Rel path from current file to flag image: ../startpuffA.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=../startpuffA.jpg, imageref='../startpuffA.jpg', alt='Start the AAAA'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: ../startpuffA.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../startpuffA.jpg
+   [filter] Also adding dita-ot:original-imageref: ../startpuffA.jpg
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffB.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] imageref was: startpuffB.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffB.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffB.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] And current file uri: content/subdirtest/jira226middle.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdirtest/jira226middle.dita
+   [filter] Rel path from current file to flag image: ../startpuffB.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=../startpuffB.jpg, imageref='../startpuffB.jpg', alt='Start the BBBB'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: ../startpuffB.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../startpuffB.jpg
+   [filter] Also adding dita-ot:original-imageref: ../startpuffB.jpg
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is subdir/startpuffC.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] imageref was: subdir/startpuffC.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapsubdir/startpuffC.jpg
+   [filter] Got flag file info. flagFi.uri: content/subdir/startpuffC.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] And current file uri: content/subdirtest/jira226middle.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdirtest/jira226middle.dita
+   [filter] Rel path from current file to flag image: ../subdir/startpuffC.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=../subdir/startpuffC.jpg, imageref='../subdir/startpuffC.jpg', alt='Start the CCCC'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: ../subdir/startpuffC.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../subdir/startpuffC.jpg
+   [filter] Also adding dita-ot:original-imageref: ../subdir/startpuffC.jpg
+   [filter] Looks like checking for flags on p
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on related-links
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on link
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on link
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='startpuff.png', alt='this starts the rev'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='startpuff.png', alt='this starts the rev'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuff.png
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] imageref was: startpuff.png
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuff.png
+   [filter] Got flag file info. flagFi.uri: content/startpuff.png
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] And current file uri: content/subdirtest/jira226middle.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdirtest/jira226middle.dita
+   [filter] Rel path from current file to flag image: ../startpuff.png
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, imageref='endpuff.png', alt='this ends the rev'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is endpuff.png
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] imageref was: endpuff.png
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapendpuff.png
+   [filter] Got flag file info. flagFi.uri: content/endpuff.png
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] And current file uri: content/subdirtest/jira226middle.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdirtest/jira226middle.dita
+   [filter] Rel path from current file to flag image: ../endpuff.png
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/subdirtest/jira226middle.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='solid', startflag=FlagImage{href=../startpuff.png, imageref='../startpuff.png', alt='this starts the rev'}, endflag=FlagImage{href=../endpuff.png, imageref='../endpuff.png', alt='this ends the rev'}}
+   [filter] WRITING A START FLAG! HREF IS: ../startpuff.png
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../startpuff.png
+   [filter] Also adding dita-ot:original-imageref: ../startpuff.png
+   [filter] WRITING A START FLAG! HREF IS: ../endpuff.png
+   [filter] abs = href and is not null. Adding dita-ot:imageref: ../endpuff.png
+   [filter] Also adding dita-ot:original-imageref: ../endpuff.png
+   [filter] Processing file:/C:/dcs/test/jira226/updir/content/jira226inner.dita to file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226inner.dita
+   [filter] Looks like checking for flags on topic
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on title
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on body
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on p
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='startpuff.png', alt='this starts the rev'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='startpuff.png', alt='this starts the rev'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuff.png
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] imageref was: startpuff.png
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuff.png
+   [filter] Got flag file info. flagFi.uri: content/startpuff.png
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] And current file uri: content/jira226inner.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226inner.dita
+   [filter] Rel path from current file to flag image: startpuff.png
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, imageref='endpuff.png', alt='this ends the rev'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is endpuff.png
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] imageref was: endpuff.png
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapendpuff.png
+   [filter] Got flag file info. flagFi.uri: content/endpuff.png
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] And current file uri: content/jira226inner.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226inner.dita
+   [filter] Rel path from current file to flag image: endpuff.png
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='solid', startflag=FlagImage{href=startpuff.png, imageref='startpuff.png', alt='this starts the rev'}, endflag=FlagImage{href=endpuff.png, imageref='endpuff.png', alt='this ends the rev'}}
+   [filter] WRITING A START FLAG! HREF IS: startpuff.png
+   [filter] abs = href and is not null. Adding dita-ot:imageref: startpuff.png
+   [filter] Also adding dita-ot:original-imageref: startpuff.png
+   [filter] WRITING A START FLAG! HREF IS: endpuff.png
+   [filter] abs = href and is not null. Adding dita-ot:imageref: endpuff.png
+   [filter] Also adding dita-ot:original-imageref: endpuff.png
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffA.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] imageref was: startpuffA.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffA.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffA.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] And current file uri: content/jira226inner.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226inner.dita
+   [filter] Rel path from current file to flag image: startpuffA.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: startpuffA.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: startpuffA.jpg
+   [filter] Also adding dita-ot:original-imageref: startpuffA.jpg
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffB.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] imageref was: startpuffB.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffB.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffB.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] And current file uri: content/jira226inner.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226inner.dita
+   [filter] Rel path from current file to flag image: startpuffB.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: startpuffB.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: startpuffB.jpg
+   [filter] Also adding dita-ot:original-imageref: startpuffB.jpg
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is subdir/startpuffC.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] imageref was: subdir/startpuffC.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapsubdir/startpuffC.jpg
+   [filter] Got flag file info. flagFi.uri: content/subdir/startpuffC.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] And current file uri: content/jira226inner.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226inner.dita
+   [filter] Rel path from current file to flag image: subdir/startpuffC.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226inner.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: subdir/startpuffC.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: subdir/startpuffC.jpg
+   [filter] Also adding dita-ot:original-imageref: subdir/startpuffC.jpg
+   [filter] Looks like checking for flags on p
+   [filter] Collected flags: 0
+   [filter] Processing file:/C:/dcs/test/jira226/updir/content/jira226outer.dita to file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226outer.dita
+   [filter] Looks like checking for flags on topic
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on title
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on body
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on p
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='startpuff.png', alt='this starts the rev'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png, imageref='startpuff.png', alt='this starts the rev'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuff.png
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] imageref was: startpuff.png
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuff.png
+   [filter] Got flag file info. flagFi.uri: content/startpuff.png
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuff.png
+   [filter] And current file uri: content/jira226outer.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226outer.dita
+   [filter] Rel path from current file to flag image: startpuff.png
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png, imageref='endpuff.png', alt='this ends the rev'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is endpuff.png
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] imageref was: endpuff.png
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapendpuff.png
+   [filter] Got flag file info. flagFi.uri: content/endpuff.png
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/endpuff.png
+   [filter] And current file uri: content/jira226outer.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226outer.dita
+   [filter] Rel path from current file to flag image: endpuff.png
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='solid', startflag=FlagImage{href=startpuff.png, imageref='startpuff.png', alt='this starts the rev'}, endflag=FlagImage{href=endpuff.png, imageref='endpuff.png', alt='this ends the rev'}}
+   [filter] WRITING A START FLAG! HREF IS: startpuff.png
+   [filter] abs = href and is not null. Adding dita-ot:imageref: startpuff.png
+   [filter] Also adding dita-ot:original-imageref: startpuff.png
+   [filter] WRITING A START FLAG! HREF IS: endpuff.png
+   [filter] abs = href and is not null. Adding dita-ot:imageref: endpuff.png
+   [filter] Also adding dita-ot:original-imageref: endpuff.png
+   [filter] Looks like checking for flags on p
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on image
+   [filter] Collected flags: 0
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffA.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] imageref was: startpuffA.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffA.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffA.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffA.jpg
+   [filter] And current file uri: content/jira226outer.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226outer.dita
+   [filter] Rel path from current file to flag image: startpuffA.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=startpuffA.jpg, imageref='startpuffA.jpg', alt='Start the AAAA'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: startpuffA.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: startpuffA.jpg
+   [filter] Also adding dita-ot:original-imageref: startpuffA.jpg
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is startpuffB.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] imageref was: startpuffB.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapstartpuffB.jpg
+   [filter] Got flag file info. flagFi.uri: content/startpuffB.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/startpuffB.jpg
+   [filter] And current file uri: content/jira226outer.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226outer.dita
+   [filter] Rel path from current file to flag image: startpuffB.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=startpuffB.jpg, imageref='startpuffB.jpg', alt='Start the BBBB'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: startpuffB.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: startpuffB.jpg
+   [filter] Also adding dita-ot:original-imageref: startpuffB.jpg
+   [filter] Looks like checking for flags on p
+   [filter] MORE DEBUG. startflag: FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter] ***************** Adjusting path to image FlagImage{href=file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] *******************
+   [filter] *******************
+   [filter] *******************
+   [filter] imageref is subdir/startpuffC.jpg
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] GOTTA FIX PDF
+   [filter] OK what the heck....
+   [filter] +++ mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ mapInTemp maybe should have been?: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ imageref against mapInTemp: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] +++ getInputFile: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap
+   [filter] +++ getInputMap: content/jira226.ditamap
+   [filter] +++ input map against temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [filter] +++ flag against input map in temp dir: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] imageref was: subdir/startpuffC.jpg
+   [filter] href was: file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg
+   [filter] Relative path to map would be: content/jira226.ditamap
+   [filter] From there to flag would be: content/jira226.ditamapsubdir/startpuffC.jpg
+   [filter] Got flag file info. flagFi.uri: content/subdir/startpuffC.jpg
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] ...which relative to input map would be: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdir/startpuffC.jpg
+   [filter] And current file uri: content/jira226outer.dita
+   [filter] ...which was resolved as URI: file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226outer.dita
+   [filter] Rel path from current file to flag image: subdir/startpuffC.jpg
+   [filter] ***************** Adjusting path to image null
+   [filter]  for currentFile file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] Collected flags: 1
+   [filter] Writing start flag(s)!
+   [filter] Adjusted against path file:/C:/dcs/test/jira226/updir/content/jira226outer.dita
+   [filter] Oh and the flag is: Flag{color='null', backcolor='null', style=null, changebar='null', startflag=FlagImage{href=subdir/startpuffC.jpg, imageref='subdir/startpuffC.jpg', alt='Start the CCCC'}, endflag=null}
+   [filter] WRITING A START FLAG! HREF IS: subdir/startpuffC.jpg
+   [filter] abs = href and is not null. Adding dita-ot:imageref: subdir/startpuffC.jpg
+   [filter] Also adding dita-ot:original-imageref: subdir/startpuffC.jpg
+   [filter] Looks like checking for flags on p
+   [filter] Collected flags: 0
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\canditopics.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\conref.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\conreftargets.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\copytosource.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\fullditamap.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\fullditamapandtopic.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\fullditatopic.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\hrefditatopic.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\hreftargets.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\html.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\image.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\outditafiles.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\resourceonly.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\resourceonly.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\subjectscheme.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\subtargets.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\user.input.file.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+
+mapref-check:
+
+mapref:
+   [mapref] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+   [mapref] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / content/jira226.ditamap / file:/C:/dcs/test/jira226/updir/content/jira226.ditamap / content\jira226.ditamap
+
+branch-filter:
+[branch-filter] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+
+keyref:
+   [mapref] Transforming into C:\dcs\test\jira226\updir\content\tempOOB-checkin
+   [mapref] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\preprocess\mapref.xsl
+   [mapref] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\jira226.ditamap
+
+copy-to:
+
+conrefpush:
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\conref.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+
+conref-check:
+
+conref:
+
+profile-check:
+
+profile:
+
+topic-fragment:
+[topic-fragment] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/peer/jira226peer.dita
+[topic-fragment] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdirtest/jira226middle.dita
+[topic-fragment] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226inner.dita
+[topic-fragment] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226outer.dita
+
+chunk-check:
+
+chunk:
+    [chunk] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\fullditatopic.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\fullditamap.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\fullditamapandtopic.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\resourceonly.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+[job-helper] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\.job.xml to C:\dcs\test\jira226\updir\content\tempOOB-checkin\copytosource.list
+[job-helper] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\job-helper.xsl
+
+move-meta-entries:
+[move-meta] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+[move-meta] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226.ditamap
+[move-meta] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\preprocess\mappull.xsl
+
+maplink-check:
+
+maplink:
+  [maplink] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/peer/jira226peer.dita
+  [maplink] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226outer.dita
+  [maplink] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/jira226inner.dita
+  [maplink] Processing file:/C:/dcs/test/jira226/updir/content/tempOOB-checkin/content/subdirtest/jira226middle.dita
+
+topicpull-check:
+
+topicpull:
+[topicpull] Transforming into C:\dcs\test\jira226\updir\content\tempOOB-checkin
+[topicpull] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\preprocess\topicpull.xsl
+[topicpull] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\peer\jira226peer.dita
+[topicpull] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\subdirtest\jira226middle.dita
+[topicpull] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\jira226inner.dita
+[topicpull] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\jira226outer.dita
+
+clean-map-check:
+
+clean-map:
+[clean-map] Transforming into C:\dcs\test\jira226\updir\content\tempOOB-checkin
+[clean-map] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.base\xsl\preprocess\clean-map.xsl
+[clean-map] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\jira226.ditamap
+
+copy-image:
+
+copy-html:
+
+copy-flag-check:
+
+copy-flag:
+
+copy-files:
+
+preprocess:
+
+html5.topic.init:
+
+html5.image-metadata:
+[image-metadata] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\peer\jira226peer.dita
+[image-metadata] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\subdirtest\jira226middle.dita
+[image-metadata] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\jira226inner.dita
+[image-metadata] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\jira226outer.dita
+[image-metadata] Reading file:/C:/dcs/test/jira226/updir/content/outOOB-checkin/content/anotherpuff.png
+[image-metadata] Building file info! src/uri/result/file: file:/C:/dcs/test/jira226/updir/content/anotherpuff.png / content/anotherpuff.png / file:/C:/dcs/test/jira226/updir/content/anotherpuff.png / content\anotherpuff.png
+
+html5.topics.common:
+
+html5.topics.common.inner:
+     [xslt] Transforming into C:\dcs\test\jira226\updir\content\outOOB-checkin
+     [xslt] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.html5\xsl\dita2html5.xsl
+     [xslt] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\peer\jira226peer.dita to C:\dcs\test\jira226\updir\content\outOOB-checkin\peer\jira226peer.html
+     [xslt] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\subdirtest\jira226middle.dita to C:\dcs\test\jira226\updir\content\outOOB-checkin\content\subdirtest\jira226middle.html
+     [xslt] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\jira226inner.dita to C:\dcs\test\jira226\updir\content\outOOB-checkin\content\jira226inner.html
+     [xslt] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\jira226outer.dita to C:\dcs\test\jira226\updir\content\outOOB-checkin\content\jira226outer.html
+
+html5.topic:
+
+html5.map.init:
+
+html5.map.toc:
+     [xslt] Transforming into C:\dcs\test\jira226\updir\content\outOOB-checkin
+     [xslt] Loading stylesheet C:\github\robander\dita-ot\src\main\plugins\org.dita.html5\xsl\map2html5-cover.xsl
+     [xslt] Processing C:\dcs\test\jira226\updir\content\tempOOB-checkin\content\jira226.ditamap to C:\dcs\test\jira226\updir\content\outOOB-checkin\index.html
+
+html5.map:
+
+html5.css:
+
+html5.copy-css-user:
+
+dita2html5:
+
+clean-temp:

@@ -163,13 +163,24 @@ See the accompanying LICENSE file for applicable license.
       <xsl:if test="*//startflag|*//endflag">
         <xsl:variable name="flags" as="element()*">
           <xsl:for-each select=".//startflag|.//endflag">
+            <xsl:variable name="href" select="(@dita-ot:original-imageref, @imageref)[1]" as="xs:string?"/>
+            <xsl:message>Checking for <xsl:value-of select="$href"/> in job</xsl:message>
             <xsl:choose>
+              <xsl:when test="exists(key('jobFile', $href, $job))">
+                <xsl:message>PULLING IMAGEREF FROM JOB, translate <xsl:value-of select="$href"/> to <xsl:value-of select="key('jobFile', $href, $job)/@src"/></xsl:message>
+                <!--<xsl:value-of select="key('jobFile', $href, $job)/@src"/>-->
+                <image class="+ topic/image ditaot-d/flagimage " href="{key('jobFile', $href, $job)/@src}" placement="inline">
+                  <alt class="- topic/alt "><xsl:value-of select="alt-text"/></alt>
+                </image>
+              </xsl:when>
               <xsl:when test="@dita-ot:original-imageref">
+                <xsl:message>PUTTING OUT <xsl:value-of select="name()"/> REF WITH DITA-OT:ORIGINAL-IMAGEREF <xsl:value-of select="@dita-ot:original-imageref"/> </xsl:message>
                 <image class="+ topic/image ditaot-d/flagimage " href="{@dita-ot:original-imageref}" placement="inline">
                   <alt class="- topic/alt "><xsl:value-of select="alt-text"/></alt>
                 </image>
               </xsl:when>
               <xsl:when test="@imageref">
+                <xsl:message>PUTTING OUT <xsl:value-of select="name()"/> REF WITH IMAGEREF <xsl:value-of select="@imageref"/> </xsl:message>
                 <image class="+ topic/image ditaot-d/flagimage " href="{@imageref}" placement="inline">
                   <alt class="- topic/alt "><xsl:value-of select="alt-text"/></alt>
                 </image>

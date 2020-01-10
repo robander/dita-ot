@@ -118,6 +118,8 @@ public final class MergeDitavalModule extends AbstractPipelineModuleImpl {
                 final Element ditavalRoot = doc.getDocumentElement();
                 final NodeList rootChildren = ditavalRoot.getChildNodes();
                 logger.debug("Writing conditions from ditaval: " + curDitaVal);
+                System.err.println("Writing conditions from ditaval: " + curDitaVal);
+                System.err.println("Resolving against: " + curDitaVal.toURI().resolve("."));
                 writeConditions(export, rootChildren, curDitaVal.toURI().resolve("."));
             }
             export.writeEndElement();
@@ -164,6 +166,8 @@ public final class MergeDitavalModule extends AbstractPipelineModuleImpl {
                         final String imagerefAtt = atts.getNamedItem(ATTRIBUTE_NAME_IMAGEREF) != null ?
                                 atts.getNamedItem(ATTRIBUTE_NAME_IMAGEREF).getNodeValue() :    // DITA 1.1 and later: use @imageref on <startflag>, <endflag>
                                 atts.getNamedItem(ATTRIBUTE_NAME_IMG).getNodeValue();          // Pre-DITA 1.1: use @img on <prop>
+                        export.writeAttribute("xml", null, "base", ditavalDirectory.toString());
+                        //export.writeAttribute(DITA_OT_NS_PREFIX, DITA_OT_NAMESPACE, "basedir", imagerefAtt);
                         if (toURI(imagerefAtt).isAbsolute()) {
                             export.writeAttribute(DITA_OT_NS_PREFIX, DITA_OT_NAMESPACE, ATTRIBUTE_NAME_IMAGEREF_URI, imagerefAtt);
                         } else {

@@ -809,6 +809,42 @@ public class IntegrationTest extends AbstractIntegrationTest {
                 .errorCount(1)
                 .test();
     }
+    
+    @Test
+    public void testfilterflag_peer() throws Throwable {
+        final Path testDir = Paths.get("src", "test", "resources", "filterflag_peer", "src");
+        final String filters = asList(
+                Paths.get("filters", "revs.ditaval"),
+                Paths.get("filters", "flags.ditaval"))
+                .stream()
+                .map(path -> testDir.resolve(path).toAbsolutePath().toString())
+                .collect(Collectors.joining(File.pathSeparator));
+        builder().name("filterlist")
+                .transtype(XHTML)
+                .input(Paths.get("content", "flagpeer.ditamap"))
+                .put("args.filter", filters)
+                .put("clean.temp", "no")
+                .test();
+    }
+    
+    @Test
+    public void testfilterflag_updir() throws Throwable {
+        final Path testDir = Paths.get("src", "test", "resources", "filterflag_updir", "src");
+        final String filters = asList(
+                Paths.get("content", "revs.ditaval"),
+                Paths.get("flags", "flags.ditaval"))
+                .stream()
+                .map(path -> testDir.resolve(path).toAbsolutePath().toString())
+                .collect(Collectors.joining(File.pathSeparator));
+        builder().name("filterflag_updir")
+                .transtype(XHTML)
+                .input(Paths.get("content/flagupdir.ditamap"))
+                .put("args.filter", filters)
+                .put("args.input.dir",testDir.resolve(Paths.get("content")))
+                .put("generate.copy.outer", "3")
+                .warnCount(2)
+                .test();
+    }
 
     @Test
     public void testuplevels1() throws Throwable {

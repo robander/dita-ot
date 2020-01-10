@@ -720,23 +720,69 @@ public final class FilterUtils {
         }
 
         public Flag adjustPath(final URI currentFile, final Job job) {
+        	System.out.println("MORE DEBUG. startflag: " + startflag);
             return new Flag(proptype, color, backcolor, style, changebar,
                     adjustPath(startflag, currentFile, job),
                     adjustPath(endflag, currentFile, job));
         }
 
         private FlagImage adjustPath(final FlagImage img, final URI currentFile, final Job job) {
+        	//final String inputDir = job.getProperty("user.input.dir.uri");
+        	//final File ditavalFile = new File(job.tempDir, FILE_NAME_MERGED_DITAVAL);
+        	System.out.println("***************** Adjusting path to image " + img);
+        	System.out.println(" for currentFile " + currentFile);
             if (img == null) {
                 return img;
             }
             final URI rel;
+            if (img.imageref != null) {
+        		System.out.println("*******************");
+        		System.out.println("*******************");
+        		System.out.println("*******************");
+        		//System.out.println("input dir is " + inputDir);
+        		System.out.println("imageref is " + img.imageref);
+        		//System.out.println("make URI " + URLUtils.toURI(inputDir).resolve(img.imageref));
+        	}
+        	
+            
             final Job.FileInfo flagFi = job.getFileInfo(img.href);
             if (flagFi != null) {
                 final Job.FileInfo current = job.getFileInfo(currentFile);
-                final URI flag = job.tempDirURI.resolve(flagFi.uri);
+                //final URI flag = job.tempDirURI.resolve(flagFi.uri);
+                
+                //URI curr is absolute path to current file in temp dir; flag value is relative path against map.
+                //To get relative path from curr to flag, get path from curr to map to image.
+                final URI mapInTemp = job.tempDirURI.resolve(job.getFileInfo(job.getInputFile()).uri);
+                //final URI flag = img.imageref != null ? job.getInputFile().resolve(img.imageref) : job.tempDirURI.resolve(flagFi.uri);
+                final URI flag = img.imageref != null ? mapInTemp.resolve(img.imageref) : job.tempDirURI.resolve(flagFi.uri);
                 final URI curr = job.tempDirURI.resolve(current.uri);
+                final URI relPathToMap = URLUtils.getRelativePath(curr, job.getInputMap());
+                System.out.println("GOTTA FIX PDF");
+                System.out.println("GOTTA FIX PDF");
+                System.out.println("GOTTA FIX PDF");
+                System.out.println("OK what the heck...." + 
+                "\n+++ mapInTemp: " + mapInTemp +
+                "\n+++ mapInTemp maybe should have been?: " + job.tempDirURI.resolve(job.getFileInfo(job.getInputFile()).uri) +
+                "\n+++ imageref against mapInTemp: " + mapInTemp.resolve(img.imageref) +
+                "\n+++ getInputFile: " + job.getInputFile() 
+                + "\n+++ getInputMap: " + job.getInputMap() 
+                + "\n+++ input map against temp dir: " + job.tempDirURI.resolve(job.getInputMap())
+                + "\n+++ flag against input map in temp dir: " + job.tempDirURI.resolve(job.getInputMap()).resolve(img.imageref));
+                System.out.println("imageref was: " + img.imageref);
+                System.out.println("href was: " + img.href);
+                System.out.println("Relative path to map would be: " + relPathToMap);
+                System.out.println("From there to flag would be: " + relPathToMap + img.imageref);
+                
+
+            	System.out.println("Got flag file info. flagFi.uri: " + flagFi.uri);
+            	System.out.println("...which was resolved as URI: " + flag);
+            	System.out.println("...which relative to input map would be: " + job.getInputFile().resolve(flag));
+                System.out.println("And current file uri: " + current.uri);
+                System.out.println("...which was resolved as URI: " + curr);
                 rel = URLUtils.getRelativePath(curr, flag);
+                System.out.println("Rel path from current file to flag image: " + rel);
             } else {
+            	System.out.print("Flag info was null, using " + img.href);
                 rel = img.href;
             }
             return new FlagImage(rel, img.alt);
@@ -948,19 +994,37 @@ public final class FilterUtils {
 
         public static class FlagImage {
             public final URI href;
+            public final URI imageref;
             public final String alt;
 
             public FlagImage(URI href, String alt) {
                 this.href = href;
+                this.imageref = href;
+                this.alt = alt;
+                System.err.println("CREATING NEW FLAGIMAGE " + href);
+                System.err.println("  href and imageref: " + href);
+                System.err.println("  alt: " + alt);
+            }
+            
+            public FlagImage(URI href, URI imageref, String alt) {
+                System.err.println("CREATING NEW FLAGIMAGE " + imageref);
+                System.err.println("  href: " + href);
+                System.err.println("  imageref: " + imageref);
+                System.err.println("  alt: " + alt);
+                this.href = href;
+                this.imageref = imageref;
                 this.alt = alt;
             }
 
             private void writeFlag(final ContentHandler contentHandler, final String tag) throws SAXException {
+            	System.out.println("WRITING A START FLAG! HREF IS: " + href);
                 final XMLUtils.AttributesBuilder propAtts = new XMLUtils.AttributesBuilder().add("action", "flag");
                 final URI abs = href;
                 if (abs != null) {
+                	System.out.println("abs = href and is not null. Adding dita-ot:imageref: " + abs.toString());
                     propAtts.add(DITA_OT_NS, ATTRIBUTE_NAME_IMAGEREF_URI, "dita-ot:" + ATTRIBUTE_NAME_IMAGEREF_URI, "CDATA", abs.toString());
                     final URI rel = abs;
+                    System.out.println("Also adding dita-ot:original-imageref: " + rel.toString());
                     propAtts.add(DITA_OT_NS, "original-" + ATTRIBUTE_NAME_IMAGEREF, "dita-ot:original-" + ATTRIBUTE_NAME_IMAGEREF, "CDATA", rel.toString());
                     propAtts.add(ATTRIBUTE_NAME_IMAGEREF, rel.toString());
                 }
@@ -996,6 +1060,7 @@ public final class FilterUtils {
             public String toString() {
                 return "FlagImage{" +
                         "href=" + href +
+                        ", imageref='" + imageref + '\'' +
                         ", alt='" + alt + '\'' +
                         '}';
             }

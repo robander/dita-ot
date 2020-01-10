@@ -80,7 +80,10 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
 
     /** Set of all images used for flagging */
     private final Set<URI> flagImageSet;
-
+    
+    /** Map of flag images URIs absolute + relative to DITAVAL **/ 
+    private final Map<URI, URI> flagImagesMap;
+    
     /** Set of all HTML and other non-DITA or non-image files */
     private final SetMultimap<String, URI> htmlSet;
 
@@ -164,6 +167,7 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
         conrefSet = new HashSet<>(128);
         formatSet = new HashSet<>();
         flagImageSet = new LinkedHashSet<>(128);
+        flagImagesMap = new HashMap<>();
         htmlSet = SetMultimapBuilder.hashKeys().hashSetValues().build();
         hrefTargetSet = new HashSet<>(128);
         coderefTargetSet = new HashSet<>(16);
@@ -653,6 +657,9 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
             ditaValReader.read(ditavalFile.toURI());
             flagImageSet.addAll(ditaValReader.getImageList());
             relFlagImagesSet.addAll(ditaValReader.getRelFlagImageList());
+            flagImagesMap.putAll(ditaValReader.getFlagImageMap());
+            //flagImageList.addAll(ditaValReader.getImageList());
+            //relFlagImageList.addAll(ditaValReader.getRelFlagImageList());
             filterUtils = new FilterUtils(printTranstype.contains(transtype), ditaValReader.getFilterMap(),
                     ditaValReader.getForegroundConflictColor(), ditaValReader.getBackgroundConflictColor());
         } else {
@@ -747,11 +754,36 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
         for (final Reference file: formatSet) {
             getOrCreateFileInfo(fileinfos, file.filename).format = file.format;
         }
+        
+    /*
+     * final Iterator<URI> it = flagImageList.iterator(); final Iterator<URI> itRel
+     * = relFlagImageList.iterator(); while (it.hasNext()) { final URI debugnext =
+     * it.next();
+     * 
+     * final URI debugrelnext = itRel.next();
+     * System.out.println("TRYING THIS OUT AS A WHILE LIST THING");
+     * System.out.println("Get or create file info for: " + debugnext);
+     * System.out.println("The rel path is: " + debugrelnext);
+     * System.out.println(" -- first check if it's there? " +
+     * job.getFileInfo(debugnext)); //System.out.println("Matching relflag item: " +
+     * relFlagImagesSet); final FileInfo f = getOrCreateFileInfo(fileinfos,
+     * debugnext); System.out.println("And it is: " + f); f.isFlagImage = true;
+     * f.format = ATTR_FORMAT_VALUE_IMAGE; }
+     */
+        
+        
+    
         for (final URI file: flagImageSet) {
-            final FileInfo f = getOrCreateFileInfo(fileinfos, file);
-            f.isFlagImage = true;
-            f.format = ATTR_FORMAT_VALUE_IMAGE;
+            System.out.println("Get or create file info for: " + file);
+            System.out.println(" -- first check if it's there? " + job.getFileInfo(file)); 
+            System.out.println("Matching relpath item: " + flagImagesMap.get(file));
+      //        final FileInfo f = getOrCreateFileInfo(fileinfos, file);
+            final FileInfo f = getOrCreateFlagImageFileInfo(fileinfos, file, flagImagesMap.get(file));
+            System.out.println("And it is: " + f);
+            f.isFlagImage = true; 
+            f.format = ATTR_FORMAT_VALUE_IMAGE; 
         }
+         
         for (final String format: htmlSet.keySet()) {
             for (final URI file : htmlSet.get(format)) {
                 getOrCreateFileInfo(fileinfos, file).format = format;
@@ -890,13 +922,57 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
     private FileInfo getOrCreateFileInfo(final Map<URI, FileInfo> fileInfos, final URI file) {
         assert file.getFragment() == null;
         final URI f = file.normalize();
+        System.out.println("+ file.normalize(): " + f);
         FileInfo.Builder b;
         if (fileInfos.containsKey(f)) {
+            System.out.println("+ already had info for that normalized file");
             b = new FileInfo.Builder(fileInfos.get(f));
         } else {
-            b = new FileInfo.Builder().src(file);
+            System.out.println("+ creating file info for file");
+            b = new FileInfo.Builder().src(file).result(file);
         }
+        System.out.println(" DEBUG creating uri " + tempFileNameScheme.generateTempFileName(file));
+        System.out.println(" DEBUG creating uri " + tempFileNameScheme.generateTempFileName(file));
         b = b.uri(tempFileNameScheme.generateTempFileName(file));
+        final FileInfo i = b.build();
+        fileInfos.put(i.src, i);
+        return i;
+    }
+    
+    /** Treat flag image references as if they are relative to the input dir.
+     * @param fileInfos
+     * @param file
+     * @param file
+     * @return
+     */
+    private FileInfo getOrCreateFlagImageFileInfo(final Map<URI, FileInfo> fileInfos, final URI file, final URI relpath) {
+        assert file.getFragment() == null;
+        final URI f = file.normalize();
+        System.out.println("getOrCreateFlagImageFileInfo in genMapAndTopicListmodule");
+        System.out.println("getOrCreateFlagImageFileInfo in genMapAndTopicListmodule");
+        System.out.println("getOrCreateFlagImageFileInfo in genMapAndTopicListmodule");
+        System.out.println("getOrCreateFlagImageFileInfo in genMapAndTopicListmodule");
+        System.out.println("+ file.normalize(): " + f);
+        FileInfo.Builder b;
+        if (fileInfos.containsKey(f)) {
+            System.out.println("+ already had info for that normalized file");
+            b = new FileInfo.Builder(fileInfos.get(f));
+        } else {
+            System.out.println("+ creating file info for file");
+            b = new FileInfo.Builder().src(file);
+        }//RDA
+        System.out.println("********************************");
+        System.out.println("SOMEHOW I DIDN'T HAVE relpath: " + relpath);
+        System.out.println("SOMEHOW I DIDN'T HAVE and also file: " + file);
+        System.out.println(" DEBUG creating uri relpath " + tempFileNameScheme.generateTempFileName(relpath));
+        System.out.println(" DEBUG2 creating uri abspath " + tempFileNameScheme.generateTempFileName(file));
+        System.out.println("Or maybe make it relative to base input dir: " + baseInputDir);
+        System.out.println("Which would make: " + baseInputDir.resolve(relpath));
+        //b = b.uri(tempFileNameScheme.generateTempFileName(baseInputDir.resolve(relpath)));
+        System.out.println("Or maybe make it relative to MAP FILE!!!!: " + rootFile);
+        System.out.println("Which would make: " + rootFile.resolve(relpath));
+        System.out.println("Which generates a temp file name: " + tempFileNameScheme.generateTempFileName(rootFile.resolve(relpath)));
+        b = b.uri(tempFileNameScheme.generateTempFileName(rootFile.resolve(relpath)));
         final FileInfo i = b.build();
         fileInfos.put(i.src, i);
         return i;
@@ -1013,6 +1089,7 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
         public URI generateTempFileName(final URI src) {
             assert src.isAbsolute();
             //final URI b = baseInputDir.toURI();
+            System.out.println("tfn1, src: " + src);
             final URI rel = toURI(b.relativize(src).toString());
             return rel;
         }
@@ -1022,6 +1099,7 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
         @Override
         public URI generateTempFileName(final URI src) {
             assert src.isAbsolute();
+            System.out.println("tfn2, src: " + src);
             final URI rel = toURI(src.getPath().substring(1));
             return rel;
         }

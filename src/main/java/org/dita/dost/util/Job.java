@@ -799,6 +799,7 @@ public final class Job {
             public Builder isInput(final boolean isInput) { this.isInput = isInput; return this; }
 
             public FileInfo build() {
+            	System.out.println("Building file info! src/uri/result/file: " + src + " / " + uri + " / " + result + " / " + file);
                 if (uri == null && file == null) {
                     throw new IllegalStateException("uri and file may not be null");
                 }

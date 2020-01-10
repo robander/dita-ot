@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?><val xmlns:dita-ot="http://dita-ot.sourceforge.net">
+<prop action="flag" att="platform" val="A">
+<startflag xml:base="file:/C:/dcs/test/jira226/simple/ditavaldir/" dita-ot:imagerefuri="file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffA.jpg" imageref="startpuffA.jpg"><alt-text>Start the AAAA</alt-text></startflag></prop>
+<prop action="flag" att="platform" val="B">
+<startflag xml:base="file:/C:/dcs/test/jira226/simple/ditavaldir/" dita-ot:imagerefuri="file:/C:/dcs/test/jira226/simple/ditavaldir/startpuffB.jpg" imageref="startpuffB.jpg"><alt-text>Start the BBBB</alt-text></startflag></prop>
+<prop action="flag" att="platform" val="C">
+<startflag xml:base="file:/C:/dcs/test/jira226/simple/ditavaldir/" dita-ot:imagerefuri="file:/C:/dcs/test/jira226/simple/ditavaldir/subdir/startpuffC.jpg" imageref="subdir/startpuffC.jpg"><alt-text>Start the CCCC</alt-text></startflag></prop>
+
+   <revprop action="flag" changebar="solid" val="flags">
+<startflag xml:base="file:/C:/dcs/test/jira226/simple/ditavaldir/" dita-ot:imagerefuri="file:/C:/dcs/test/jira226/simple/ditavaldir/startpuff.png" imageref="startpuff.png"><alt-text>this starts the rev</alt-text></startflag>
+<endflag xml:base="file:/C:/dcs/test/jira226/simple/ditavaldir/" dita-ot:imagerefuri="file:/C:/dcs/test/jira226/simple/ditavaldir/endpuff.png" imageref="endpuff.png"><alt-text>this ends the rev</alt-text></endflag></revprop>
+<revprop action="flag" val="svg">
+  <startflag xml:base="file:/C:/dcs/test/jira226/simple/ditavaldir/" dita-ot:imagerefuri="file:/C:/dcs/test/jira226/simple/ditavaldir/startchange.svg" imageref="startchange.svg"><alt-text>this starts the rev</alt-text></startflag>
+  <endflag xml:base="file:/C:/dcs/test/jira226/simple/ditavaldir/" dita-ot:imagerefuri="file:/C:/dcs/test/jira226/simple/ditavaldir/endchange.svg" imageref="endchange.svg"><alt-text>this ends the rev</alt-text></endflag></revprop>
+</val>

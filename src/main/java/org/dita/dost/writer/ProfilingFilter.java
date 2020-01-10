@@ -118,11 +118,16 @@ public final class ProfilingFilter extends AbstractXMLFilter {
                 prefixes.clear();
                 getContentHandler().startElement(uri, localName, qName, atts);
                 if (doFlag && cls.isValid()) {
-                    flags = filterUtils.stream()
+                	System.out.println("Looks like checking for flags on " + localName);
+                	flags = filterUtils.stream()
                             .flatMap(f -> f.getFlags(atts, props).stream())
                             .map(f -> f.adjustPath(currentFile, job))
                             .collect(Collectors.toSet());
+                	System.out.println("Collected flags: " + flags.size());
                     for (final Flag flag: flags) {
+                    	System.out.println("Writing start flag(s)!");
+                    	System.out.println("Adjusted against path " + currentFile);
+                    	System.out.println("Oh and the flag is: " + flag);
                         flag.writeStartFlag(getContentHandler());
                     }
                 }
