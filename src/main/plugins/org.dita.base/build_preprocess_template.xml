@@ -225,9 +225,11 @@ See the accompanying LICENSE file for applicable license.
   </target>
   
   <target name="branch-filter">
+    
     <pipeline taskname="branch-filter" message="Filter branches">
       <module class="org.dita.dost.module.BranchFilterModule"/>
     </pipeline>
+    <fail/>
   </target>
   
   <!-- conref push

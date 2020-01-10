@@ -467,6 +467,7 @@ public class BranchFilterModule extends AbstractPipelineModuleImpl {
             final List<Element> branches = new ArrayList<>(ditavalRefs.size());
             branches.add(elem);
             final Node next = elem.getNextSibling();
+            //TODO: handle case of ditavalref at root #2865
             for (int i = 1; i < ditavalRefs.size(); i++) {
                 final Element clone = (Element) elem.cloneNode(true);
                 if (next != null) {
