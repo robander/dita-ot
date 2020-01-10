@@ -21,6 +21,9 @@ import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.StringTokenizer;
 
+import org.dita.dost.exception.DITAOTException;
+import org.dita.dost.log.MessageUtils;
+
 /**
  * Corrects the URLs.
  */
@@ -439,12 +442,21 @@ public final class URLUtils {
         if (filename == null) {
             return null;
         }
+        //try {
         final URI f = stripFragment(filename);
+        
         if ("file".equals(f.getScheme()) && f.getPath() != null && f.isAbsolute()) {
+            System.err.println("First one. Working with ["+ f + "]");
             return new File(f);
         } else {
+            System.err.println("second one");
             return toFile(f.toString());
         }
+        //}  catch (final IllegalArgumentException e) {
+            //RDA DITAOTEXCEPTION
+        //    throw new Exception(MessageUtils.getMessage("DOTJ082E", filename.toString()).toString() + " " + e);
+            //throw e;
+        //}
     }
 
     /**
@@ -485,7 +497,9 @@ public final class URLUtils {
             try {
                 return new URI(clean(file.getPath().replace(WINDOWS_SEPARATOR, URI_SEPARATOR).trim(), false));
             } catch (final URISyntaxException e) {
-                throw new IllegalArgumentException(e.getMessage(), e);
+                throw new IllegalArgumentException("url1" + e.getMessage(), e);
+            } catch (final Exception e) {
+                throw new IllegalArgumentException("CANNOT HANDLE THIS URI! " + file + e.getMessage(), e);
             }
         }
     }
@@ -509,8 +523,10 @@ public final class URLUtils {
             try {
                 return new URI(clean(file.replace(WINDOWS_SEPARATOR, URI_SEPARATOR).trim(), false));
             } catch (final URISyntaxException ex) {
-                throw new IllegalArgumentException(ex.getMessage(), ex);
+                throw new IllegalArgumentException("url2" + ex.getMessage(), ex);
             }
+        } catch (final Exception e) {
+            throw new IllegalArgumentException("CANNOT HANDLE THIS URI EITHER! " + file + e.getMessage(), e);
         }
     }
 
@@ -658,7 +674,7 @@ public final class URLUtils {
             try {
                 rel = new URI(null, null, upPathBuffer.toString(), null, null);
             } catch (final URISyntaxException e) {
-                throw new IllegalArgumentException(e);
+                throw new IllegalArgumentException("url3" + e);
             }
         }
 
@@ -726,7 +742,7 @@ public final class URLUtils {
         } else if (id == null) {
             return stripFragment(relativePath);
         } else {
-            throw new IllegalArgumentException(relativePath.toString());
+            throw new IllegalArgumentException("url4" + relativePath.toString());
         }
     }
 

@@ -147,7 +147,8 @@ public final class DitaWriterFilter extends AbstractXMLFilter {
             String attValue = origValue;
             if (ATTRIBUTE_NAME_CONREF.equals(attQName.getLocalPart())) {
                 attValue = replaceHREF(QName.valueOf(ATTRIBUTE_NAME_CONREF), atts).toString();
-            } else if (ATTRIBUTE_NAME_HREF.equals(attQName.getLocalPart()) || ATTRIBUTE_NAME_COPY_TO.equals(attQName.getLocalPart())) {
+            } else if (ATTRIBUTE_NAME_HREF.equals(attQName.getLocalPart()) || ATTRIBUTE_NAME_COPY_TO.equals(attQName.getLocalPart()) || 
+                    ATTRIBUTE_NAME_HREF.equals(attQName.getLocalPart())) {
                 if (atts.getValue(ATTRIBUTE_NAME_SCOPE) == null ||
                         atts.getValue(ATTRIBUTE_NAME_SCOPE).equals(ATTR_SCOPE_VALUE_LOCAL)) {
                     attValue = replaceHREF(attQName, atts).toString();

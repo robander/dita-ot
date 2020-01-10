@@ -198,10 +198,14 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
 
             addToWaitList(new Reference(rootFile));
             processWaitList();
+            System.err.println("OK I finished processing the wait list");
 
             updateBaseDirectory();
+System.err.println("I updated the base directory");
             handleConref();
+            System.err.println("I handled conref");
             outputResult();
+            System.err.println("I outputted results");
         } catch (final DITAOTException e) {
             throw e;
         } catch (final Exception e) {
@@ -315,7 +319,9 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
 
     private void processWaitList() throws DITAOTException {
         while (!waitList.isEmpty()) {
+System.err.println("Going to parse a file on the wait list!!!");        
             processFile(waitList.remove());
+System.err.println("Processed a file on the wait list!");            
         }
     }
 
@@ -369,6 +375,7 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
      * @throws DITAOTException if processing failed
      */
     private void processFile(final Reference ref) throws DITAOTException {
+    System.err.println("In processFile");
         currentFile = ref.filename;
         assert currentFile.isAbsolute();
         logger.info("Processing " + currentFile);
@@ -382,8 +389,9 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
                 xmlSource = f;
             }
             xmlSource.setContentHandler(nullHandler);
-
+System.err.println("genmaptopiclistmodule - about to parse " + currentFile);
             xmlSource.parse(currentFile.toString());
+System.err.println("genmaptopiclistmodule PARSED " + currentFile);            
 
             if (listFilter.isValidInput()) {
                 processParseResult(currentFile);
@@ -561,11 +569,13 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
         if (listFilter.getCoderefTargets().contains(file.filename)) {
             return;
         }
+        System.err.println("CATEGORIZING FILE " + file.filename);
         if (isFormatDita(file.format) && listFilter.isDitaTopic() &&
                 !job.crawlTopics() &&
                 !listFilter.getConrefTargets().contains(file.filename)) {
             return;  // Do not process topics linked from within topics
         } else if ((isFormatDita(file.format) || ATTR_FORMAT_VALUE_DITAMAP.equals(file.format))) {
+        System.err.println("Adding a file to wait list: " + file.filename);
             addToWaitList(file);
         } else if (ATTR_FORMAT_VALUE_IMAGE.equals(file.format)) {
             formatSet.add(file);
@@ -575,6 +585,7 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
         } else if (ATTR_FORMAT_VALUE_DITAVAL.equals(file.format)) {
             formatSet.add(file);
         } else {
+        System.err.println("PUTTING IN HTML SET! format=" + file.format + ", filename=" + file.filename);
             htmlSet.put(file.format, file.filename);
         }
     }
@@ -695,14 +706,16 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
         } catch (InstantiationException | IllegalAccessException | ClassNotFoundException e) {
             throw new RuntimeException(e);
         }
+        System.err.println("I set up a temp name scheme");
         tempFileNameScheme.setBaseDir(baseInputDir);
 
         // assume empty Job
         final URI rootTemp = tempFileNameScheme.generateTempFileName(rootFile);
         final File relativeRootFile = toFile(rootTemp);
-
+System.err.println("I set up the temp directory"); 
         job.setInputDir(baseInputDir);
         job.setInputMap(rootTemp);
+        System.err.println("I set input dir and input map");
         
         //If root input file is marked resource only due to conref or other feature, remove that designation
         if (resourceOnlySet.contains(rootFile)) {
@@ -712,18 +725,21 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
         job.setProperty(INPUT_DITAMAP_LIST_FILE_LIST, USER_INPUT_FILE_LIST_FILE);
         final File inputfile = new File(job.tempDir, USER_INPUT_FILE_LIST_FILE);
         writeListFile(inputfile, relativeRootFile.toString());
+        System.err.println("I wrote list file");
 
         job.setProperty("tempdirToinputmapdir.relative.value", StringUtils.escapeRegExp(getPrefix(relativeRootFile)));
         job.setProperty("uplevels", getLevelsPath(rootTemp));
-
         resourceOnlySet.addAll(listFilter.getResourceOnlySet());
+System.err.println("I got resourceOnlySet");
 
         if (job.getOnlyTopicInMap() || !job.crawlTopics()) {
             resourceOnlySet.addAll(listFilter.getNonTopicrefReferenceSet());
         }
-
+System.err.println("I updated resource only set with non topicref references");
         for (final URI file: outDitaFilesSet) {
+        System.err.println("get or create file info for: " + file);
             getOrCreateFileInfo(fileinfos, file).isOutDita = true;
+            System.err.println("got or created! for " + file);
         }
         for (final URI file: fullTopicSet) {
             final FileInfo ff = getOrCreateFileInfo(fileinfos, file);
@@ -744,22 +760,30 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
                 f.format = sourceFormat.get(f.src);
             }
         }
+        System.err.println("I finished setting a bunch of format stuff");
         for (final URI file: conrefSet) {
             getOrCreateFileInfo(fileinfos, file).hasConref = true;
         }
+        System.err.println("I got or created for conref");
         for (final Reference file: formatSet) {
             getOrCreateFileInfo(fileinfos, file.filename).format = file.format;
         }
+        System.err.println("I got or created for format");
         for (final URI file: flagImageSet) {
             final FileInfo f = getOrCreateFileInfo(fileinfos, file);
             f.isFlagImage = true;
             f.format = ATTR_FORMAT_VALUE_IMAGE;
         }
+        System.err.println("I looped flagImageSet");
         for (final String format: htmlSet.keySet()) {
+        System.err.println("Looping htmlSet with format " + format);
             for (final URI file : htmlSet.get(format)) {
+            System.err.println("getting or creating file " + file);
                 getOrCreateFileInfo(fileinfos, file).format = format;
+            System.err.println("got or created it! " + file);
             }
         }
+        System.err.println("I looped htmlSet");
         for (final URI file: hrefTargetSet) {
             final FileInfo f = getOrCreateFileInfo(fileinfos, file);
             f.isTarget = true;
@@ -767,6 +791,7 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
                 f.format = sourceFormat.get(f.src);
             }
         }
+        System.err.println("I looped over hrefTargetSet");
         for (final URI file: schemeSet) {
             getOrCreateFileInfo(fileinfos, file).isSubjectScheme = true;
         }
@@ -789,6 +814,7 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
         for (final URI file: resourceOnlySet) {
             getOrCreateFileInfo(fileinfos, file).isResourceOnly = true;
         }
+        System.err.println("I looped over resourceonlySet");
 
         addFlagImagesSetToProperties(job, relFlagImagesSet);
 
@@ -800,8 +826,10 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
                 // correct copy-to
                 if (src != null) {
                     final FileInfo corr = new FileInfo.Builder(fs).src(src).build();
+                    System.err.println("I'm adding to job: " + corr);
                     job.add(corr);
                 } else {
+                System.err.println("I'm really adding to job: " + fs);
                     job.add(fs);
                 }
             }
@@ -891,17 +919,31 @@ public final class GenMapAndTopicListModule extends SourceReaderModule {
     }
 
     private FileInfo getOrCreateFileInfo(final Map<URI, FileInfo> fileInfos, final URI file) {
+    //try {
+        System.err.println("getting or creating file " + file);
         assert file.getFragment() == null;
+        System.err.println("fragment is null " + file);
         final URI f = file.normalize();
+        System.err.println("normalized to: " + f);
         FileInfo.Builder b;
         if (fileInfos.containsKey(f)) {
+        System.err.println("building file info1 " + f);
             b = new FileInfo.Builder(fileInfos.get(f));
         } else {
+        System.err.println("building file info2 " + f);
             b = new FileInfo.Builder().src(file);
         }
         b = b.uri(tempFileNameScheme.generateTempFileName(file));
-        final FileInfo i = b.build();
+        System.err.println("got temp file name " + b);
+        FileInfo i = null;
+        try {
+            i = b.build();
+        } catch (final Exception e) {
+            logger.error("HEY! I FAILED TRYING TO WORK WITH FILE " + file + ". " + e);
+        }
+        System.err.println("built " + b);
         fileInfos.put(i.src, i);
+        System.err.println("put file info");
         return i;
     }
 

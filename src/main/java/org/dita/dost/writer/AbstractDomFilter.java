@@ -45,6 +45,7 @@ public abstract class AbstractDomFilter implements AbstractReader {
             builder.setErrorHandler(new DITAOTXMLErrorHandler(filename.getPath(), logger));
             logger.debug("Reading " + filename.toURI());
             doc = builder.parse(filename);
+System.err.println("abstract dom fileter finished parsing: " + filename);
         } catch (final RuntimeException e) {
             throw e;
         } catch (final Exception e) {

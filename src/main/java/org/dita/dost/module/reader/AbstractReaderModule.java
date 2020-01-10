@@ -305,7 +305,9 @@ public abstract class AbstractReaderModule extends AbstractPipelineModuleImpl {
      * @throws DITAOTException if processing failed
      */
     void readFile(final Reference ref, final URI parseFile) throws DITAOTException {
+        System.err.println("Reading file abstractly: " + parseFile);
         currentFile = ref.filename;
+        System.err.println("(File name from reference: " + currentFile + ")");
         assert currentFile.isAbsolute();
         final URI src = parseFile != null ? parseFile : currentFile;
         assert src.isAbsolute();
@@ -334,6 +336,7 @@ public abstract class AbstractReaderModule extends AbstractPipelineModuleImpl {
         }
 
 //        InputSource in = null;
+        System.err.println("Set stuff up, now read: " + parseFile);
         Result out = null;
         try {
             final TransformerFactory tf = TransformerFactory.newInstance();
@@ -420,6 +423,7 @@ public abstract class AbstractReaderModule extends AbstractPipelineModuleImpl {
                 FileUtils.deleteQuietly(outputFile);
             }
         }
+        System.err.println("Finished reading file abstractly: " + parseFile);
 
         if (!listFilter.isValidInput() && currentFile.equals(rootFile)) {
             if (validate) {
@@ -434,6 +438,7 @@ public abstract class AbstractReaderModule extends AbstractPipelineModuleImpl {
         doneList.add(currentFile);
         listFilter.reset();
         keydefFilter.reset();
+        System.err.println("Done with file abstractly: " + parseFile);
 
     }
 

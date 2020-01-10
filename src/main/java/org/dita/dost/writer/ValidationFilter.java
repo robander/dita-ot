@@ -85,6 +85,7 @@ public final class ValidationFilter extends AbstractXMLFilter {
         modified = validateId(localName, atts, modified);
         modified = validateReference(ATTRIBUTE_NAME_HREF, atts, modified);
         modified = validateReference(ATTRIBUTE_NAME_CONREF, atts, modified);
+        modified = validateReference(ATTRIBUTE_NAME_DATA, atts, modified);
         modified = validateScope(atts, modified);
         modified = processFormatDitamap(atts, modified);
         validateKeys(atts);

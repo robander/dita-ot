@@ -648,7 +648,7 @@ public final class GenListModuleReader extends AbstractXMLFilter {
         if (TOPIC_IMAGE.matches(attrClass)) {
             return ATTR_FORMAT_VALUE_IMAGE;
         } else if (TOPIC_OBJECT.matches(attrClass)) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("genlistmodulereader iae");
             //return ATTR_FORMAT_VALUE_HTML;
         } else {
             return atts.getValue(ATTRIBUTE_NAME_FORMAT);

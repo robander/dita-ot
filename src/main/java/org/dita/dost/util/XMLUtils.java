@@ -347,7 +347,7 @@ public final class XMLUtils {
      */
     public static void addOrSetAttribute(final AttributesImpl atts, final Node att) {
         if (att.getNodeType() != Node.ATTRIBUTE_NODE) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("xmlUtils");
         }
         final Attr a = (Attr) att;
         String localName = a.getLocalName();
@@ -898,12 +898,14 @@ public final class XMLUtils {
         public void parse(InputSource input) throws IOException, SAXException {
             System.out.println("SAX parse: " + (input.getSystemId() != null ? input.getSystemId() : input.toString()));
             r.parse(input);
+System.err.println("SAX PARSED1: " + input.toString());            
         }
 
         @Override
         public void parse(String systemId) throws IOException, SAXException {
             System.out.println("SAX parse: " + systemId);
             r.parse(systemId);
+            System.err.println("SAX PARSED2: " + systemId);
         }
     }
 

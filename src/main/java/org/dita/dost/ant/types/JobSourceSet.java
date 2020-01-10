@@ -78,7 +78,7 @@ public class JobSourceSet extends AbstractFileSet implements ResourceCollection 
                         final JobResource r = new JobResource(job.getInputDir().toURL(), f.uri.toString());
                         res.add(r);
                     } catch (final MalformedURLException e) {
-                        throw new IllegalArgumentException(e);
+                        throw new IllegalArgumentException("jobsourceset IAE" + e);
                     }
                     isFilesystemOnly = false;
                 }

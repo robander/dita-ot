@@ -30,6 +30,8 @@ import javax.xml.stream.XMLOutputFactory;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.stream.XMLStreamWriter;
 
+import org.dita.dost.exception.DITAOTException;
+import org.dita.dost.log.MessageUtils;
 import org.dita.dost.module.GenMapAndTopicListModule;
 import org.dita.dost.module.GenMapAndTopicListModule.TempFileNameScheme;
 import org.xml.sax.Attributes;
@@ -166,13 +168,16 @@ public final class Job {
      * @throws IllegalStateException if configuration files are missing
      */
     private void read() throws IOException {
+System.err.println("STARTING JOB READ TASK");    
         lastModified = jobFile.lastModified();
         if (jobFile.exists()) {
+        System.err.println("JOB FILE EXISTS");
             try (final InputStream in = new FileInputStream(jobFile)) {
                 final XMLReader parser = XMLUtils.getXMLReader();
                 parser.setContentHandler(new JobHandler(prop, files));
-
+System.err.println("GONNA PARSE JOB FILE");
                 parser.parse(new InputSource(in));
+System.err.println("PARSED JOB FILE");
             } catch (final SAXException e) {
                 throw new IOException("Failed to read job file: " + e.getMessage());
             }
@@ -621,10 +626,18 @@ public final class Job {
         public boolean isInput;
 
         FileInfo(final URI src, final URI uri, final File file) {
+            System.err.println("OK, here I am, src: " + src + ", uri: " + uri + ", file: " + file);
             if (uri == null && file == null) throw new IllegalArgumentException(new NullPointerException());
             this.src = src;
-            this.uri = uri != null ? uri : toURI(file);
-            this.file = uri != null ? toFile(uri) : file;
+            try {
+            System.err.println("gonna do uri " + uri);
+                this.uri = uri != null ? uri : toURI(file);
+                System.err.println("Gonna do file " + file);
+                this.file = uri != null ? toFile(uri) : file;
+            } catch (final Exception e) {
+                throw new IllegalArgumentException ("Heyyyy what's up hereereeee: " + uri);
+            }
+                System.err.println("Did both");
             this.result = src;
         }
         FileInfo(final URI uri) {
@@ -802,7 +815,9 @@ public final class Job {
                 if (uri == null && file == null) {
                     throw new IllegalStateException("uri and file may not be null");
                 }
+                System.err.println("Maybe I'm here in build! with src: "+ src + ", uri: " + uri + ", file: " + file);
                 final FileInfo fi = new FileInfo(src, uri, file);
+                System.err.println("did that work?");
                 if (result != null) {
                     fi.result = result;
                 }
@@ -854,7 +869,7 @@ public final class Job {
                     return g;
                 }
             }
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException("Job IAE");
         }
     }
 

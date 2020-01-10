@@ -89,7 +89,7 @@ public class JobMapper implements FileNameMapper {
                 }
                 break;
             default:
-                throw new IllegalArgumentException();
+                throw new IllegalArgumentException("jobMapper IAE");
         }
         return new String[]{extension != null ? (FilenameUtils.removeExtension(res) + extension) : res};
     }
