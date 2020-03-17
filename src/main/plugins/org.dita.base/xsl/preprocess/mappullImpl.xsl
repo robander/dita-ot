@@ -935,7 +935,7 @@ Other modes can be found within the code, and may or may not prove useful for ov
         </xsl:variable>
         <xsl:if test="not($linktext='#none#')">
           <xsl:apply-templates select="." mode="mappull:add-gentext-PI"/>
-          <linktext class="- topic/linktext ">
+          <linktext class="- map/linktext ">
             <xsl:copy-of select="$linktext"/>
           </linktext>
         </xsl:if>
@@ -1004,7 +1004,7 @@ Other modes can be found within the code, and may or may not prove useful for ov
             test="($target[contains(@class, $classval)])[1]/*[contains(@class, ' topic/shortdesc ')]|
                   ($target[contains(@class, $classval)])[1]/*[contains(@class, ' topic/abstract ')]/*[contains(@class, ' topic/shortdesc ')]">
           <xsl:apply-templates select="." mode="mappull:add-genshortdesc-PI"/>
-          <shortdesc class="- topic/shortdesc ">
+          <shortdesc class="- map/shortdesc ">
             <xsl:apply-templates select="($target[contains(@class, $classval)])[1]/*[contains(@class, ' topic/shortdesc ')] |
                                          ($target[contains(@class, $classval)])[1]/*[contains(@class, ' topic/abstract ')]/*[contains(@class, ' topic/shortdesc ')]" mode="copy-shortdesc">
               <xsl:with-param name="map-uri" select="$map-uri" tunnel="yes"/>
@@ -1018,7 +1018,7 @@ Other modes can be found within the code, and may or may not prove useful for ov
             test="($doc//*[contains(@class, ' topic/topic ')])[1]/*[contains(@class, ' topic/shortdesc ')]|
                   ($doc//*[contains(@class, ' topic/topic ')])[1]/*[contains(@class, ' topic/abstract ')]/*[contains(@class, ' topic/shortdesc ')]">
           <xsl:apply-templates select="." mode="mappull:add-genshortdesc-PI"/>
-          <shortdesc class="- topic/shortdesc ">
+          <shortdesc class="- map/shortdesc ">
             <xsl:apply-templates
               select="($doc//*[contains(@class, ' topic/topic ')])[1]/*[contains(@class, ' topic/shortdesc ')]|
                       ($doc//*[contains(@class, ' topic/topic ')])[1]/*[contains(@class, ' topic/abstract ')]/*[contains(@class, ' topic/shortdesc ')]"

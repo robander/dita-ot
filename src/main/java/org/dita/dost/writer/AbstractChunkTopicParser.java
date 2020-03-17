@@ -385,7 +385,7 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
 
             // append linktext
             final Element linkTextNode = doc.createElement(TOPIC_LINKTEXT.localName);
-            linkTextNode.setAttribute(ATTRIBUTE_NAME_CLASS, TOPIC_LINKTEXT.toString());
+            linkTextNode.setAttribute(ATTRIBUTE_NAME_CLASS, MAP_LINKTEXT.toString());
             final String text = getText(title);
             final Text textNode = doc.createTextNode(text);
             linkTextNode.appendChild(textNode);
@@ -397,7 +397,7 @@ public abstract class AbstractChunkTopicParser extends AbstractXMLWriter {
 
             // append shortdesc
             final Element shortDescNode = doc.createElement(TOPIC_SHORTDESC.localName);
-            shortDescNode.setAttribute(ATTRIBUTE_NAME_CLASS, TOPIC_SHORTDESC.toString());
+            shortDescNode.setAttribute(ATTRIBUTE_NAME_CLASS, MAP_SHORTDESC.toString());
             final String shortDescText = getText(shortDesc);
             final Text shortDescTextNode = doc.createTextNode(shortDescText);
             shortDescNode.appendChild(shortDescTextNode);

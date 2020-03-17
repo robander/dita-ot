@@ -581,7 +581,7 @@ See the accompanying LICENSE file for applicable license.
             The target of the HREF is a local DITA file
             The user has not specified locktitle to override the title -->
           <xsl:if test="not(($FINALOUTPUTTYPE = 'PDF' or $FINALOUTPUTTYPE = 'IDD') and (not(@scope) or @scope = 'local') and (not(@format) or @format = 'dita') and (not(@locktitle) or @locktitle = 'no'))">
-            <linktext class="- topic/linktext ">
+            <linktext class="- map/linktext ">
               <xsl:copy-of select="*[contains(@class, ' map/topicmeta ')]/processing-instruction()[name()='ditaot'][.='usertext' or .='gentext']"/>
               <xsl:copy-of select="*[contains(@class, ' map/topicmeta ')]/*[dita-ot:matches-linktext-class(@class)]/node()"/>
             </linktext>
