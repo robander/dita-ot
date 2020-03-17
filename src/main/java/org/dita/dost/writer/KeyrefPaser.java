@@ -718,11 +718,11 @@ public final class KeyrefPaser extends AbstractXMLFilter {
      */
     private String changeclassValue(final String classValue) {
         final DitaClass cls = new DitaClass(classValue);
-        if (cls.equals(MAP_LINKTEXT)) {
+        if (cls.equals(MAP_LINKTEXT) || cls.equals(TOPIC_LINKTEXT)) {
             return TOPIC_LINKTEXT.toString();
-        } else if (cls.equals(MAP_SEARCHTITLE)) {
+        } else if (cls.equals(MAP_SEARCHTITLE) || cls.equals(TOPIC_SEARCHTITLE)) {
             return TOPIC_SEARCHTITLE.toString();
-        } else if (cls.equals(MAP_SHORTDESC)) {
+        } else if (cls.equals(MAP_SHORTDESC) || cls.equals(TOPIC_SHORTDESC)) {
             return TOPIC_SHORTDESC.toString();
         } else {
             return cls.toString();
