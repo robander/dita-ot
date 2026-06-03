@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<topic xmlns:ditaarch="http://dita.oasis-open.org/architecture/2005/" id="topic" ditaarch:DITAArchVersion="2.0" class="- topic/topic " xtrf="file:/tmp/topic.dita" xtrc="topic:1;2:1">
+  <title class="- topic/title " xtrf="file:/tmp/topic.dita" xtrc="title:1;3:3">Topic</title>
+  <body class="- topic/body " xtrf="file:/tmp/topic.dita" xtrc="body:1;4:3">
+    <p class="- topic/p " xtrf="file:/tmp/topic.dita" xtrc="p:1;5:5">Paragraph.</p>
+  </body>
+</topic>

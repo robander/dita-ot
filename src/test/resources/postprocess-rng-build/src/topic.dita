@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="urn:pubid:oasis:names:tc:dita:rng:basetopic.rng:2.0" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<topic id="topic">
+  <title>Topic</title>
+  <body>
+    <p>Paragraph.</p>
+  </body>
+</topic>

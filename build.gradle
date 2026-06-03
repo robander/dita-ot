@@ -126,12 +126,73 @@ tasks.named("test") {
     maxParallelForks = 4
     inputs.files 'src/test/xsl/**/*.xspec'
 }
+
+def bundledTestRuntimeDir = file("${buildDir}/tmp/testRuntime")
+def bundledTestPluginUrls = [
+        "normalize": "https://github.com/dita-ot/org.dita.normalize/archive/refs/tags/2.0.zip",
+        "dita20"   : "https://github.com/dita-ot/dita/releases/download/2.0.0-20260125/org.oasis-open.dita.v2_0.zip",
+]
+
+tasks.register('integrateBundledTestPlugins') {
+    description = "Install bundled plug-ins required by test runtime"
+    dependsOn integrateDistTemp
+}
+bundledTestPluginUrls.forEach { name, url ->
+    def integrateTestPluginTask = tasks.register("integrateBundledTest${name.capitalize()}", JavaExec) {
+        dependsOn integrateDistTemp
+        mainClass = "org.apache.tools.ant.launch.Launcher"
+        classpath = sourceSets.main.runtimeClasspath + files("${distTempDir}", "${projectDir}/src/main/config")
+        workingDir distTempDir
+        args "-f"
+        args file("${distTempDir}/integrator.xml")
+        args "install"
+        args "-Dplugin.file=${url}"
+    }
+    tasks.named('integrateBundledTestPlugins') {
+        dependsOn integrateTestPluginTask
+    }
+}
+
+tasks.register('prepareBundledTestRuntime') {
+    description = "Prepare a test runtime with bundled normalize and DITA 2.0 plug-ins"
+    dependsOn integrateBundledTestPlugins
+    outputs.dir bundledTestRuntimeDir
+    if (project.hasProperty("dita20SourceDir")) {
+        inputs.dir file(project.property("dita20SourceDir"))
+    }
+    doLast {
+        delete bundledTestRuntimeDir
+        copy {
+            from distTempDir
+            into bundledTestRuntimeDir
+        }
+        if (project.hasProperty("dita20SourceDir")) {
+            copy {
+                from file(project.property("dita20SourceDir"))
+                into file("${bundledTestRuntimeDir}/plugins/org.oasis-open.dita.v2_0")
+            }
+            javaexec {
+                mainClass = "org.apache.tools.ant.launch.Launcher"
+                classpath = sourceSets.main.runtimeClasspath + files("${bundledTestRuntimeDir}", "${projectDir}/src/main/config")
+                workingDir bundledTestRuntimeDir
+                args "-f"
+                args file("${bundledTestRuntimeDir}/integrator.xml")
+            }
+        }
+    }
+}
+
+tasks.named("test") {
+    dependsOn prepareBundledTestRuntime
+    systemProperty "bundled_dita_dir", bundledTestRuntimeDir.absolutePath
+}
 // Integration test
 
 def integrationTestSystemProperties = [
         temp_dir : "${buildDir}/tmp/integrationTest",
         dita_dir : "${projectDir}/src/main",
-        basedir : "${projectDir}/src/test"
+        basedir : "${projectDir}/src/test",
+        bundled_dita_dir : bundledTestRuntimeDir.absolutePath
 ]
 if (System.getProperty("test") != null)
     integrationTestSystemProperties["test"] = "${System.getProperty("test")}"
@@ -141,7 +202,7 @@ if (System.getProperty("log_level") != null)
 tasks.register('integrationTest', Test) {
     group = "verification"
     description = "Run integration tests."
-    dependsOn buildLocal
+    dependsOn buildLocal, prepareBundledTestRuntime
     minHeapSize = "128m"
     maxHeapSize = "1024m"
     systemProperties = integrationTestSystemProperties
@@ -313,6 +374,7 @@ tasks.register('copyDistTemp', Copy) {
         exclude "plugins/org.dita.html5/build"
         exclude "plugins/org.dita.html5/.sass-cache"
         include "plugins/org.dita.htmlhelp/**"
+        include "plugins/org.dita.preprocess.rng/**"
         include "plugins/org.dita.pdf2.axf/**"
         include "plugins/org.dita.pdf2.fop/**"
         exclude "plugins/org.dita.pdf2.fop/build"

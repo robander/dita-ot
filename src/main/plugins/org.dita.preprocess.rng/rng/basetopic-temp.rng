@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<grammar
+  xmlns="http://relaxng.org/ns/structure/1.0"
+  xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0"
+  xmlns:dita="http://dita.oasis-open.org/architecture/2005/"
+>
+  <define name="dita-ot-debug-atts">
+    <optional>
+      <attribute name="xtrf"/>
+    </optional>
+    <optional>
+      <attribute name="xtrc"/>
+    </optional>
+  </define>
+
+  <include href="urn:pubid:oasis:names:tc:dita:rng:basetopic.rng:2.0">
+    <define name="univ-atts">
+      <ref name="id-atts"/>
+      <ref name="select-atts"/>
+      <ref name="localization-atts"/>
+      <optional>
+        <attribute name="outputclass"/>
+      </optional>
+      <ref name="dita-ot-debug-atts"/>
+    </define>
+    <define name="univ-atts-translate-no">
+      <ref name="id-atts"/>
+      <ref name="select-atts"/>
+      <ref name="localization-atts-translate-no"/>
+      <optional>
+        <attribute name="outputclass"/>
+      </optional>
+      <ref name="dita-ot-debug-atts"/>
+    </define>
+    <define name="topic.attributes">
+      <attribute name="id">
+        <data type="ID"/>
+      </attribute>
+      <ref name="conref-atts"/>
+      <ref name="select-atts"/>
+      <ref name="localization-atts"/>
+      <optional>
+        <attribute name="outputclass"/>
+      </optional>
+      <ref name="dita-ot-debug-atts"/>
+    </define>
+  </include>
+</grammar>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <group>
+    <system systemId="urn:dita-ot:rng:basetopic-normalized.rng" uri="rng/basetopic-normalized.rng"/>
+    <system systemId="urn:dita-ot:rng:basetopic-temp.rng" uri="rng/basetopic-temp.rng"/>
+  </group>
+  <group>
+    <uri name="urn:dita-ot:rng:basetopic-normalized.rng" uri="rng/basetopic-normalized.rng"/>
+    <uri name="urn:dita-ot:rng:basetopic-temp.rng" uri="rng/basetopic-temp.rng"/>
+  </group>
+</catalog>

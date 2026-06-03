@@ -48,6 +48,7 @@ public abstract class AbstractIntegrationTest {
 
   enum Transtype {
     PREPROCESS("xhtml", true, "preprocess", "build-init", "preprocess"),
+    DITA("dita", false, "dita", "dita"),
     XHTML("xhtml", false, "xhtml", "dita2xhtml"),
     HTML5("html5", false, "html5", "dita2html5"),
     PDF("pdf", true, Set.of("fo"), "pdf", "dita2pdf2"),
@@ -105,6 +106,7 @@ public abstract class AbstractIntegrationTest {
   private final Map<String, Object> args = new HashMap<>();
   private int warnCount = 0;
   private int errorCount = 0;
+  private File ditaDirOverride;
 
   public AbstractIntegrationTest name(String name) {
     this.name = Paths.get(name);
@@ -145,6 +147,11 @@ public abstract class AbstractIntegrationTest {
 
   public AbstractIntegrationTest errorCount(int errorCount) {
     this.errorCount = errorCount;
+    return this;
+  }
+
+  public AbstractIntegrationTest ditaDir(File ditaDir) {
+    this.ditaDirOverride = ditaDir;
     return this;
   }
 
@@ -247,7 +254,7 @@ public abstract class AbstractIntegrationTest {
     final Map<String, String> params = Collections.unmodifiableMap(builder);
 
     try {
-      this.log = runOt(testDir, transtype, tempDir, outDir, params, targets);
+      this.log = runOt(testDir, transtype, tempDir, outDir, params, targets, ditaDirOverride);
       final List<TestListener.Message> warnings = getMessages(log, Project.MSG_WARN);
       final List<TestListener.Message> errors = getMessages(log, Project.MSG_ERR);
       assertAll(
@@ -347,7 +354,8 @@ public abstract class AbstractIntegrationTest {
     final File tempBaseDir,
     final File resBaseDir,
     final Map<String, String> args,
-    final String[] targets
+    final String[] targets,
+    final File ditaDirOverride
   ) throws Exception {
     //        System.out.println(transtype);
     final File tempDir = new File(tempBaseDir, transtype.toString());
@@ -359,7 +367,8 @@ public abstract class AbstractIntegrationTest {
     final PrintStream savedErr = System.err;
     final PrintStream savedOut = System.out;
     try {
-      final File buildFile = new File(ditaDir, "build.xml");
+      final File runtimeDitaDir = ditaDirOverride != null ? ditaDirOverride : ditaDir;
+      final File buildFile = new File(runtimeDitaDir, "build.xml");
       final Project project = new Project();
       project.addBuildListener(listener);
       System.setOut(new PrintStream(new DemuxOutputStream(project, false)));
@@ -375,7 +384,7 @@ public abstract class AbstractIntegrationTest {
       project.setUserProperty("preprocess.copy-generated-files.skip", "true");
       project.setUserProperty("ant.file", buildFile.getAbsolutePath());
       project.setUserProperty("ant.file.type", "file");
-      project.setUserProperty("dita.dir", ditaDir.getAbsolutePath());
+      project.setUserProperty("dita.dir", runtimeDitaDir.getAbsolutePath());
       project.setUserProperty("output.dir", resDir.getAbsolutePath());
       project.setUserProperty("dita.temp.dir", tempDir.getAbsolutePath());
       project.setUserProperty("clean.temp", "no");
